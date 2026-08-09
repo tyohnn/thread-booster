@@ -1,0 +1,10 @@
+{
+  "title": "Workflow",
+  "pages": [
+    "index",
+    "planning",
+    "development"
+  ],
+  "collapsible": true,
+  "defaultOpen": true
+}
