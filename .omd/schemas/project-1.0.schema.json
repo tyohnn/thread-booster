@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oh-my-docs.dev/schemas/project-1.0.schema.json",
+  "title": "Oh My Docs project contract",
+  "type": "object",
+  "required": ["contractVersion", "mode", "paths", "informationArchitecture", "lifecycles", "ui", "ownership"],
+  "properties": {
+    "contractVersion": { "const": "1.0" },
+    "mode": { "enum": ["greenfield", "brownfield"] },
+    "paths": {
+      "type": "object",
+      "required": ["docs", "ui", "content", "templates"],
+      "description": "For contentSource.ssot=local, content is .omd/dbs (HTML catalogs). Notion SSOT ignores content for writes.",
+      "properties": {
+        "docs": { "type": "string", "description": "Optional Fumadocs shell app path (docs/ or apps/docs/)" },
+        "ui": { "type": "string" },
+        "content": {
+          "type": "string",
+          "description": "Local catalog root. Default .omd/dbs for HTML SSOT."
+        },
+        "templates": { "type": "string" },
+        "assets": {
+          "type": "string",
+          "description": "Shared local HTML assets (default .omd/assets)"
+        }
+      }
+    },
+    "informationArchitecture": {
+      "type": "object",
+      "required": ["sections", "catalogs"],
+      "properties": {
+        "schemaVersion": { "type": "string" },
+        "sections": { "type": "array" },
+        "catalogs": { "type": "array" },
+        "kindToDatabase": { "type": "object" },
+        "nav": { "type": "object" },
+        "graphDigest": { "type": "string" }
+      }
+    },
+    "lifecycles": { "type": "object" },
+    "ui": {
+      "type": "object",
+      "required": ["base", "distribution", "shellDependencies", "vocabulary"],
+      "properties": {
+        "base": { "const": "fumadocs" },
+        "distribution": { "const": "skill-template" },
+        "shellDependencies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "vocabulary": { "type": "array" }
+      }
+    },
+    "ownership": { "type": "object" },
+    "contentSource": {
+      "type": "object",
+      "required": ["ssot"],
+      "properties": {
+        "ssot": { "enum": ["local", "notion"] },
+        "notion": {
+          "type": "object",
+          "required": ["rootPageId", "rootPageUrl", "schemaVersion"],
+          "properties": {
+            "rootPageId": { "type": "string", "minLength": 1 },
+            "rootPageUrl": { "type": "string", "minLength": 1 },
+            "schemaVersion": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

@@ -2,8 +2,8 @@
 
 Threads 계정들을 수집·분석해 **독자가 어디서 이탈하는지 찾고, 터진 구조를 템플릿으로 재사용**하는 프로젝트.
 
-- **기획 SSOT는 Notion** — [Thread Booster > 제품 기획 · 기능 명세](https://app.notion.com/p/3b6346dac4568080a6b1c8b24aa7b65e)
-  (PRD · User Story · Features · Release · ADR · 정책 · IA · Pages)
+- **기획 SSOT는 `.omd/dbs`** — 로컬 HTML 카탈로그 (PRD · User Story · Features · Release · ADR · 정책 · IA · Pages · Layouts · 화면 상태)
+- Notion [제품 기획 · 기능 명세](https://app.notion.com/p/3b6346dac4568080a6b1c8b24aa7b65e)는 이관 원본·보관용
 - 이 저장소는 **수집기와 데이터**, 그리고 **훅 템플릿 자산**을 담는다
 - 대시보드(v1.0)는 아직 없다. 로컬 단독 실행으로 만들 예정 (ADR-003)
 
@@ -12,7 +12,8 @@ Threads 계정들을 수집·분석해 **독자가 어디서 이탈하는지 찾
 ```
 thread-rocket/
 ├── README.md
-├── NOTION_SYNC.md             ← Notion 연동 인수인계 (재개 전 필독)
+├── NOTION_SYNC.md             ← 수집 데이터 Notion DB 연동 (제품 IA와 별개)
+├── .omd/dbs/                  ← ★ 기획 SSOT (로컬 HTML 카탈로그)
 ├── shared/
 │   ├── crawler/               ← ★ 현행 수집기 (SSR JSON 방식)
 │   │   ├── README.md          ← 방법론·제약·사용법

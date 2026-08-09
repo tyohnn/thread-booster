@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-002">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-002" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P0" />
+  <title>F-002 · 퍼머링크 수집 실행기</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-002</p>
+    <h1 data-omd-field="title">퍼머링크 수집 실행기</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">수집</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P0</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">코드 목록을 받아 퍼머링크의 SSR JSON을 파싱해 raw JSONL로 append한다. 로그인 불필요.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-001.html">PRD-001</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-001.html">REL-001</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-41.html">SCR-41</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>코드 목록을 받아 퍼머링크의 SSR JSON을 파싱해 raw JSONL로 append한다. 로그인 불필요.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>배치마다 3~8초 + 지터를 둔다 (POL-001)</li>
+    <li>에러 응답을 감지하면 지수 백오프 후 자체 종료한다</li>
+    <li>실패한 코드만 재시도할 수 있다</li>
+    <li>한 번에 한 계정만 실행된다</li>
+    </ul>
+    <h2>근거</h2>
+    <p>기존 <code>shared/crawler/fetch.mjs</code> 가 이 동작을 이미 검증했다 (1,506요청 실패 0).</p>
+  </main>
+</body>
+</html>

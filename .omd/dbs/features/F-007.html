@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-007">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-007" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P0" />
+  <title>F-007 · 로컬 스토어 빌드</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-007</p>
+    <h1 data-omd-field="title">로컬 스토어 빌드</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">정규화·적재</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P0</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">정규화 산출물을 단일 분석 스토어(DuckDB 파일)로 적재한다. 대시보드는 이 파일만 읽는다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-001.html">PRD-001</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-001.html">REL-001</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages"></dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>정규화 산출물을 단일 분석 스토어(DuckDB 파일)로 적재한다. 대시보드는 이 파일만 읽는다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>계정·체인·글·관측·유지율 테이블이 만들어진다</li>
+    <li>원본 JSONL만 있으면 스토어를 전체 재생성할 수 있다</li>
+    <li>스키마 변경 시 마이그레이션 대신 재생성한다</li>
+    </ul>
+    <h2>의존</h2>
+    <p>ADR-002 (엔진 선택) 확정 후 착수.</p>
+  </main>
+</body>
+</html>

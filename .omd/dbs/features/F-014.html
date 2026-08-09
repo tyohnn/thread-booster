@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-014">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-014" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P1" />
+  <title>F-014 · 체인 퍼널 차트</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-014</p>
+    <h1 data-omd-field="title">체인 퍼널 차트</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">이탈 분석</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P1</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">한 체인의 1번·2번·마지막 글 조회수를 막대로 그리고 구간별 잔존율을 표시한다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-003.html">PRD-003</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-002.html">REL-002</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-13.html">SCR-13</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>한 체인의 1번·2번·마지막 글 조회수를 막대로 그리고 구간별 잔존율을 표시한다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>구간별 잔존율(%)이 막대 위에 보인다</li>
+    <li>중간 글은 측정값이 없음을 명시하고 <strong>보간하지 않는다</strong></li>
+    <li>단일 글 체인은 퍼널을 그리지 않고 안내를 띄운다</li>
+    <li>마지막 글 조회수가 없으면 2단계로 표시한다</li>
+    </ul>
+    <h2>의존</h2>
+    <p>F-004 (마지막 글 조회수 보강 수집)</p>
+  </main>
+</body>
+</html>

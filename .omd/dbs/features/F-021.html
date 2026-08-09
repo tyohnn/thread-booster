@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-021">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-021" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P0" />
+  <title>F-021 · 템플릿 성과 롤업</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-021</p>
+    <h1 data-omd-field="title">템플릿 성과 롤업</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">템플릿 매니저</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P0</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">템플릿에 연결된 체인들의 지표를 집계해 템플릿 카드에 보여준다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-004.html">PRD-004</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-002.html">REL-002</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-31.html">SCR-31</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>템플릿에 연결된 체인들의 지표를 집계해 템플릿 카드에 보여준다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>연결 체인 수, 중앙 훅 조회수, 중앙 유지율, 중앙 배수가 나온다</li>
+    <li>표본이 3개 미만이면 수치 대신 &quot;근거 부족&quot;을 표시한다</li>
+    <li>템플릿 목록을 성과순으로 정렬할 수 있다</li>
+    </ul>
+    <h2>의존</h2>
+    <p>F-019 매핑 재수행이 선행돼야 의미 있는 수치가 나온다.</p>
+  </main>
+</body>
+</html>

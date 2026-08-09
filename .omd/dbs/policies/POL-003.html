@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="policy" data-omd-id="POL-003">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="POL-003" />
+  <meta name="omd:kind" content="policy" />
+  <meta name="omd:status" content="In progress" />
+  <title>POL-003 · 지표 계산 규칙</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">POL-003</p>
+    <h1 data-omd-field="title">지표 계산 규칙</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">In progress</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">유지율·배수·참여율의 정의와 결측 처리를 고정한다</dd>
+      <dt>유형</dt>
+      <dd data-omd-field="유형">계산규칙</dd>
+      <dt>적용 화면</dt>
+      <dd data-omd-field="적용 화면">체인 목록, 이탈 분석, 템플릿 성과</dd>
+      <dt>근거</dt>
+      <dd data-omd-field="근거">2026-08-08 재수집 분석 기준</dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Rule</h2>
+    <h3>정의</h3>
+    
+    <table>
+    <tr><th>지표</th><th>정의</th></tr>
+    <tr><td>초반 유지율</td><td>2번 글 조회수 ÷ 1번 글 조회수</td></tr>
+    <tr><td>완주율</td><td>마지막 글 조회수 ÷ 1번 글 조회수</td></tr>
+    <tr><td>참여율</td><td>좋아요 ÷ 조회수</td></tr>
+    <tr><td>월별 배수</td><td>체인 좋아요 ÷ 해당 월 중앙 좋아요</td></tr>
+    </table>
+    
+    <h3>규칙</h3>
+    
+    <ul>
+    <li>조회수는 페이로드 정수를 쓴다. 화면 표기의 2유효숫자 반올림을 따라가지 않는다</li>
+    <li><strong>결측은 보간하지 않는다.</strong> 조회수 없는 글은 빈칸이며 0으로 표시하지 않는다</li>
+    <li>단일 글 체인은 유지율 계산에서 제외한다</li>
+    <li>집계는 평균이 아니라 <strong>중앙값</strong>을 기본으로 한다. 조회수 분포가 극단적으로 치우쳐 있다</li>
+    <li>모든 수치에 <strong>표본 수(n)</strong> 를 함께 표시한다</li>
+    <li>통계는 상관이며 인과가 아니다. 해석 문구에 이를 명시한다</li>
+    </ul>
+
+    <h2>Applies when</h2>
+    <p>적용 화면: 체인 목록, 이탈 분석, 템플릿 성과</p>
+
+    <h2>Does not apply</h2>
+    <p class="omd-placeholder">Notion 본문에 해당 섹션 내용 없음.</p>
+
+    <h2>Rationale</h2>
+    <p>2026-08-08 재수집 분석 기준</p>
+
+    <h2>시간대</h2>
+    <p>수집 원본은 UTC다. 화면 표기는 KST(+9)로 통일한다.</p>
+  </main>
+</body>
+</html>

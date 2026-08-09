@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="screen-state" data-omd-id="STA-031-2">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="STA-031-2" />
+  <meta name="omd:kind" content="screen-state" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:stateType" content="로딩" />
+  <title>STA-031-2 · 템플릿 목록 · 로딩</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">STA-031-2</p>
+    <h1 data-omd-field="title">템플릿 목록 · 로딩</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>trigger</dt>
+      <dd data-omd-field="trigger">템플릿 목록 화면 진입 또는 새로고침으로 데이터 질의가 진행 중일 때</dd>
+      <dt>exit</dt>
+      <dd data-omd-field="exit">질의 응답 도착 시 기본 · 빈 상태 · 부분 데이터 중 해당 상태로 자동 전환</dd>
+      <dt>stateType</dt>
+      <dd data-omd-field="stateType">로딩</dd>
+      <dt>Page</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-31.html">SCR-31</a>
+      </dd>
+      <dt>Layout</dt>
+      <dd data-omd-rel="layouts">
+        <a href="../layouts/LAY-004.html">LAY-004</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>템플릿 목록 화면 진입 또는 새로고침으로 데이터 질의가 진행 중일 때</p>
+    <h2>What the user sees</h2>
+    <p>스켈레톤·플레이스홀더가 실제 열/카드 폭과 맞게 표시된다. 레이아웃이 데이터 도착 시 튀지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>질의 응답 도착 시 기본 · 빈 상태 · 부분 데이터 중 해당 상태로 자동 전환</p>
+  </main>
+<section class="omd-wireframe" data-omd-wireframe="shell">
+  <h2>Shell + body</h2>
+  <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
+#wf-shell .side{background:#292524;color:#fafaf9;padding:.75rem;font-size:.8rem;display:flex;flex-direction:column;gap:2px}
+#wf-shell .brand{font-weight:700;padding:4px 8px 12px}
+#wf-shell .grp{font-size:10px;letter-spacing:.08em;opacity:.7;text-transform:uppercase;padding:10px 8px 4px}
+#wf-shell .nav{padding:5px 8px;border-radius:4px}
+#wf-shell .nav.on, #wf-shell .nav.active{background:#44403c}
+#wf-shell .nav .k{float:right;opacity:.7}
+#wf-shell .foot{margin-top:auto;font-size:11px;opacity:.7;padding:8px;border-top:1px solid #44403c}
+#wf-shell .main{display:flex;flex-direction:column;min-width:0;background:#fafaf9}
+#wf-shell .top{border-bottom:1px solid #d6d3d1;padding:.5rem .75rem;font-size:.8rem;color:#57534e}
+#wf-shell .top b{color:#1c1917}
+#wf-shell .body{padding:.75rem;flex:1}
+#wf-shell{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a}
+#wf-shell *{box-sizing:border-box}
+#wf-shell{margin:0;padding:14px;font:12.5px/1.55 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-shell h3{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:0 0 7px}
+#wf-shell .case{border:1px solid var(--bd);border-radius:9px;background:var(--panel);padding:12px 13px;margin-bottom:12px}
+#wf-shell .tag{display:inline-block;font-size:10px;border-radius:4px;padding:1px 7px;margin-left:6px;font-weight:600}
+#wf-shell .t-load{background:#8b8b8520;color:var(--mut)}
+#wf-shell .t-empty{background:#a1704020;color:#a17040}
+#wf-shell .t-part{background:#c2a03a20;color:#9a7c1e}
+#wf-shell .t-err{background:#b3413a1a;color:var(--err)}
+#wf-shell .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:9px}
+#wf-shell .card{border:1px solid var(--bd);border-radius:7px;padding:10px;display:flex;flex-direction:column;gap:6px}
+#wf-shell .sk{background:linear-gradient(90deg,var(--bd),transparent,var(--bd));background-size:200% 100%;border-radius:4px;height:10px;animation:sh 1.4s infinite}
+@keyframes sh{0%{background-position:200% 0}
+#wf-shell 100%{background-position:-200% 0}
+#wf-shell .banner{border:1px solid var(--warn);background:#c2703a12;border-radius:6px;padding:8px 11px;color:var(--warn);font-size:12px;margin-bottom:9px}
+#wf-shell .banner.err{border-color:var(--err);background:#b3413a10;color:var(--err)}
+#wf-shell .mid{text-align:center;padding:22px 10px;color:var(--mut)}
+#wf-shell .mid .msg{color:var(--ink);font-weight:600;margin-bottom:3px}
+#wf-shell .btn{display:inline-block;border:1px solid var(--acc);color:var(--acc);border-radius:6px;padding:5px 13px;font-weight:600;margin-top:9px;font-size:12px}
+#wf-shell .btn.sec{border-color:var(--bd);color:var(--mut);font-weight:400;margin-left:5px}
+#wf-shell .dim{color:var(--mut);font-size:11px}
+#wf-shell .thin{color:var(--warn);font-size:10.5px}
+#wf-shell .perf{font-size:10.5px;color:var(--mut);font-variant-numeric:tabular-nums}</style>
+  <div id="wf-shell" class="omd-mock"><div class="omd-wire-shell shell">
+  <aside class="omd-wire-sidebar side">
+    <div class="brand">Thread Booster</div>
+    <div class="nav">대시보드 홈</div>
+    <div class="grp">레퍼런스</div>
+    <div class="nav">계정 목록 <span class="k">3</span></div>
+    <div class="nav">체인 목록 <span class="k">1,722</span></div>
+    <div class="nav">글 검색</div>
+    <div class="grp">템플릿</div>
+    <div class="nav on active">템플릿 목록 <span class="k">28</span></div>
+    <div class="nav">심리 기법 <span class="k">17</span></div>
+    <div class="grp">데이터</div>
+    <div class="nav">수집 콘솔</div>
+    <div class="nav">계정 레지스트리</div>
+    <div class="foot">마지막 수집<br>2026-08-08 · 실패 0</div>
+  </aside>
+  <div class="omd-wire-main main">
+    <div class="omd-wire-crumb top"><div class="crumb">템플릿 / <b>템플릿 목록</b></div></div>
+    <div class="omd-wire-body body"><div class="case"><div class="grid">
+  <div class="card"><div class="sk" style="width:60%;height:13px"></div><div class="sk" style="height:34px"></div><div class="sk" style="width:80%"></div></div>
+  <div class="card"><div class="sk" style="width:70%;height:13px"></div><div class="sk" style="height:34px"></div><div class="sk" style="width:65%"></div></div>
+  <div class="card"><div class="sk" style="width:55%;height:13px"></div><div class="sk" style="height:34px"></div><div class="sk" style="width:75%"></div></div>
+</div></div></div>
+  </div>
+</div></div>
+</section>
+<section class="omd-wireframe" data-omd-wireframe="body">
+  <h2>Body only</h2>
+  <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a}
+#wf-body *{box-sizing:border-box}
+#wf-body{margin:0;padding:14px;font:12.5px/1.55 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-body h3{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:0 0 7px}
+#wf-body .case{border:1px solid var(--bd);border-radius:9px;background:var(--panel);padding:12px 13px;margin-bottom:12px}
+#wf-body .tag{display:inline-block;font-size:10px;border-radius:4px;padding:1px 7px;margin-left:6px;font-weight:600}
+#wf-body .t-load{background:#8b8b8520;color:var(--mut)}
+#wf-body .t-empty{background:#a1704020;color:#a17040}
+#wf-body .t-part{background:#c2a03a20;color:#9a7c1e}
+#wf-body .t-err{background:#b3413a1a;color:var(--err)}
+#wf-body .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:9px}
+#wf-body .card{border:1px solid var(--bd);border-radius:7px;padding:10px;display:flex;flex-direction:column;gap:6px}
+#wf-body .sk{background:linear-gradient(90deg,var(--bd),transparent,var(--bd));background-size:200% 100%;border-radius:4px;height:10px;animation:sh 1.4s infinite}
+@keyframes sh{0%{background-position:200% 0}
+#wf-body 100%{background-position:-200% 0}
+#wf-body .banner{border:1px solid var(--warn);background:#c2703a12;border-radius:6px;padding:8px 11px;color:var(--warn);font-size:12px;margin-bottom:9px}
+#wf-body .banner.err{border-color:var(--err);background:#b3413a10;color:var(--err)}
+#wf-body .mid{text-align:center;padding:22px 10px;color:var(--mut)}
+#wf-body .mid .msg{color:var(--ink);font-weight:600;margin-bottom:3px}
+#wf-body .btn{display:inline-block;border:1px solid var(--acc);color:var(--acc);border-radius:6px;padding:5px 13px;font-weight:600;margin-top:9px;font-size:12px}
+#wf-body .btn.sec{border-color:var(--bd);color:var(--mut);font-weight:400;margin-left:5px}
+#wf-body .dim{color:var(--mut);font-size:11px}
+#wf-body .thin{color:var(--warn);font-size:10.5px}
+#wf-body .perf{font-size:10.5px;color:var(--mut);font-variant-numeric:tabular-nums}</style>
+  <div id="wf-body" class="omd-mock"><div class="omd-wire-body-only"><div class="case"><div class="grid">
+  <div class="card"><div class="sk" style="width:60%;height:13px"></div><div class="sk" style="height:34px"></div><div class="sk" style="width:80%"></div></div>
+  <div class="card"><div class="sk" style="width:70%;height:13px"></div><div class="sk" style="height:34px"></div><div class="sk" style="width:65%"></div></div>
+  <div class="card"><div class="sk" style="width:55%;height:13px"></div><div class="sk" style="height:34px"></div><div class="sk" style="width:75%"></div></div>
+</div></div></div></div>
+</section>
+</body>
+</html>

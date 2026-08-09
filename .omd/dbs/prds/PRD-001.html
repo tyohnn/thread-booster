@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="prd" data-omd-id="PRD-001">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="PRD-001" />
+  <meta name="omd:kind" content="prd" />
+  <meta name="omd:status" content="초안" />
+  <title>PRD-001 · 데이터 파이프라인과 로컬 스토어</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">PRD-001</p>
+    <h1 data-omd-field="title">데이터 파이프라인과 로컬 스토어</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">긁어낸 스레드 데이터를 한 번의 명령으로 수집·정규화·적재해, 대시보드가 바로 질의할 수 있는 단일 로컬 스토어를 유지한다.</dd>
+      <dt>우선순위</dt>
+      <dd data-omd-field="우선순위">P0</dd>
+      <dt>제품 영역</dt>
+      <dd data-omd-field="제품 영역">데이터 파이프라인</dd>
+      <dt>문서 버전</dt>
+      <dd data-omd-field="문서 버전">0.1</dd>
+      <dt>시작일</dt>
+      <dd data-omd-field="시작일">2026-08-09</dd>
+      <dt>목표일</dt>
+      <dd data-omd-field="목표일">2026-08-16</dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories">
+        <a href="../stories/US-001.html" data-omd-rel-target="US-001">US-001</a>
+        <a href="../stories/US-002.html" data-omd-rel-target="US-002">US-002</a>
+        <a href="../stories/US-003.html" data-omd-rel-target="US-003">US-003</a>
+      </dd>
+      <dt>Features</dt>
+      <dd data-omd-rel="features">
+        <a href="../features/F-001.html" data-omd-rel-target="F-001">F-001</a>
+        <a href="../features/F-002.html" data-omd-rel-target="F-002">F-002</a>
+        <a href="../features/F-003.html" data-omd-rel-target="F-003">F-003</a>
+        <a href="../features/F-004.html" data-omd-rel-target="F-004">F-004</a>
+        <a href="../features/F-005.html" data-omd-rel-target="F-005">F-005</a>
+        <a href="../features/F-006.html" data-omd-rel-target="F-006">F-006</a>
+        <a href="../features/F-007.html" data-omd-rel-target="F-007">F-007</a>
+        <a href="../features/F-008.html" data-omd-rel-target="F-008">F-008</a>
+      </dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-001.html" data-omd-rel-target="REL-001">REL-001</a>
+      </dd>
+      <dt>IA</dt>
+      <dd data-omd-rel="ia">
+        <a href="../ia/IA-41.html" data-omd-rel-target="IA-41">IA-41</a>
+        <a href="../ia/IA-42.html" data-omd-rel-target="IA-42">IA-42</a>
+      </dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-41.html" data-omd-rel-target="SCR-41">SCR-41</a>
+        <a href="../pages/SCR-42.html" data-omd-rel-target="SCR-42">SCR-42</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Problem</h2>
+    <ul>
+    <li>수집기는 이미 동작하지만, 산출물이 <code>data_export/</code> 아래 JSON 파일로 흩어져 있어 조회하려면 매번 스크립트를 써야 한다</li>
+    <li>2026-08-08 재수집에서 <strong>기존 체인 구성의 80%가 틀렸음</strong>이 드러났다. 정규화가 재현 가능해야 이런 정정이 안전해진다</li>
+    <li>같은 글이 7주 만에 2.5배 성장한 사례가 있다. 관측은 덮어쓰면 안 되고 시계열로 누적돼야 한다</li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <blockquote>
+    <p><strong>한 줄 정의:</strong> 긁어낸 스레드 데이터를 한 번의 명령으로 수집·정규화·적재해, 대시보드가 바로 질의할 수 있는 단일 로컬 스토어를 유지한다.</p>
+    </blockquote>
+
+    <h2>Goals</h2>
+    <ul>
+    <li>수집부터 적재까지 <strong>명령 한 줄</strong>로 끝난다</li>
+    <li>어느 계정을 언제 어디까지 받았는지를 스토어만 보고 알 수 있다</li>
+    <li>같은 입력으로 두 번 돌리면 같은 결과가 나온다</li>
+    </ul>
+
+    <h2>Non-goals</h2>
+    <ul>
+    <li>실시간 동기화. 수동 실행으로 충분하다</li>
+    <li>클라우드 DB·서버 운영</li>
+    <li>Notion 으로의 대량 적재 (→ ADR-001 에서 배제 결정)</li>
+    </ul>
+
+    <h2>Included stories</h2>
+    <p class="omd-placeholder">스토리 목록은 헤더 Stories 관계를 참고.</p>
+
+    <h2>Success measures</h2>
+    <table>
+    <tr><th>지표</th><th>현재</th><th>목표</th><th>측정 방법</th></tr>
+    <tr><td>수집 → 조회 가능까지 수작업 단계</td><td>5단계 (수동 스크립트)</td><td>1단계</td><td>명령어 수</td></tr>
+    <tr><td>수집 실패율</td><td>0% (1,506요청)</td><td>1% 미만 유지</td><td>실행 로그</td></tr>
+    <tr><td>관측 시점 수</td><td>3 (06-12 / 08-02 / 08-08)</td><td>수집마다 +1 누적</td><td>metrics 고유 observed_at</td></tr>
+    <tr><td>마지막 글 조회수 보유율</td><td>0%</td><td>체인의 90% 이상</td><td>스토어 질의</td></tr>
+    </table>
+
+    <h2>사용자</h2>
+    <ul>
+    <li>핵심: 데이터 운영자 (= 본인). 수집을 돌리고 실패를 확인한다</li>
+    <li>보조: 대시보드 자체. 이 스토어를 읽는 유일한 소비자다</li>
+    <li>로컬 단독 실행. 계정·권한 구분 없음</li>
+    </ul>
+
+    <h2>핵심 사용자 흐름</h2>
+    <ol>
+    <li>계정 레지스트리에 팔로우할 계정을 추가한다</li>
+    <li>수집 명령을 돌린다 — 신규 글 발견 → 퍼머링크 수집 → 2번·마지막 글 수집</li>
+    <li>정규화가 돌면서 체인이 재구성되고 관측이 누적된다</li>
+    <li>대시보드를 새로고침하면 새 데이터가 보인다</li>
+    </ol>
+
+    <h2>범위</h2>
+    <h3>포함</h3>
+    
+    <ul>
+    <li>계정 레지스트리 (팔로우 대상 관리)</li>
+    <li>SSR JSON 파싱 수집 실행·재시도·진행 표시</li>
+    <li>체인 재구성을 포함한 정규화</li>
+    <li>관측 시계열 append 적재</li>
+    <li>마지막 글 조회수 보강 수집 (약 640요청)</li>
+    </ul>
+    
+    <h3>제외</h3>
+    
+    <ul>
+    <li>신규 글 자동 발견의 완전 자동화 (로그인 세션 필요 구간)</li>
+    <li>우리 계정 API 연동 (→ v2.0)</li>
+    </ul>
+
+    <h2>제약 및 의존성</h2>
+    <ul>
+    <li>한 번에 한 계정만 수집한다. 2026-08-01 병렬 수집이 소프트 차단을 불렀다</li>
+    <li>조회수는 퍼머링크에서만 나온다. 목록 페이지에는 없다</li>
+    <li>Threads 응답 구조가 바뀌면 파서가 깨진다</li>
+    </ul>
+
+    <h2>위험 요소</h2>
+    <ul>
+    <li><strong>소프트 차단 재발</strong> — 지터·백오프·자체종료를 유지하고 차단 우회는 하지 않는다</li>
+    <li><strong>기존 스냅샷 손실</strong> — 06-12 / 08-02 스냅샷은 성장 비교의 유일한 근거다. 삭제 금지</li>
+    </ul>
+
+    <h2>미결정 사항</h2>
+    <ul>
+    <li>☐ 스토어 엔진 — DuckDB vs SQLite (→ ADR-002)</li>
+    <li>☐ 기존 Notion 5-DB를 어떻게 할 것인가 (아카이브 vs 삭제)</li>
+    </ul>
+
+    <h2>승인 기록</h2>
+    <ul>
+    <li>승인자:</li>
+    <li>승인일:</li>
+    <li>주요 조건:</li>
+    </ul>
+  </main>
+</body>
+</html>

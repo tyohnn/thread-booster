@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="adr" data-omd-id="ADR-003">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="ADR-003" />
+  <meta name="omd:kind" content="adr" />
+  <meta name="omd:status" content="제안" />
+  <meta name="omd:stage" content="제안" />
+  <title>ADR-003 · 대시보드는 Next.js 로컬 실행으로 만든다</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">ADR-003</p>
+    <h1 data-omd-field="title">대시보드는 Next.js 로컬 실행으로 만든다</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">제안</dd>
+      <dt>stage</dt>
+      <dd data-omd-field="stage">제안</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">대시보드는 Next.js 로컬 실행으로 만든다</dd>
+      <dt>영역</dt>
+      <dd data-omd-field="영역">인프라</dd>
+      <dt>결정일</dt>
+      <dd data-omd-field="결정일">2026-08-09</dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Context</h2>
+    <p>배포도 로그인도 없다. <code>localhost</code>에서 나 혼자 쓴다. 필요한 것은 표·차트·상세 페이지이고, 데이터는 로컬 파일에 있다.</p>
+
+    <h2>Decision</h2>
+    <ul>
+    <li><strong>Next.js(App Router)</strong> 를 로컬에서 실행한다. 서버 컴포넌트에서 DuckDB를 직접 질의한다</li>
+    <li>차트는 <strong>Recharts</strong>. 필요한 것은 막대·히스토그램·산점도 정도다</li>
+    <li>인증·미들웨어·멀티테넌시는 넣지 않는다</li>
+    </ul>
+
+    <h2>Consequences</h2>
+    <ul>
+    <li>실행은 <code>pnpm dev</code> 한 줄. 데이터 갱신은 별도 명령</li>
+    <li>배포 관련 작업은 v1 범위에서 전부 제외한다</li>
+    </ul>
+
+    <h2>Alternatives considered</h2>
+    <table>
+    <tr><th>대안</th><th>평가</th></tr>
+    <tr><td>Streamlit·Observable 등 노트북형</td><td>만들기는 빠르지만 체인 상세 같은 문서형 화면이 어색하다</td></tr>
+    <tr><td>정적 사이트 + 전체 데이터 번들</td><td>10MB 넘는 JSON을 브라우저에 올려야 하고 갱신마다 빌드가 필요하다</td></tr>
+    </table>
+
+    <h2>근거</h2>
+    <ul>
+    <li>서버에서 질의하면 22,437행을 브라우저로 내려보낼 필요가 없다</li>
+    <li>나중에 배포로 전환할 때 구조를 다시 짜지 않아도 된다</li>
+    <li>이미 익숙한 스택이라 v1까지의 거리가 짧다</li>
+    </ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="release" data-omd-id="REL-001">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="REL-001" />
+  <meta name="omd:kind" content="release" />
+  <meta name="omd:status" content="계획" />
+  <title>REL-001 · v0.1 데이터 파이프라인</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">REL-001</p>
+    <h1 data-omd-field="title">v0.1 데이터 파이프라인</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">계획</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">수집·정규화·적재를 한 번의 명령으로 돌리고, 대시보드가 읽을 단일 로컬 스토어를 만든다</dd>
+      <dt>버전 유형</dt>
+      <dd data-omd-field="버전 유형">Minor</dd>
+      <dt>제품</dt>
+      <dd data-omd-field="제품">데이터 파이프라인</dd>
+      <dt>목표 출시일</dt>
+      <dd data-omd-field="목표 출시일">2026-08-16</dd>
+      <dt>PRDs</dt>
+      <dd data-omd-rel="prds">
+        <a href="../prds/PRD-001.html" data-omd-rel-target="PRD-001">PRD-001</a>
+      </dd>
+      <dt>Features</dt>
+      <dd data-omd-rel="features">
+        <a href="../features/F-001.html" data-omd-rel-target="F-001">F-001</a>
+        <a href="../features/F-002.html" data-omd-rel-target="F-002">F-002</a>
+        <a href="../features/F-003.html" data-omd-rel-target="F-003">F-003</a>
+        <a href="../features/F-004.html" data-omd-rel-target="F-004">F-004</a>
+        <a href="../features/F-005.html" data-omd-rel-target="F-005">F-005</a>
+        <a href="../features/F-006.html" data-omd-rel-target="F-006">F-006</a>
+        <a href="../features/F-007.html" data-omd-rel-target="F-007">F-007</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories">
+        <a href="../stories/US-001.html" data-omd-rel-target="US-001">US-001</a>
+        <a href="../stories/US-002.html" data-omd-rel-target="US-002">US-002</a>
+        <a href="../stories/US-003.html" data-omd-rel-target="US-003">US-003</a>
+      </dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages"></dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Theme</h2>
+    <ul>
+    <li>SSR 퍼머링크 수집기를 계정 레지스트리 기준으로 실행</li>
+    <li>raw JSONL → posts · chains · metrics · retention 정규화</li>
+    <li>정규화 결과를 로컬 분석 스토어(단일 파일)로 적재</li>
+    <li>체인 마지막 글 조회수 추가 수집 (완주율 계산의 전제)</li>
+    </ul>
+
+    <h2>In scope</h2>
+    <ul>
+    <li>기능: <strong>F-001 ~ F-007</strong> (계정 레지스트리 · 퍼머링크 수집기 · 신규 글 발견 · 마지막 글 보강 수집 · 정규화 · 관측 적재 · 스토어 빌드)</li>
+    <li>User Story: <strong>US-001 ~ US-003</strong></li>
+    <li><strong>화면은 없다.</strong> 이 릴리즈는 CLI·스크립트로만 동작한다. 계정 등록도 <code>accounts.json</code> 으로 한다</li>
+    <li><code>F-008 수집 콘솔</code> 과 화면 <code>SCR-41</code>·<code>SCR-42</code> 는 v1.0 으로 옮겼다 — 앱 셸을 여기서 세우면 ADR-002(스토어 엔진)가 확정되기 전에 스택이 끌려간다</li>
+    </ul>
+
+    <h2>Out of scope</h2>
+    <p class="omd-placeholder">Notion 본문에 해당 섹션 내용 없음.</p>
+
+    <h2>Exit criteria</h2>
+    <ul>
+    <li><code>pnpm data:refresh</code> 한 줄로 수집부터 적재까지 끝난다</li>
+    <li>스토어에 계정 3개 이상, 체인 1,000개 이상이 들어간다</li>
+    <li>같은 글의 관측이 시점별로 누적된다 (덮어쓰지 않는다)</li>
+    </ul>
+
+    <h2>비고</h2>
+    <p>기존 <code>shared/crawler</code> 스크립트가 이미 검증돼 있다. 이 릴리즈는 새로 만드는 것이 아니라 <strong>묶어서 재현 가능하게 만드는 것</strong>이 목적이다.</p>
+  </main>
+</body>
+</html>

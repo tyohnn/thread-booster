@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-015">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-015" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P1" />
+  <title>F-015 · 유지율 분포와 훅 유형 비교</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-015</p>
+    <h1 data-omd-field="title">유지율 분포와 훅 유형 비교</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">이탈 분석</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P1</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">전체 유지율 분포를 히스토그램으로 보여주고, 훅 유형·계정·체인 길이별로 나눠 비교한다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-003.html">PRD-003</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-002.html">REL-002</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-12.html">SCR-12</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>전체 유지율 분포를 히스토그램으로 보여주고, 훅 유형·계정·체인 길이별로 나눠 비교한다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>중앙값 기준선이 표시된다 (현재 1,168체인 12.6%)</li>
+    <li>계정을 섞은 단일 중앙값뿐 아니라 계정별 기준선도 같이 보인다</li>
+    <li>유형별 n과 상관계수가 함께 나온다</li>
+    <li>체인 길이 ↔ 유지율 산점도를 제공한다</li>
+    <li>&quot;상관이며 인과가 아님&quot; 경고가 화면에 고정된다</li>
+    </ul>
+    <h2>기준선</h2>
+    <p>계정별 중앙 유지율 (2026-08-09, n=1,168) — beyond.cho 14.7% · ho_ho_ju_ju 14.8% · badakstock 11.0%</p>
+    <p>훅 유형별 수치는 <strong>2026-08-08 beyond.cho + ho_ho_ju_ju 641체인 기준</strong>이다 — 시사형 18.0% (n=196) · 목록형 12.0% (n=134) · 기타 9.0% (n=154), 길이↔유지율 순위상관 +0.274.</p>
+    <p>badakstock 편입 후 재계산해야 하며, 그 전까지는 가설로 다룬다.</p>
+  </main>
+</body>
+</html>

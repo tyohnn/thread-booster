@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="screen-state" data-omd-id="STA-013-1">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="STA-013-1" />
+  <meta name="omd:kind" content="screen-state" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:stateType" content="기본" />
+  <title>STA-013-1 · 체인 상세 · 기본</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">STA-013-1</p>
+    <h1 data-omd-field="title">체인 상세 · 기본</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>trigger</dt>
+      <dd data-omd-field="trigger">글이 2개 이상이고 1번·2번·마지막 글 조회수가 모두 있을 때 — 3점 퍼널이 온전히 그려진다</dd>
+      <dt>exit</dt>
+      <dd data-omd-field="exit">해당 없음 — 정상 상태. 단 현재 데이터로는 이 상태가 드물다 (완주율 미수집)</dd>
+      <dt>stateType</dt>
+      <dd data-omd-field="stateType">기본</dd>
+      <dt>Page</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-13.html">SCR-13</a>
+      </dd>
+      <dt>Layout</dt>
+      <dd data-omd-rel="layouts">
+        <a href="../layouts/LAY-003.html">LAY-003</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>글이 2개 이상이고 1번·2번·마지막 글 조회수가 모두 있을 때 — 3점 퍼널이 온전히 그려진다</p>
+    <h2>What the user sees</h2>
+    <p>해당 화면의 정상 골격이 채워진 상태다. KPI·표·카드 수치는 스토어 실측(중앙값·n)을 쓴다.</p>
+    <h2>Exit path</h2>
+    <p>해당 없음 — 정상 상태. 단 현재 데이터로는 이 상태가 드물다 (완주율 미수집)</p>
+  </main>
+<section class="omd-wireframe" data-omd-wireframe="shell">
+  <h2>Shell + body</h2>
+  <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
+#wf-shell .side{background:#292524;color:#fafaf9;padding:.75rem;font-size:.8rem;display:flex;flex-direction:column;gap:2px}
+#wf-shell .brand{font-weight:700;padding:4px 8px 12px}
+#wf-shell .grp{font-size:10px;letter-spacing:.08em;opacity:.7;text-transform:uppercase;padding:10px 8px 4px}
+#wf-shell .nav{padding:5px 8px;border-radius:4px}
+#wf-shell .nav.on, #wf-shell .nav.active{background:#44403c}
+#wf-shell .nav .k{float:right;opacity:.7}
+#wf-shell .foot{margin-top:auto;font-size:11px;opacity:.7;padding:8px;border-top:1px solid #44403c}
+#wf-shell .main{display:flex;flex-direction:column;min-width:0;background:#fafaf9}
+#wf-shell .top{border-bottom:1px solid #d6d3d1;padding:.5rem .75rem;font-size:.8rem;color:#57534e}
+#wf-shell .top b{color:#1c1917}
+#wf-shell .body{padding:.75rem;flex:1}
+#wf-shell{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--gap:#c9c9c4}
+#wf-shell *{box-sizing:border-box}
+#wf-shell{margin:0;padding:16px;font:13px/1.6 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-shell .wrap{display:grid;grid-template-columns:1fr 232px;gap:16px;align-items:start}
+#wf-shell .head{border:1px solid var(--bd);border-radius:8px;padding:13px 15px;background:var(--panel);margin-bottom:12px}
+#wf-shell .meta{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--mut)}
+#wf-shell .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+#wf-shell .funnel{display:flex;align-items:flex-end;gap:26px;height:96px;margin:16px 0 4px}
+#wf-shell .fb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px;position:relative}
+#wf-shell .fb .bar{width:100%;background:var(--acc);border-radius:3px 3px 0 0}
+#wf-shell .fb .n{font-size:11px;font-variant-numeric:tabular-nums;font-weight:600}
+#wf-shell .fb .l{font-size:10px;color:var(--mut)}
+#wf-shell .drop{position:absolute;top:-4px;right:-22px;font-size:10px;color:#c2703a;font-weight:600}
+#wf-shell .miss{width:100%;height:26px;border:1.5px dashed var(--gap);border-radius:3px}
+#wf-shell .post{border:1px solid var(--bd);border-radius:8px;background:var(--panel);padding:12px 14px;margin-bottom:8px;display:grid;grid-template-columns:26px 1fr 190px;gap:12px}
+#wf-shell .seq{font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums;padding-top:2px}
+#wf-shell .txt{white-space:pre-wrap;font-size:13px}
+#wf-shell .st{font-size:11px;color:var(--mut);text-align:right;font-variant-numeric:tabular-nums}
+#wf-shell .st .hi{color:var(--ink);font-weight:600}
+#wf-shell .st .none{opacity:.5}
+#wf-shell .side .card{border:1px solid var(--bd);border-radius:8px;background:var(--panel);padding:12px;margin-bottom:10px}
+#wf-shell .side h4{margin:0 0 8px;font-size:11px;color:var(--mut);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+#wf-shell .btn{display:block;text-align:center;border:1px solid var(--acc);color:var(--acc);border-radius:6px;padding:8px;font-weight:600;margin-bottom:7px}
+#wf-shell .btn.sec{border-color:var(--bd);color:var(--mut);font-weight:400}
+#wf-shell .tag{display:inline-block;font-size:10px;border:1px solid var(--bd);border-radius:4px;padding:1px 6px;margin:0 3px 3px 0;color:var(--mut)}
+#wf-shell .note{margin-top:12px;font-size:11px;color:var(--mut)}</style>
+  <div id="wf-shell" class="omd-mock"><div class="omd-wire-shell shell">
+  <aside class="omd-wire-sidebar side">
+    <div class="brand">Thread Booster</div>
+    <div class="nav">대시보드 홈</div>
+    <div class="grp">레퍼런스</div>
+    <div class="nav">계정 목록 <span class="k">3</span></div>
+    <div class="nav on active">체인 목록 <span class="k">1,722</span></div>
+    <div class="nav">글 검색</div>
+    <div class="grp">템플릿</div>
+    <div class="nav">템플릿 목록 <span class="k">28</span></div>
+    <div class="nav">심리 기법 <span class="k">17</span></div>
+    <div class="grp">데이터</div>
+    <div class="nav">수집 콘솔</div>
+    <div class="nav">계정 레지스트리</div>
+    <div class="foot">마지막 수집<br>2026-08-08 · 실패 0</div>
+  </aside>
+  <div class="omd-wire-main main">
+    <div class="omd-wire-crumb top"><div class="crumb">레퍼런스 / 체인 목록 / <b>상세</b></div></div>
+    <div class="omd-wire-body body"><div class="wrap">
+  <div>
+    <div class="head">
+      <div style="font-weight:600;margin-bottom:6px">🚨와... 스페이스X가 2600조를 쓸어 담는다</div>
+      <div class="meta"><span>beyond.cho</span><span>2026-05-25</span><span>체인 <b>16</b>글</span><span>훅 조회 <b>20,851</b></span><span>유지율 <b>47.6%</b></span><span>배수 <b>1.4×</b></span></div>
+      <div class="funnel">
+        <div class="fb"><div class="n">20,851</div><div class="bar" style="height:74px"></div><div class="l">1번 글</div><span class="drop">−52.4%</span></div>
+        <div class="fb"><div class="n">9,925</div><div class="bar" style="height:35px"></div><div class="l">2번 글</div><span class="drop">−38%</span></div>
+        <div class="fb"><div class="n" style="color:var(--mut)">미수집</div><div class="miss"></div><div class="l">3~15번</div></div>
+        <div class="fb"><div class="n">6,150</div><div class="bar" style="height:22px"></div><div class="l">마지막 글</div></div>
+      </div>
+      <div style="font-size:11px;color:var(--mut)">중간 글은 조회수가 없다 — 연속 곡선이 아니라 3점 막대이며 보간하지 않는다 (POL-003)</div>
+    </div>
+    <div class="post"><div class="seq">1</div><div class="txt">🚨와... 스페이스X가 2600조를 쓸어 담는다
+
+한국 개미가 모르면 ㅈ되는 정보 싹 다 가져옴
+(뒤쳐지기 싫으면 제발 놓치지 마라)</div><div class="st"><span class="hi">조회 20,851</span><br>♥ 371 · 💬 42 · ↻ 18</div></div>
+    <div class="post"><div class="seq">2</div><div class="txt">먼저 스페이스X가 뭘 하는 회사인지부터.
+로켓만 쏘는 회사가 아니다...</div><div class="st"><span class="hi">조회 9,925</span><br>♥ 88 · 💬 4 · ↻ 2</div></div>
+    <div class="post"><div class="seq">3</div><div class="txt">스타링크 가입자가 작년에만 3배 늘었음.</div><div class="st"><span class="none">조회 —</span><br>♥ 61 · 💬 2 · ↻ 1</div></div>
+    <div class="post"><div class="seq">16</div><div class="txt">정리하면 이 세 가지다. 저장해두고 다시 봐라.</div><div class="st"><span class="hi">조회 6,150</span><br>♥ 44 · 💬 1 · ↻ 0</div></div>
+  </div>
+  <aside class="side">
+    <div class="card">
+      <span class="btn">⬆ 템플릿으로 저장</span>
+      <span class="btn sec">원본 퍼머링크 열기</span>
+    </div>
+    <div class="card">
+      <h4>훅 유형</h4>
+      <span class="tag">시사형</span><span class="tag">감탄 서사</span>
+      <h4 style="margin-top:12px">심리 기법</h4>
+      <span class="tag">A-INT</span><span class="tag">A-NUM</span><span class="tag">B-AUTH</span><span class="tag">C-PROM</span><span class="tag">C-DIR</span>
+    </div>
+    <div class="card">
+      <h4>연결 템플릿</h4>
+      <div style="font-size:12px">T-1 사건 브리핑<br><span style="color:var(--mut);font-size:11px">n=17 · 중앙 유지율 31.2%</span></div>
+    </div>
+  </aside>
+</div>
+</div>
+  </div>
+</div></div>
+</section>
+<section class="omd-wireframe" data-omd-wireframe="body">
+  <h2>Body only</h2>
+  <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--gap:#c9c9c4}
+#wf-body *{box-sizing:border-box}
+#wf-body{margin:0;padding:16px;font:13px/1.6 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-body .wrap{display:grid;grid-template-columns:1fr 232px;gap:16px;align-items:start}
+#wf-body .head{border:1px solid var(--bd);border-radius:8px;padding:13px 15px;background:var(--panel);margin-bottom:12px}
+#wf-body .meta{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--mut)}
+#wf-body .meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+#wf-body .funnel{display:flex;align-items:flex-end;gap:26px;height:96px;margin:16px 0 4px}
+#wf-body .fb{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px;position:relative}
+#wf-body .fb .bar{width:100%;background:var(--acc);border-radius:3px 3px 0 0}
+#wf-body .fb .n{font-size:11px;font-variant-numeric:tabular-nums;font-weight:600}
+#wf-body .fb .l{font-size:10px;color:var(--mut)}
+#wf-body .drop{position:absolute;top:-4px;right:-22px;font-size:10px;color:#c2703a;font-weight:600}
+#wf-body .miss{width:100%;height:26px;border:1.5px dashed var(--gap);border-radius:3px}
+#wf-body .post{border:1px solid var(--bd);border-radius:8px;background:var(--panel);padding:12px 14px;margin-bottom:8px;display:grid;grid-template-columns:26px 1fr 190px;gap:12px}
+#wf-body .seq{font-size:11px;color:var(--mut);font-variant-numeric:tabular-nums;padding-top:2px}
+#wf-body .txt{white-space:pre-wrap;font-size:13px}
+#wf-body .st{font-size:11px;color:var(--mut);text-align:right;font-variant-numeric:tabular-nums}
+#wf-body .st .hi{color:var(--ink);font-weight:600}
+#wf-body .st .none{opacity:.5}
+#wf-body .side .card{border:1px solid var(--bd);border-radius:8px;background:var(--panel);padding:12px;margin-bottom:10px}
+#wf-body .side h4{margin:0 0 8px;font-size:11px;color:var(--mut);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+#wf-body .btn{display:block;text-align:center;border:1px solid var(--acc);color:var(--acc);border-radius:6px;padding:8px;font-weight:600;margin-bottom:7px}
+#wf-body .btn.sec{border-color:var(--bd);color:var(--mut);font-weight:400}
+#wf-body .tag{display:inline-block;font-size:10px;border:1px solid var(--bd);border-radius:4px;padding:1px 6px;margin:0 3px 3px 0;color:var(--mut)}
+#wf-body .note{margin-top:12px;font-size:11px;color:var(--mut)}</style>
+  <div id="wf-body" class="omd-mock"><div class="omd-wire-body-only"><div class="wrap">
+  <div>
+    <div class="head">
+      <div style="font-weight:600;margin-bottom:6px">🚨와... 스페이스X가 2600조를 쓸어 담는다</div>
+      <div class="meta"><span>beyond.cho</span><span>2026-05-25</span><span>체인 <b>16</b>글</span><span>훅 조회 <b>20,851</b></span><span>유지율 <b>47.6%</b></span><span>배수 <b>1.4×</b></span></div>
+      <div class="funnel">
+        <div class="fb"><div class="n">20,851</div><div class="bar" style="height:74px"></div><div class="l">1번 글</div><span class="drop">−52.4%</span></div>
+        <div class="fb"><div class="n">9,925</div><div class="bar" style="height:35px"></div><div class="l">2번 글</div><span class="drop">−38%</span></div>
+        <div class="fb"><div class="n" style="color:var(--mut)">미수집</div><div class="miss"></div><div class="l">3~15번</div></div>
+        <div class="fb"><div class="n">6,150</div><div class="bar" style="height:22px"></div><div class="l">마지막 글</div></div>
+      </div>
+      <div style="font-size:11px;color:var(--mut)">중간 글은 조회수가 없다 — 연속 곡선이 아니라 3점 막대이며 보간하지 않는다 (POL-003)</div>
+    </div>
+    <div class="post"><div class="seq">1</div><div class="txt">🚨와... 스페이스X가 2600조를 쓸어 담는다
+
+한국 개미가 모르면 ㅈ되는 정보 싹 다 가져옴
+(뒤쳐지기 싫으면 제발 놓치지 마라)</div><div class="st"><span class="hi">조회 20,851</span><br>♥ 371 · 💬 42 · ↻ 18</div></div>
+    <div class="post"><div class="seq">2</div><div class="txt">먼저 스페이스X가 뭘 하는 회사인지부터.
+로켓만 쏘는 회사가 아니다...</div><div class="st"><span class="hi">조회 9,925</span><br>♥ 88 · 💬 4 · ↻ 2</div></div>
+    <div class="post"><div class="seq">3</div><div class="txt">스타링크 가입자가 작년에만 3배 늘었음.</div><div class="st"><span class="none">조회 —</span><br>♥ 61 · 💬 2 · ↻ 1</div></div>
+    <div class="post"><div class="seq">16</div><div class="txt">정리하면 이 세 가지다. 저장해두고 다시 봐라.</div><div class="st"><span class="hi">조회 6,150</span><br>♥ 44 · 💬 1 · ↻ 0</div></div>
+  </div>
+  <aside class="side">
+    <div class="card">
+      <span class="btn">⬆ 템플릿으로 저장</span>
+      <span class="btn sec">원본 퍼머링크 열기</span>
+    </div>
+    <div class="card">
+      <h4>훅 유형</h4>
+      <span class="tag">시사형</span><span class="tag">감탄 서사</span>
+      <h4 style="margin-top:12px">심리 기법</h4>
+      <span class="tag">A-INT</span><span class="tag">A-NUM</span><span class="tag">B-AUTH</span><span class="tag">C-PROM</span><span class="tag">C-DIR</span>
+    </div>
+    <div class="card">
+      <h4>연결 템플릿</h4>
+      <div style="font-size:12px">T-1 사건 브리핑<br><span style="color:var(--mut);font-size:11px">n=17 · 중앙 유지율 31.2%</span></div>
+    </div>
+  </aside>
+</div>
+</div></div>
+</section>
+</body>
+</html>

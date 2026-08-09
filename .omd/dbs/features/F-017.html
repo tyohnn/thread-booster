@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-017">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-017" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P1" />
+  <title>F-017 · 훅 유형 분류기</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-017</p>
+    <h1 data-omd-field="title">훅 유형 분류기</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">이탈 분석</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P1</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">훅 본문을 보고 유형을 붙인다. 1차는 규칙 기반(이모지·숫자 목록·감탄사 패턴), 수정은 수작업으로 덮어쓴다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-003.html">PRD-003</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-002.html">REL-002</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages"></dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>훅 본문을 보고 유형을 붙인다. 1차는 규칙 기반(이모지·숫자 목록·감탄사 패턴), 수정은 수작업으로 덮어쓴다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>규칙 분류 결과를 수작업으로 고칠 수 있다</li>
+    <li>수정한 값은 재분류 시 덮어쓰이지 않는다</li>
+    <li>샘플 50개 검수에서 90% 이상 일치한다</li>
+    </ul>
+    <h2>미결</h2>
+    <p>분류를 규칙으로 유지할지, 수작업 태깅을 정답으로 쓸지 (PRD-003 미결정)</p>
+  </main>
+</body>
+</html>

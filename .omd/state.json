@@ -1,0 +1,131 @@
+{
+  "contractVersion": "1.0",
+  "skillVersion": "0.2.0",
+  "templateVersion": "0.2.0",
+  "uiSnapshot": {
+    "distribution": "skill-template",
+    "vocabularyDigest": "b1e9cd04c195828d578d42587e854c5b4da695dff98bd2d111bd68e321879556"
+  },
+  "projectDigest": "4f9cb329a8a9893df75f21fcd78d1e5351833f4afe3aaea5610d2eb9ffe130ea",
+  "inventory": {
+    "sections": [
+      "home",
+      "vision",
+      "starting",
+      "domain",
+      "workflow",
+      "planning",
+      "plans",
+      "adr",
+      "spec"
+    ],
+    "catalogs": [
+      "glossary",
+      "models",
+      "policies",
+      "prds",
+      "stories",
+      "spec-data-model",
+      "spec-system-model",
+      "plans",
+      "adr"
+    ],
+    "vocabulary": [
+      "Card",
+      "Cards",
+      "File",
+      "Files",
+      "Folder",
+      "DocKind",
+      "DocStatus",
+      "AdrStatus",
+      "Decision",
+      "SpecVersion",
+      "Canvas",
+      "CanvasLegend",
+      "DocsInlineToc",
+      "DocsSidebarFolder",
+      "indexOnlyPageTree",
+      "createCatalogNavigation"
+    ],
+    "contentSource": "local"
+  },
+  "files": {
+    ".omd/assets/omd-doc.css": {
+      "ownership": "omd-generated",
+      "digest": "76047e7248230fbbce760d8913a3108e4e70ae24c9e9ae9c7d409f7fa7026575"
+    },
+    ".omd/dbs/index.html": {
+      "ownership": "omd-generated",
+      "digest": "caffc08c5405573fcfa177ef25902fd20f807f2da1e34f40045b99783e2f4669"
+    },
+    ".omd/dbs/release/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/prds/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/stories/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/features/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/policies/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/adr/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/ia/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/pages/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/layouts/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/screen-states/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/archive/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/plans/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/glossary/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/models/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    ".omd/dbs/specs/.gitkeep": {
+      "ownership": "omd-generated",
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "AGENTS.md": {
+      "ownership": "omd-managed",
+      "digest": "5159068c5efce6112e830f17bb35dd528637b7af5111f0abbf6c54534faf2fd6"
+    },
+    "CLAUDE.md": {
+      "ownership": "omd-managed",
+      "digest": "6c51142e127aec43a250fb7406f1e17af591c5a792208ec317312e715caba314"
+    }
+  }
+}
