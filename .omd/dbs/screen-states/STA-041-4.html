@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>배치 완료 후 일부 항목이 파싱 실패 · 타임아웃 · 에러 응답으로 실패했을 때</p>
-    <h2>What the user sees</h2>
-    <p>가능한 데이터는 그대로 보여주고, 결측·근거 부족은 배너·배지·빈칸(—)으로 명시한다. 0으로 채우지 않는다.</p>
-    <h2>Exit path</h2>
-    <p>실패분만 재시도해 성공하면 기본 상태로, 재시도 후에도 남으면 이 상태 유지</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -108,6 +101,7 @@ DYvbgBnjwN7  timeout 15s</div>
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a;--ok:#3f7d4e}
@@ -143,5 +137,13 @@ DYvbgBnjwN7  timeout 15s</div>
   <div class="dim" style="margin-top:6px">파싱 실패가 몰리면 SSR 구조 변경 신호다 — <code>ssr.mjs</code> 를 먼저 본다 (ADR-004)</div>
 </div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>배치 완료 후 일부 항목이 파싱 실패 · 타임아웃 · 에러 응답으로 실패했을 때</p>
+    <h2>What the user sees</h2>
+    <p>가능한 데이터는 그대로 보여주고, 결측·근거 부족은 배너·배지·빈칸(—)으로 명시한다. 0으로 채우지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>실패분만 재시도해 성공하면 기본 상태로, 재시도 후에도 남으면 이 상태 유지</p>
+  </main>
 </body>
 </html>

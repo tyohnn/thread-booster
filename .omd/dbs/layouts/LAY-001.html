@@ -37,21 +37,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Role</h2>
-    <p>껍데기(chrome) · 고정 사이드바(200px, 3그룹 + 마지막 수집 시각) · 상단바(브레드크럼 + 전역 검색 ⌘K) · 스크롤 본문 영역</p>
-    <h2>Regions</h2>
-    <p>고정 사이드바(200px, 3그룹 + 마지막 수집 시각) · 상단바(브레드크럼 + 전역 검색 ⌘K) · 스크롤 본문 영역</p>
-    <h2>Rules</h2>
-    <ul>
-      <li>사이드바 그룹은 <strong>레퍼런스 · 템플릿 · 데이터</strong> 셋이다. 이탈 분석은 별도 그룹을 두지 않고 체인 화면에 접는다 (2026-08-09 결정)</li>
-      <li>사이드바 항목의 숫자 배지는 스토어 실측이다. 바뀌지 않는 상수를 박지 않는다</li>
-      <li>하단 고정 영역에 마지막 수집 시각과 실패 건수를 둔다. 데이터가 오래되면 여기서 먼저 보인다</li>
-      <li>로그인·계정 전환 UI 는 없다 (ADR-003, 로컬 단독)</li>
-    </ul>
-    <h2>Responsive notes</h2>
-    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell (chrome)</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -117,41 +103,20 @@
 </div>
 </div>
 </section>
-<section class="omd-wireframe" data-omd-wireframe="body">
-  <h2>Body only</h2>
-  <style>#wf-body .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
-#wf-body .side{background:#292524;color:#fafaf9;padding:.75rem;font-size:.8rem;display:flex;flex-direction:column;gap:2px}
-#wf-body .brand{font-weight:700;padding:4px 8px 12px}
-#wf-body .grp{font-size:10px;letter-spacing:.08em;opacity:.7;text-transform:uppercase;padding:10px 8px 4px}
-#wf-body .nav{padding:5px 8px;border-radius:4px}
-#wf-body .nav.on, #wf-body .nav.active{background:#44403c}
-#wf-body .nav .k{float:right;opacity:.7}
-#wf-body .foot{margin-top:auto;font-size:11px;opacity:.7;padding:8px;border-top:1px solid #44403c}
-#wf-body .main{display:flex;flex-direction:column;min-width:0;background:#fafaf9}
-#wf-body .top{border-bottom:1px solid #d6d3d1;padding:.5rem .75rem;font-size:.8rem;color:#57534e}
-#wf-body .top b{color:#1c1917}
-#wf-body .body{padding:.75rem;flex:1}
-#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff}
-#wf-body *{box-sizing:border-box}
-#wf-body{margin:0;font:13px/1.5 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
-#wf-body .shell{display:grid;grid-template-columns:200px 1fr;height:100vh}
-#wf-body .side{border-right:1px solid var(--bd);padding:14px 10px;background:var(--panel);display:flex;flex-direction:column;gap:2px}
-#wf-body .brand{font-weight:700;font-size:14px;padding:4px 8px 14px}
-#wf-body .grp{font-size:10px;letter-spacing:.08em;color:var(--mut);text-transform:uppercase;padding:12px 8px 4px}
-#wf-body .nav{padding:5px 8px;border-radius:5px;color:var(--ink);text-decoration:none}
-#wf-body .nav.on{background:var(--bd);font-weight:600}
-#wf-body .nav .k{float:right;color:var(--mut);font-variant-numeric:tabular-nums}
-#wf-body .foot{margin-top:auto;font-size:11px;color:var(--mut);padding:8px;border-top:1px solid var(--bd)}
-#wf-body .main{display:flex;flex-direction:column;min-width:0}
-#wf-body .top{height:48px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:12px;padding:0 16px;background:var(--panel)}
-#wf-body .crumb{color:var(--mut)}
-#wf-body .crumb b{color:var(--ink)}
-#wf-body .search{margin-left:auto;border:1px solid var(--bd);border-radius:6px;padding:5px 10px;color:var(--mut);min-width:220px;background:var(--bg)}
-#wf-body .body{flex:1;padding:18px;overflow:auto}
-#wf-body .slot{border:1.5px dashed var(--bd);border-radius:8px;height:100%;display:flex;align-items:center;justify-content:center;color:var(--mut);flex-direction:column;gap:6px}
-#wf-body .slot code{background:var(--bd);padding:2px 6px;border-radius:4px;color:var(--ink)}
-#wf-body .note{position:fixed;right:14px;bottom:12px;font-size:11px;color:var(--mut)}</style>
-  <div id="wf-body" class="omd-mock"><div class="omd-wire-body-only"><div class="slot"><div>본문 골격이 들어가는 자리</div><div><code>LAY-002</code> <code>LAY-003</code> <code>LAY-004</code></div></div></div></div>
-</section>
+<main class="omd-doc-body">
+    <h2>Role</h2>
+    <p>껍데기(chrome) · 고정 사이드바(200px, 3그룹 + 마지막 수집 시각) · 상단바(브레드크럼 + 전역 검색 ⌘K) · 스크롤 본문 영역</p>
+    <h2>Regions</h2>
+    <p>고정 사이드바(200px, 3그룹 + 마지막 수집 시각) · 상단바(브레드크럼 + 전역 검색 ⌘K) · 스크롤 본문 영역</p>
+    <h2>Rules</h2>
+    <ul>
+      <li>사이드바 그룹은 <strong>레퍼런스 · 템플릿 · 데이터</strong> 셋이다. 이탈 분석은 별도 그룹을 두지 않고 체인 화면에 접는다 (2026-08-09 결정)</li>
+      <li>사이드바 항목의 숫자 배지는 스토어 실측이다. 바뀌지 않는 상수를 박지 않는다</li>
+      <li>하단 고정 영역에 마지막 수집 시각과 실패 건수를 둔다. 데이터가 오래되면 여기서 먼저 보인다</li>
+      <li>로그인·계정 전환 UI 는 없다 (ADR-003, 로컬 단독)</li>
+    </ul>
+    <h2>Responsive notes</h2>
+    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
+  </main>
 </body>
 </html>
