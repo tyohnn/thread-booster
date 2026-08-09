@@ -6,7 +6,7 @@ Threads 레퍼런스 계정을 수집·분석해 **독자가 어디서 이탈하
 ## 먼저 알아야 할 것
 
 - **기획 SSOT는 `.omd/dbs` (로컬 HTML 카탈로그)다.**
-  — PRD · User Story · Features · Release · ADR · 정책 · IA · Pages · Layouts · 화면 상태 · 폐기 보관함.
+  — PRD · User Story · Features · Release · ADR · policy · IA · Pages · Layouts · Page States · 아카이브.
   제품 관련 결정을 코드에서 추측하지 말고 **여기서 읽어라.**
   Notion 핸드북([제품 기획 · 기능 명세](https://app.notion.com/p/3b6346dac4568080a6b1c8b24aa7b65e))은 **이관 원본·보관용**이며 더 이상 쓰기 대상이 아니다.
 - **공개 GitHub 저장소다** — `tyohnn/thread-booster` (PUBLIC). 커밋하는 것은 전부 외부에 공개된다.
@@ -93,7 +93,7 @@ Notion MCP로 한글을 쓰면 낮은 확률로 글자가 바뀐다 (`걸러낸�
 
 ## 기획 문서 작성 규약 (`.omd/dbs`)
 
-**화면 상태 — 상태 하나당 한 HTML 파일이다** (`.omd/dbs/screen-states/STA-*.html`).
+**Page States — 상태 하나당 한 HTML 파일이다** (`.omd/dbs/screen-states/STA-*.html`).
 - 화면마다 **기본 상태** 파일을 두고, 변주(로딩 · 빈 상태 · 부분 데이터 · 오류 · 권한 없음 · 스코프 밖)를
   **각각 별도 파일**로 만든다. 한 파일에 여러 변주를 묶지 않는다.
 - 각 파일은 `트리거`(이 상태로 들어가는 조건)와 `빠져나가는 법`(정상으로 복귀하는 경로)을 반드시 채운다.
