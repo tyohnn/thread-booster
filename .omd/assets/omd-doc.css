@@ -1,0 +1,257 @@
+/* Oh My Docs — local HTML catalog stylesheet */
+:root {
+  --omd-bg: #f7f5f1;
+  --omd-surface: #fffdf9;
+  --omd-ink: #1c1917;
+  --omd-muted: #57534e;
+  --omd-line: #d6d3d1;
+  --omd-accent: #0f766e;
+  --omd-accent-soft: #ccfbf1;
+  --omd-warn: #b45309;
+  --omd-wire-bg: #e7e5e4;
+  --omd-wire-panel: #fafaf9;
+  --omd-font-sans: "IBM Plex Sans", "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+  --omd-font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+  --omd-max: 52rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--omd-ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #d1fae5 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #fef3c7 0%, transparent 50%),
+    var(--omd-bg);
+  font-family: var(--omd-font-sans);
+  line-height: 1.55;
+}
+
+body {
+  margin: 0 auto;
+  max-width: var(--omd-max);
+  padding: 2rem 1.25rem 4rem;
+}
+
+a {
+  color: var(--omd-accent);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.omd-doc-header {
+  background: var(--omd-surface);
+  border: 1px solid var(--omd-line);
+  border-radius: 12px;
+  padding: 1.25rem 1.35rem 1.1rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 1px 0 rgba(28, 25, 23, 0.04);
+}
+
+.omd-doc-header h1 {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.omd-id {
+  display: inline-block;
+  font-family: var(--omd-font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--omd-accent);
+  background: var(--omd-accent-soft);
+  border-radius: 6px;
+  padding: 0.15rem 0.5rem;
+}
+
+.omd-props {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0;
+}
+
+.omd-props dt {
+  margin: 0;
+  color: var(--omd-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 0.2rem;
+}
+
+.omd-props dd {
+  margin: 0;
+  min-height: 1.4rem;
+}
+
+.omd-props dd[data-omd-rel] a {
+  display: inline-block;
+  margin: 0 0.35rem 0.25rem 0;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--omd-line);
+  border-radius: 999px;
+  background: #fff;
+  font-family: var(--omd-font-mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.omd-doc-body {
+  background: var(--omd-surface);
+  border: 1px solid var(--omd-line);
+  border-radius: 12px;
+  padding: 1.5rem 1.35rem;
+}
+
+.omd-doc-body h2 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.omd-doc-body h2:first-child {
+  margin-top: 0;
+}
+
+.omd-doc-body p,
+.omd-doc-body li {
+  color: var(--omd-ink);
+}
+
+.omd-doc-body ul {
+  padding-left: 1.2rem;
+}
+
+.omd-placeholder {
+  color: var(--omd-muted);
+  font-style: italic;
+}
+
+.omd-wireframe {
+  margin-top: 1.75rem;
+  padding: 1rem;
+  border: 1px dashed var(--omd-muted);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f5f5f4, var(--omd-wire-bg));
+}
+
+.omd-wireframe > h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--omd-muted);
+}
+
+.omd-wire-shell {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  min-height: 16rem;
+  border: 1px solid var(--omd-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--omd-wire-panel);
+}
+
+.omd-wire-sidebar {
+  background: #292524;
+  color: #fafaf9;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.omd-wire-sidebar .active {
+  background: #44403c;
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+}
+
+.omd-wire-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.omd-wire-crumb {
+  border-bottom: 1px solid var(--omd-line);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--omd-muted);
+}
+
+.omd-wire-body {
+  padding: 0.75rem;
+  flex: 1;
+}
+
+.omd-wire-body-only {
+  border: 1px solid var(--omd-line);
+  border-radius: 8px;
+  min-height: 12rem;
+  padding: 0.75rem;
+  background: var(--omd-wire-panel);
+}
+
+.omd-wire-block {
+  border: 1px solid var(--omd-line);
+  border-radius: 6px;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+  font-size: 0.85rem;
+  color: var(--omd-muted);
+}
+
+.omd-home-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.omd-home-list a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--omd-line);
+  border-radius: 8px;
+  background: var(--omd-surface);
+  text-decoration: none;
+  color: var(--omd-ink);
+}
+
+.omd-home-list a:hover {
+  border-color: var(--omd-accent);
+}
+
+.omd-home-list span {
+  display: block;
+  color: var(--omd-muted);
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 640px) {
+  .omd-wire-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .omd-props {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .omd-props dt {
+    padding-top: 0.6rem;
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-006">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-006" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P0" />
+  <title>F-006 · 관측 시계열 적재</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-006</p>
+    <h1 data-omd-field="title">관측 시계열 적재</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">정규화·적재</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P0</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">수집할 때마다 글별 좋아요·댓글·재게시·조회수를 관측 시점과 함께 append한다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-001.html">PRD-001</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-001.html">REL-001</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages"></dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>수집할 때마다 글별 좋아요·댓글·재게시·조회수를 관측 시점과 함께 append한다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>같은 글의 이전 관측을 덮어쓰지 않는다 (POL-004)</li>
+    <li>관측 시점(observed_at)이 UTC ISO-8601로 기록된다</li>
+    <li>조회수가 없으면 null이며 0으로 채우지 않는다</li>
+    </ul>
+    <h2>현황</h2>
+    <p>현재 24,347행, 관측 시점 3개(2026-06-12 / 08-02 / 08-08).</p>
+  </main>
+</body>
+</html>

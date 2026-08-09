@@ -1,0 +1,472 @@
+{
+  "contractVersion": "1.0",
+  "mode": "brownfield",
+  "contentSource": {
+    "ssot": "local"
+  },
+  "paths": {
+    "docs": ".omd/dbs",
+    "ui": "packages/docs-ui",
+    "content": ".omd/dbs",
+    "templates": "skills/oh-my-doc/templates/default/omd/templates",
+    "assets": ".omd/assets"
+  },
+  "informationArchitecture": {
+    "schemaVersion": "2.0",
+    "sections": [
+      {
+        "id": "home",
+        "title": "Home",
+        "path": "index",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "vision",
+        "title": "Vision",
+        "path": "vision",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "starting",
+        "title": "Start here",
+        "path": "starting",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "domain",
+        "title": "Domain",
+        "path": "domain",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "workflow",
+        "title": "Workflow",
+        "path": "workflow",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "planning",
+        "title": "Planning",
+        "path": "planning",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "plans",
+        "title": "Plans",
+        "path": "plans",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "adr",
+        "title": "ADRs",
+        "path": "adr",
+        "required": true,
+        "visible": true
+      },
+      {
+        "id": "spec",
+        "title": "Spec",
+        "path": "spec",
+        "required": true,
+        "visible": true
+      }
+    ],
+    "catalogs": [
+      {
+        "id": "glossary",
+        "label": "Glossary",
+        "prefix": [
+          "domain",
+          "glossary"
+        ],
+        "indexUrl": "/docs/domain/glossary",
+        "indexOnly": true
+      },
+      {
+        "id": "models",
+        "label": "Domain models",
+        "prefix": [
+          "domain",
+          "models"
+        ],
+        "indexUrl": "/docs/domain/models",
+        "indexOnly": true
+      },
+      {
+        "id": "policies",
+        "label": "Domain policies",
+        "prefix": [
+          "domain",
+          "policies"
+        ],
+        "indexUrl": "/docs/domain/policies",
+        "indexOnly": true
+      },
+      {
+        "id": "prds",
+        "label": "Product requirements",
+        "prefix": [
+          "planning",
+          "prds"
+        ],
+        "indexUrl": "/docs/planning/prds",
+        "indexOnly": true
+      },
+      {
+        "id": "stories",
+        "label": "User stories",
+        "prefix": [
+          "planning",
+          "stories"
+        ],
+        "indexUrl": "/docs/planning/stories",
+        "indexOnly": true
+      },
+      {
+        "id": "spec-data-model",
+        "label": "Data model",
+        "prefix": [
+          "spec",
+          "data-model"
+        ],
+        "indexUrl": "/docs/spec/data-model",
+        "indexOnly": true
+      },
+      {
+        "id": "spec-system-model",
+        "label": "System model",
+        "prefix": [
+          "spec",
+          "system-model"
+        ],
+        "indexUrl": "/docs/spec/system-model",
+        "indexOnly": true
+      },
+      {
+        "id": "plans",
+        "label": "Implementation plans",
+        "prefix": [
+          "plans"
+        ],
+        "indexUrl": "/docs/plans",
+        "indexOnly": true
+      },
+      {
+        "id": "adr",
+        "label": "ADR",
+        "prefix": [
+          "adr"
+        ],
+        "indexUrl": "/docs/adr",
+        "indexOnly": true
+      }
+    ],
+    "kindToDatabase": {
+      "prd": "dbs.prds",
+      "story": "dbs.stories",
+      "plan": "dbs.plans",
+      "adr": "dbs.adrs",
+      "spec": "dbs.data-model"
+    },
+    "nav": {
+      "topLevel": [
+        "pages.home",
+        "pages.vision",
+        "pages.starting",
+        "pages.workflow",
+        "pages.domain",
+        "pages.planning",
+        "pages.spec",
+        "pages.plans",
+        "pages.adrs"
+      ],
+      "localRootOrder": [
+        "pages.home",
+        "pages.vision",
+        "pages.starting",
+        "pages.domain",
+        "pages.workflow",
+        "pages.planning",
+        "pages.plans",
+        "pages.adrs",
+        "pages.spec"
+      ],
+      "nested": {
+        "pages.workflow": [
+          "pages.workflow-planning",
+          "pages.development"
+        ],
+        "pages.domain": [
+          "pages.glossary",
+          "pages.models",
+          "pages.policies"
+        ],
+        "pages.planning": [
+          "pages.prds",
+          "pages.stories"
+        ],
+        "pages.spec": [
+          "pages.data-model",
+          "pages.system-model"
+        ]
+      }
+    },
+    "graphDigest": "9d4c738f5ad6bf16c7843976432b123465e89b7c4e1c9f02c9a279a32bea0141"
+  },
+  "lifecycles": {
+    "prd": {
+      "field": "status",
+      "values": [
+        "draft",
+        "active",
+        "done"
+      ]
+    },
+    "story": {
+      "field": null,
+      "values": []
+    },
+    "feature": {
+      "field": "status",
+      "values": [
+        "draft",
+        "active",
+        "done"
+      ]
+    },
+    "release": {
+      "field": "status",
+      "values": [
+        "draft",
+        "active",
+        "done"
+      ]
+    },
+    "spec": {
+      "field": "stage",
+      "values": [
+        "draft",
+        "accepted",
+        "superseded"
+      ]
+    },
+    "adr": {
+      "field": "stage",
+      "values": [
+        "accepted",
+        "locked",
+        "superseded"
+      ]
+    },
+    "plan": {
+      "field": "stage",
+      "values": [
+        "draft",
+        "ready",
+        "active",
+        "done",
+        "superseded"
+      ]
+    },
+    "policy": {
+      "field": null,
+      "values": []
+    },
+    "term": {
+      "field": null,
+      "values": []
+    },
+    "model": {
+      "field": null,
+      "values": []
+    },
+    "ia": {
+      "field": null,
+      "values": []
+    },
+    "page": {
+      "field": null,
+      "values": []
+    },
+    "layout": {
+      "field": null,
+      "values": []
+    },
+    "screen-state": {
+      "field": null,
+      "values": []
+    },
+    "archive": {
+      "field": null,
+      "values": []
+    }
+  },
+  "ui": {
+    "base": "fumadocs",
+    "distribution": "skill-template",
+    "shellDependencies": [
+      "fumadocs-ui",
+      "fumadocs-core",
+      "fumadocs-mdx"
+    ],
+    "vocabulary": [
+      {
+        "name": "Card",
+        "surface": "fumadocs-mdx",
+        "export": "Card",
+        "source": "fumadocs-ui",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "Cards",
+        "surface": "fumadocs-mdx",
+        "export": "Cards",
+        "source": "fumadocs-ui",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "File",
+        "surface": "fumadocs-mdx",
+        "export": "File",
+        "source": "fumadocs-ui",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "Files",
+        "surface": "fumadocs-mdx",
+        "export": "Files",
+        "source": "fumadocs-ui",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "Folder",
+        "surface": "fumadocs-mdx",
+        "export": "Folder",
+        "source": "fumadocs-ui",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "DocKind",
+        "surface": "planning-badge",
+        "export": "DocKind",
+        "contractVersion": "1.0",
+        "enums": {
+          "kind": [
+            "PRD",
+            "US",
+            "PLAN",
+            "SPEC",
+            "ADR"
+          ]
+        }
+      },
+      {
+        "name": "DocStatus",
+        "surface": "planning-badge",
+        "export": "DocStatus",
+        "contractVersion": "1.0",
+        "enums": {
+          "status": [
+            "draft",
+            "accepted",
+            "ready",
+            "active",
+            "done",
+            "superseded"
+          ]
+        }
+      },
+      {
+        "name": "AdrStatus",
+        "surface": "planning-badge",
+        "export": "AdrStatus",
+        "contractVersion": "1.0",
+        "enums": {
+          "status": [
+            "accepted",
+            "locked",
+            "superseded"
+          ]
+        }
+      },
+      {
+        "name": "Decision",
+        "surface": "decision-block",
+        "export": "Decision",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "SpecVersion",
+        "surface": "spec-block",
+        "export": "SpecVersion",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "Canvas",
+        "surface": "visual-block",
+        "export": "Canvas",
+        "contractVersion": "1.0",
+        "enums": {
+          "nodeKind": [
+            "input",
+            "process",
+            "output",
+            "external"
+          ]
+        }
+      },
+      {
+        "name": "CanvasLegend",
+        "surface": "visual-block",
+        "export": "CanvasLegend",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "DocsInlineToc",
+        "surface": "navigation-shell",
+        "export": "DocsInlineToc",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "DocsSidebarFolder",
+        "surface": "navigation-shell",
+        "export": "DocsSidebarFolder",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "indexOnlyPageTree",
+        "surface": "catalog-helper",
+        "export": "indexOnlyPageTree",
+        "contractVersion": "1.0"
+      },
+      {
+        "name": "createCatalogNavigation",
+        "surface": "catalog-helper",
+        "export": "createCatalogNavigation",
+        "contractVersion": "1.0"
+      }
+    ]
+  },
+  "ownership": {
+    "omdGenerated": [
+      ".omd/project.json",
+      ".omd/schemas/",
+      ".omd/dbs/",
+      ".omd/assets/omd-doc.css",
+      ".omd/dbs/content/docs/meta.json"
+    ],
+    "omdManaged": [
+      "AGENTS.md",
+      "CLAUDE.md"
+    ],
+    "importedOwned": [],
+    "projectOwned": []
+  }
+}

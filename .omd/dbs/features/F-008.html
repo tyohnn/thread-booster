@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-008">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-008" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P1" />
+  <title>F-008 · 수집 콘솔</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-008</p>
+    <h1 data-omd-field="title">수집 콘솔</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">수집</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P1</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">계정별 수집 상태, 마지막 실행 결과, 실패 건수, 관측 시점 목록을 한 화면에서 본다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-001.html">PRD-001</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-002.html">REL-002</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-41.html">SCR-41</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>계정별 수집 상태, 마지막 실행 결과, 실패 건수, 관측 시점 목록을 한 화면에서 본다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>진행률·성공·실패 건수가 보인다</li>
+    <li>실패 사유가 분류된다 (에러 응답 / 타임아웃 / 파싱 실패)</li>
+    <li>실패한 코드만 재시도하는 버튼이 있다</li>
+    <li>차단 의심 상태를 눈에 띄게 경고한다</li>
+    </ul>
+  </main>
+</body>
+</html>

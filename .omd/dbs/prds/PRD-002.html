@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="prd" data-omd-id="PRD-002">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="PRD-002" />
+  <meta name="omd:kind" content="prd" />
+  <meta name="omd:status" content="초안" />
+  <title>PRD-002 · 레퍼런스 탐색</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">PRD-002</p>
+    <h1 data-omd-field="title">레퍼런스 탐색</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">팔로우하는 스레드 계정의 체인과 글을 조회수·참여율과 함께 훑어, 오늘 무엇을 본뜰지 5분 안에 고를 수 있게 한다.</dd>
+      <dt>우선순위</dt>
+      <dd data-omd-field="우선순위">P0</dd>
+      <dt>제품 영역</dt>
+      <dd data-omd-field="제품 영역">레퍼런스 탐색</dd>
+      <dt>문서 버전</dt>
+      <dd data-omd-field="문서 버전">0.1</dd>
+      <dt>시작일</dt>
+      <dd data-omd-field="시작일">2026-08-16</dd>
+      <dt>목표일</dt>
+      <dd data-omd-field="목표일">2026-09-06</dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories">
+        <a href="../stories/US-004.html" data-omd-rel-target="US-004">US-004</a>
+        <a href="../stories/US-005.html" data-omd-rel-target="US-005">US-005</a>
+        <a href="../stories/US-006.html" data-omd-rel-target="US-006">US-006</a>
+        <a href="../stories/US-007.html" data-omd-rel-target="US-007">US-007</a>
+        <a href="../stories/US-008.html" data-omd-rel-target="US-008">US-008</a>
+      </dd>
+      <dt>Features</dt>
+      <dd data-omd-rel="features">
+        <a href="../features/F-009.html" data-omd-rel-target="F-009">F-009</a>
+        <a href="../features/F-010.html" data-omd-rel-target="F-010">F-010</a>
+        <a href="../features/F-011.html" data-omd-rel-target="F-011">F-011</a>
+        <a href="../features/F-012.html" data-omd-rel-target="F-012">F-012</a>
+        <a href="../features/F-013.html" data-omd-rel-target="F-013">F-013</a>
+      </dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-002.html" data-omd-rel-target="REL-002">REL-002</a>
+      </dd>
+      <dt>IA</dt>
+      <dd data-omd-rel="ia">
+        <a href="../ia/IA-11.html" data-omd-rel-target="IA-11">IA-11</a>
+        <a href="../ia/IA-12.html" data-omd-rel-target="IA-12">IA-12</a>
+        <a href="../ia/IA-13.html" data-omd-rel-target="IA-13">IA-13</a>
+        <a href="../ia/IA-14.html" data-omd-rel-target="IA-14">IA-14</a>
+      </dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-11.html" data-omd-rel-target="SCR-11">SCR-11</a>
+        <a href="../pages/SCR-12.html" data-omd-rel-target="SCR-12">SCR-12</a>
+        <a href="../pages/SCR-13.html" data-omd-rel-target="SCR-13">SCR-13</a>
+        <a href="../pages/SCR-14.html" data-omd-rel-target="SCR-14">SCR-14</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Problem</h2>
+    <ul>
+    <li>현재 레퍼런스를 보려면 Threads 앱을 직접 스크롤해야 하고, 조회수는 글마다 들어가야 보인다</li>
+    <li>피드는 시간순이라 <strong>터진 것만 모아 보는 것이 불가능하다</strong></li>
+    <li>체인이 앱에서는 시각적으로 끊겨 보여 길이·구조를 파악하기 어렵다</li>
+    <li>이미 체인 1,722·글 30,523·관측 33,701행을 갖고 있다. 안 보고 있을 뿐이다</li>
+    </ul>
+
+    <h2>Outcome</h2>
+    <blockquote>
+    <p><strong>한 줄 정의:</strong> 팔로우하는 스레드 계정의 체인과 글을 조회수·참여율과 함께 훑어, 오늘 무엇을 본뜰지 5분 안에 고를 수 있게 한다.</p>
+    </blockquote>
+
+    <h2>Goals</h2>
+    <ul>
+    <li>조회수·참여율·월별 배수로 정렬해 상위 체인을 즉시 추린다</li>
+    <li>체인 하나를 열면 1번부터 끝까지 순서대로 전문과 지표가 보인다</li>
+    <li>같은 글이 시간이 지나면서 얼마나 성장했는지 본다 (스냅샷 비교)</li>
+    </ul>
+
+    <h2>Non-goals</h2>
+    <ul>
+    <li>원문 재게시를 위한 복사 기능. 수집 데이터는 분석용이다 (→ POL-002)</li>
+    <li>이미지·영상 다운로드 보관</li>
+    <li>댓글 수집·분석</li>
+    </ul>
+
+    <h2>Included stories</h2>
+    <p class="omd-placeholder">스토리 목록은 헤더 Stories 관계를 참고.</p>
+
+    <h2>Success measures</h2>
+    <table>
+    <tr><th>지표</th><th>현재</th><th>목표</th><th>측정 방법</th></tr>
+    <tr><td>상위 체인 20개 추리기까지</td><td>수분 (수동 분석)</td><td>1분 이내</td><td>직접 측정</td></tr>
+    <tr><td>조회 가능한 체인</td><td>0 (UI 없음)</td><td>1,722 전수</td><td>목록 행 수</td></tr>
+    <tr><td>체인 목록 응답</td><td>—</td><td>300ms 미만</td><td>로컬 측정</td></tr>
+    </table>
+
+    <h2>사용자</h2>
+    <ul>
+    <li>핵심: 콘텐츠 기획자 — 오늘 쓸 소재와 구조를 찾는다</li>
+    <li>보조: 분석가 — 계정 간 전략 차이를 비교한다</li>
+    </ul>
+
+    <h2>핵심 사용자 흐름</h2>
+    <ol>
+    <li>계정 목록에서 계정을 고른다</li>
+    <li>체인 목록을 조회수로 정렬하고 기간·훅 유형으로 걸러낸다</li>
+    <li>체인 상세로 들어가 글 순서대로 읽는다</li>
+    <li>쓸만한 구조면 그 자리에서 템플릿으로 보낸다 (→ PRD-004)</li>
+    </ol>
+
+    <h2>범위</h2>
+    <h3>포함</h3>
+    
+    <ul>
+    <li>계정 목록·요약 (체인 수, 중앙값 조회수, 참여율)</li>
+    <li>체인 목록 — 정렬·필터·검색</li>
+    <li>체인 상세 — 글 순서, 글별 지표, 길이</li>
+    <li>글 전문 검색</li>
+    <li>스냅샷 비교 (성장 추이)</li>
+    </ul>
+    
+    <h3>제외</h3>
+    
+    <ul>
+    <li>퍼널·유지율 시각화 (→ PRD-003)</li>
+    <li>템플릿 CRUD (→ PRD-004)</li>
+    </ul>
+
+    <h2>제약 및 의존성</h2>
+    <ul>
+    <li>PRD-001 의 스토어가 먼저 있어야 한다</li>
+    <li>조회수는 1번·2번 글에만 있다. 중간 글은 공백이다</li>
+    <li>계정은 현재 3개 수집 완료 (beyond.cho · ho_ho_ju_ju · badakstock)</li>
+    </ul>
+
+    <h2>위험 요소</h2>
+    <ul>
+    <li>지표가 전부 상관이며 인과가 아니다. 화면에 이 경고를 명시한다</li>
+    <li>계정 표본이 작아 (2~3개) 일반화가 위험하다</li>
+    </ul>
+
+    <h2>미결정 사항</h2>
+    <ul>
+    <li>☐ 기본 정렬 기준 — 조회수 vs 월별 중앙값 대비 배수(norm_multiple)</li>
+    <li>☐ 글 전문 검색에 한국어 형태소 분석까지 필요한가</li>
+    </ul>
+
+    <h2>승인 기록</h2>
+    <ul>
+    <li>승인자:</li>
+    <li>승인일:</li>
+    <li>주요 조건:</li>
+    </ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="policy" data-omd-id="POL-004">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="POL-004" />
+  <meta name="omd:kind" content="policy" />
+  <meta name="omd:status" content="In progress" />
+  <title>POL-004 · 스냅샷 보존</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">POL-004</p>
+    <h1 data-omd-field="title">스냅샷 보존</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">In progress</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">과거 수집 스냅샷은 지우지 않는다</dd>
+      <dt>유형</dt>
+      <dd data-omd-field="유형">데이터규칙</dd>
+      <dt>적용 화면</dt>
+      <dd data-omd-field="적용 화면">수집 콘솔, 성장 추이</dd>
+      <dt>근거</dt>
+      <dd data-omd-field="근거">같은 글이 7주 만에 2.5배 성장한 사례가 확인됨</dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Rule</h2>
+    <ul>
+    <li><code>accounts/*/data/*.csv</code> (2026-06-12) 와 구 <code>data_export/*.json</code> (2026-08-02) 는 <strong>삭제 금지</strong>다</li>
+    <li>관측은 append-only. 같은 글의 이전 값을 덮어쓰지 않는다</li>
+    <li>재생성하는 것은 파생물(DuckDB)이지 원본 JSONL이 아니다</li>
+    </ul>
+
+    <h2>Applies when</h2>
+    <p>적용 화면: 수집 콘솔, 성장 추이</p>
+
+    <h2>Does not apply</h2>
+    <p class="omd-placeholder">Notion 본문에 해당 섹션 내용 없음.</p>
+
+    <h2>Rationale</h2>
+    <p>시점이 여러 개여야 "터진 직후 스파이크"와 "계속 붙는 글"을 구분할 수 있다. 현재 3개 시점을 보유하고 있다.</p>
+
+    <h2>2026-08-09 변경 — 구 스냅샷은 저장소 밖으로 나갔다</h2>
+    <p><code>accounts/</code> · <code>content_plans/</code> · <code>raw_content/</code> · <code>archive/</code> 를 로컬 저장소에서 제거했다. <strong>2026-06-12 CSV 스냅샷도 여기 포함된다.</strong></p>
+    
+    <ul>
+    <li>전량은 <code>~/projects/thread-rocket_cleanup-backup_2026-08-09.tar.gz</code> (109개 파일)에 보존</li>
+    <li>현재 <code>metrics.jsonl</code> 의 관측 시점은 <strong>2026-08-08 하나뿐</strong>이다. 스토어만으로는 성장 추이를 계산할 수 없다</li>
+    <li>"같은 글이 7주 만에 2.5배 성장" 을 다시 쓰려면 백업에서 CSV 를 꺼내 <code>metrics.jsonl</code> 로 흡수시켜야 한다</li>
+    </ul>
+    
+    <p><strong>정책 자체는 유지한다</strong> — 관측은 계속 append-only 이고, 백업 tar 는 삭제하지 않는다. 다만 "저장소 안에 스냅샷을 둔다"는 조건은 더 이상 성립하지 않으므로, 시계열 비교가 필요해지는 시점에 흡수 작업을 먼저 해야 한다.</p>
+  </main>
+</body>
+</html>

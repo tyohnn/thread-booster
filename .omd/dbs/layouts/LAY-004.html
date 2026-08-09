@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="layout" data-omd-id="LAY-004">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="LAY-004" />
+  <meta name="omd:kind" content="layout" />
+  <meta name="omd:status" content="초안" />
+  <title>LAY-004 · 카드 그리드</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">LAY-004</p>
+    <h1 data-omd-field="title">카드 그리드</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">본문 골격 · 정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</dd>
+      <dt>tier</dt>
+      <dd data-omd-field="tier">본문 골격</dd>
+      <dt>skeleton</dt>
+      <dd data-omd-field="skeleton">components/layout/CardGrid.tsx (예정)</dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-31.html">SCR-31</a>
+        <a href="../pages/SCR-33.html">SCR-33</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Role</h2>
+    <p>본문 골격 · 정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</p>
+    <h2>Regions</h2>
+    <p>정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</p>
+    <h2>Rules</h2>
+    <ul>
+      <li>카드는 <strong>슬롯 골격을 그대로 보여준다.</strong> 예시 문장이 아니라 <code>{ACTOR}</code> 같은 빈칸 형태여야 재사용할 때 바로 갈아끼울 수 있다</li>
+      <li><strong>표본 3건 미만은 수치를 띄우지 않는다.</strong> &quot;근거 부족&quot; 배지로 대체한다 (F-021)</li>
+      <li>기본 정렬은 성과순. 단 정렬 기준이 중앙 유지율인지 배수인지를 칩으로 명시한다</li>
+      <li>마지막 칸의 점선 카드는 체인에서 승격하는 진입점이다 — 빈 상태에서도 동일하게 보인다</li>
+    </ul>
+    <h2>Responsive notes</h2>
+    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
+  </main>
+<section class="omd-wireframe" data-omd-wireframe="shell">
+  <h2>Shell + body</h2>
+  <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
+#wf-shell .side{background:#292524;color:#fafaf9;padding:.75rem;font-size:.8rem;display:flex;flex-direction:column;gap:2px}
+#wf-shell .brand{font-weight:700;padding:4px 8px 12px}
+#wf-shell .grp{font-size:10px;letter-spacing:.08em;opacity:.7;text-transform:uppercase;padding:10px 8px 4px}
+#wf-shell .nav{padding:5px 8px;border-radius:4px}
+#wf-shell .nav.on, #wf-shell .nav.active{background:#44403c}
+#wf-shell .nav .k{float:right;opacity:.7}
+#wf-shell .foot{margin-top:auto;font-size:11px;opacity:.7;padding:8px;border-top:1px solid #44403c}
+#wf-shell .main{display:flex;flex-direction:column;min-width:0;background:#fafaf9}
+#wf-shell .top{border-bottom:1px solid #d6d3d1;padding:.5rem .75rem;font-size:.8rem;color:#57534e}
+#wf-shell .top b{color:#1c1917}
+#wf-shell .body{padding:.75rem;flex:1}
+#wf-shell{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a}
+#wf-shell *{box-sizing:border-box}
+#wf-shell{margin:0;font:12px/1.5 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-shell .shell{display:grid;grid-template-columns:186px 1fr;height:580px;border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+#wf-shell .side{border-right:1px solid var(--bd);padding:12px 9px;background:var(--panel);display:flex;flex-direction:column;gap:1px;font-size:11.5px}
+#wf-shell .brand{font-weight:700;font-size:13px;padding:3px 7px 12px}
+#wf-shell .grp{font-size:9.5px;letter-spacing:.07em;color:var(--mut);text-transform:uppercase;padding:10px 7px 3px}
+#wf-shell .nav{padding:4px 7px;border-radius:5px;color:var(--ink);text-decoration:none}
+#wf-shell .nav.on{background:var(--bd);font-weight:600}
+#wf-shell .nav .k{float:right;color:var(--mut);font-variant-numeric:tabular-nums}
+#wf-shell .foot{margin-top:auto;font-size:10px;color:var(--mut);padding:7px;border-top:1px solid var(--bd)}
+#wf-shell .main{display:flex;flex-direction:column;min-width:0}
+#wf-shell .top{height:42px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--panel);flex:none}
+#wf-shell .crumb{color:var(--mut);font-size:11.5px}
+#wf-shell .crumb b{color:var(--ink)}
+#wf-shell .search{margin-left:auto;border:1px solid var(--bd);border-radius:6px;padding:4px 9px;color:var(--mut);min-width:190px;background:var(--bg);font-size:11px}
+#wf-shell .body{flex:1;padding:14px;overflow:auto;background:var(--bg)}
+#wf-shell /* ── 여기부터 LAY-004 본문 골격 ── */
+  .bar{display:flex;gap:5px;align-items:center;margin-bottom:11px;flex-wrap:wrap}
+#wf-shell .chip{border:1px solid var(--bd);border-radius:20px;padding:2px 9px;color:var(--mut);background:var(--panel);font-size:11px}
+#wf-shell .chip.on{border-color:var(--acc);color:var(--acc);font-weight:600}
+#wf-shell .right{margin-left:auto;color:var(--mut);font-size:11px}
+#wf-shell .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}
+#wf-shell .card{border:1px solid var(--bd);border-radius:9px;background:var(--panel);padding:12px;display:flex;flex-direction:column;gap:8px}
+#wf-shell .t{font-weight:600;font-size:12.5px}
+#wf-shell .skel{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;color:var(--mut);background:var(--bg);border:1px solid var(--bd);border-radius:5px;padding:6px 7px;white-space:pre-wrap;line-height:1.45}
+#wf-shell .tags span{display:inline-block;font-size:9.5px;border:1px solid var(--bd);border-radius:4px;padding:1px 5px;margin:0 3px 3px 0;color:var(--mut)}
+#wf-shell .perf{display:flex;gap:12px;font-size:10.5px;border-top:1px solid var(--bd);padding-top:7px;margin-top:auto}
+#wf-shell .perf b{display:block;font-size:13px;font-variant-numeric:tabular-nums}
+#wf-shell .perf .l{color:var(--mut);font-size:9.5px}
+#wf-shell .thin{color:var(--warn);font-size:10.5px;border-top:1px solid var(--bd);padding-top:7px;margin-top:auto}
+#wf-shell .cap{padding:10px 14px;font-size:11px;color:var(--mut);background:var(--panel);border-top:1px solid var(--bd)}
+#wf-shell .cap b{color:var(--ink)}</style>
+  <div id="wf-shell" class="omd-mock"><div class="omd-wire-shell shell">
+  <aside class="omd-wire-sidebar side">
+    <div class="brand">🚀 Thread Booster</div>
+    <a class="nav" href="#">대시보드 홈</a>
+    <div class="grp">레퍼런스</div>
+    <a class="nav" href="#">계정 목록 <span class="k">3</span></a>
+    <a class="nav" href="#">체인 목록 <span class="k">1,722</span></a>
+    <a class="nav" href="#">글 검색</a>
+    <div class="grp">템플릿</div>
+    <a class="nav on active" href="#">템플릿 목록 <span class="k">28</span></a>
+    <a class="nav" href="#">심리 기법 <span class="k">17</span></a>
+    <div class="grp">데이터</div>
+    <a class="nav" href="#">수집 콘솔</a>
+    <a class="nav" href="#">계정 레지스트리</a>
+    <div class="foot">마지막 수집<br>2026-08-08 · 실패 0</div>
+  </aside>
+  <div class="omd-wire-main main">
+    <header class="omd-wire-crumb top"><div class="crumb">템플릿 / <b>템플릿 목록</b></div><div class="search">체인·글 검색 ⌘K</div></header>
+    <div class="omd-wire-body body">
+      <div class="bar">
+        <span class="chip on">성과순</span><span class="chip">최근순</span><span class="chip">기법별</span>
+        <span class="chip">시사형</span><span class="chip">목록형</span>
+        <span class="right">28개 · 근거 있는 것 21개</span>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="t">T-1 사건 브리핑</div>
+          <div class="skel">{SIGNAL}{ACTOR}가 {EVENT} {INTENSIFIER}
+{DIRECTIVE}
+{SCALE} {SITUATION}</div>
+          <div class="tags"><span>A-INT</span><span>A-NUM</span><span>B-AUTH</span><span>C-PROM</span></div>
+          <div class="perf"><div><b>17</b><span class="l">체인</span></div><div><b>1.9×</b><span class="l">배수</span></div><div><b>31.2%</b><span class="l">유지율</span></div></div>
+        </div>
+        <div class="card">
+          <div class="t">T-3 목록 예고</div>
+          <div class="skel">{TOPIC} {COUNT}가지
+{ADDRESS} 모르면 {STAKES}
+{PROMISE}</div>
+          <div class="tags"><span>A-NUM</span><span>C-PROM</span><span>X-CLOSED?</span></div>
+          <div class="perf"><div><b>24</b><span class="l">체인</span></div><div><b>2.4×</b><span class="l">배수</span></div><div><b>11.8%</b><span class="l">유지율</span></div></div>
+        </div>
+        <div class="card">
+          <div class="t">T-6 수치 밀도</div>
+          <div class="skel">{SCALE} {EVENT}
+{NUMBER} · {NUMBER} · {NUMBER}</div>
+          <div class="tags"><span>A-NUM</span><span>B-DATA</span></div>
+          <div class="thin">⚠ 근거 부족 — 연결 체인 2건</div>
+        </div>
+        <div class="card" style="border-style:dashed;align-items:center;justify-content:center;color:var(--mut);min-height:140px">＋ 체인에서 승격하기</div>
+      </div>
+    </div>
+    
+  </div>
+</div></div>
+</section>
+<section class="omd-wireframe" data-omd-wireframe="body">
+  <h2>Body only</h2>
+  <style>#wf-body .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
+#wf-body .side{background:#292524;color:#fafaf9;padding:.75rem;font-size:.8rem;display:flex;flex-direction:column;gap:2px}
+#wf-body .brand{font-weight:700;padding:4px 8px 12px}
+#wf-body .grp{font-size:10px;letter-spacing:.08em;opacity:.7;text-transform:uppercase;padding:10px 8px 4px}
+#wf-body .nav{padding:5px 8px;border-radius:4px}
+#wf-body .nav.on, #wf-body .nav.active{background:#44403c}
+#wf-body .nav .k{float:right;opacity:.7}
+#wf-body .foot{margin-top:auto;font-size:11px;opacity:.7;padding:8px;border-top:1px solid #44403c}
+#wf-body .main{display:flex;flex-direction:column;min-width:0;background:#fafaf9}
+#wf-body .top{border-bottom:1px solid #d6d3d1;padding:.5rem .75rem;font-size:.8rem;color:#57534e}
+#wf-body .top b{color:#1c1917}
+#wf-body .body{padding:.75rem;flex:1}
+#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a}
+#wf-body *{box-sizing:border-box}
+#wf-body{margin:0;padding:16px;font:13px/1.55 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-body .bar{display:flex;gap:6px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+#wf-body .chip{border:1px solid var(--bd);border-radius:20px;padding:3px 11px;color:var(--mut);background:var(--panel)}
+#wf-body .chip.on{border-color:var(--acc);color:var(--acc);font-weight:600}
+#wf-body .right{margin-left:auto;color:var(--mut);font-size:12px}
+#wf-body .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+#wf-body .card{border:1px solid var(--bd);border-radius:9px;background:var(--panel);padding:13px 14px;display:flex;flex-direction:column;gap:9px}
+#wf-body .t{font-weight:600}
+#wf-body .skel{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--mut);background:var(--bg);border:1px solid var(--bd);border-radius:5px;padding:7px 8px;white-space:pre-wrap;line-height:1.5}
+#wf-body .tags span{display:inline-block;font-size:10px;border:1px solid var(--bd);border-radius:4px;padding:1px 5px;margin:0 3px 3px 0;color:var(--mut)}
+#wf-body .perf{display:flex;gap:14px;font-size:11px;border-top:1px solid var(--bd);padding-top:8px;margin-top:auto}
+#wf-body .perf b{display:block;font-size:14px;font-variant-numeric:tabular-nums}
+#wf-body .perf .l{color:var(--mut);font-size:10px}
+#wf-body .thin{color:var(--warn);font-size:11px;border-top:1px solid var(--bd);padding-top:8px;margin-top:auto}
+#wf-body .note{margin-top:12px;font-size:11px;color:var(--mut)}</style>
+  <div id="wf-body" class="omd-mock"><div class="bar">
+  <span class="chip on">성과순</span><span class="chip">최근순</span><span class="chip">기법별</span>
+  <span class="chip">시사형</span><span class="chip">목록형</span>
+  <span class="right">28개 · 근거 있는 것 21개</span>
+</div>
+<div class="grid">
+  <div class="card">
+    <div class="t">T-1 사건 브리핑</div>
+    <div class="skel">{SIGNAL}{ACTOR}가 {EVENT} {INTENSIFIER}
+{DIRECTIVE}
+{SCALE} {SITUATION}</div>
+    <div class="tags"><span>A-INT</span><span>A-NUM</span><span>B-AUTH</span><span>C-PROM</span><span>C-DIR</span></div>
+    <div class="perf">
+      <div><b>17</b><span class="l">연결 체인</span></div>
+      <div><b>1.9×</b><span class="l">중앙 배수</span></div>
+      <div><b>31.2%</b><span class="l">중앙 유지율</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="t">T-3 목록 예고</div>
+    <div class="skel">{TOPIC} {COUNT}가지
+{ADDRESS} 모르면 {STAKES}
+{PROMISE}</div>
+    <div class="tags"><span>A-NUM</span><span>C-PROM</span><span>X-CLOSED?</span></div>
+    <div class="perf">
+      <div><b>24</b><span class="l">연결 체인</span></div>
+      <div><b>2.4×</b><span class="l">중앙 배수</span></div>
+      <div><b>11.8%</b><span class="l">중앙 유지율</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="t">T-6 수치 밀도</div>
+    <div class="skel">{SCALE} {EVENT}
+{NUMBER} · {NUMBER} · {NUMBER}
+{CLAIM}</div>
+    <div class="tags"><span>A-NUM</span><span>B-DATA</span><span>C-STEP</span></div>
+    <div class="thin">⚠ 근거 부족 — 연결 체인 2건. 표본 3건 미만은 수치를 띄우지 않는다</div>
+  </div>
+  <div class="card" style="border-style:dashed;align-items:center;justify-content:center;color:var(--mut);min-height:150px">
+    ＋ 체인에서 승격하기
+  </div>
+</div>
+</div>
+</section>
+</body>
+</html>

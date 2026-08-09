@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="policy" data-omd-id="POL-001">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="POL-001" />
+  <meta name="omd:kind" content="policy" />
+  <meta name="omd:status" content="In progress" />
+  <title>POL-001 · 수집 속도와 차단 대응</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">POL-001</p>
+    <h1 data-omd-field="title">수집 속도와 차단 대응</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">In progress</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">한 번에 한 계정만, 사람 속도로, 차단 우회는 하지 않는다</dd>
+      <dt>유형</dt>
+      <dd data-omd-field="유형">데이터규칙</dd>
+      <dt>적용 화면</dt>
+      <dd data-omd-field="적용 화면">수집 콘솔</dd>
+      <dt>근거</dt>
+      <dd data-omd-field="근거">2026-08-01 병렬 수집으로 소프트 차단 발생 (39건 연속 에러 응답)</dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Rule</h2>
+    <ul>
+    <li>동시에 <strong>한 계정</strong>만 수집한다. 두 계정 병렬이 2026-08-01 차단의 결정타였다</li>
+    <li>배치마다 3~8초 + 지터를 둔다</li>
+    <li>에러 응답(HTML 오류 문서)을 감지하면 지수 백오프 후 자체 종료한다</li>
+    <li><strong>차단 우회를 위한 신원 변경·프록시 로테이션은 하지 않는다.</strong> 차단되면 멈춘다</li>
+    <li>수집은 공개된 퍼머링크 범위로 한정한다</li>
+    </ul>
+
+    <h2>Applies when</h2>
+    <p>적용 화면: 수집 콘솔</p>
+
+    <h2>Does not apply</h2>
+    <p class="omd-placeholder">Notion 본문에 해당 섹션 내용 없음.</p>
+
+    <h2>Rationale</h2>
+    <p>2026-08-01 병렬 수집으로 소프트 차단 발생 (39건 연속 에러 응답)</p>
+
+    <h2>예외</h2>
+    <p>신규 글 발견은 프로필 피드가 필요해 로그인 세션을 쓴다. 이 경우에도 속도 규칙은 그대로 적용한다.</p>
+  </main>
+</body>
+</html>

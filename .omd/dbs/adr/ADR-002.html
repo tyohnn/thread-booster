@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="adr" data-omd-id="ADR-002">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="ADR-002" />
+  <meta name="omd:kind" content="adr" />
+  <meta name="omd:status" content="제안" />
+  <meta name="omd:stage" content="제안" />
+  <title>ADR-002 · 로컬 스토어는 DuckDB 파일 하나로 간다</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">ADR-002</p>
+    <h1 data-omd-field="title">로컬 스토어는 DuckDB 파일 하나로 간다</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">제안</dd>
+      <dt>stage</dt>
+      <dd data-omd-field="stage">제안</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">로컬 스토어는 DuckDB 파일 하나로 간다</dd>
+      <dt>영역</dt>
+      <dd data-omd-field="영역">데이터 모델</dd>
+      <dt>결정일</dt>
+      <dd data-omd-field="결정일">2026-08-09</dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Context</h2>
+    <p>로컬 단독 실행이고 쓰기는 수집할 때만, 읽기는 집계·정렬·조인이 대부분이다. 관측 시계열은 append-only로 계속 자란다.</p>
+
+    <h2>Decision</h2>
+    <p><strong>DuckDB 파일 한 개</strong>를 스토어로 쓴다. 원본 JSONL은 그대로 보존하고, DuckDB는 언제든 재생성 가능한 파생물로 취급한다.</p>
+
+    <h2>Consequences</h2>
+    <ul>
+    <li>정규화 단계가 DuckDB 적재까지 책임진다</li>
+    <li>스키마 변경 시 마이그레이션 대신 <strong>전체 재생성</strong>한다. 원본이 JSONL로 남아 있어 가능하다</li>
+    </ul>
+
+    <h2>Alternatives considered</h2>
+    <table>
+    <tr><th>대안</th><th>평가</th></tr>
+    <tr><td>SQLite</td><td>익숙하고 안정적이지만 집계 성능과 분석 함수가 약하다. 다만 이 규모(2만 행)에서는 실질 차이가 크지 않을 수 있다</td></tr>
+    <tr><td>JSON 파일 직접 읽기</td><td>지금 방식. 매번 전체를 메모리에 올려야 하고 조인이 코드로 흩어진다</td></tr>
+    </table>
+
+    <h2>근거</h2>
+    <ul>
+    <li>집계·윈도우 함수가 필요한 질의(유지율 분포, 시점별 성장, 훅 유형별 중앙값)가 대부분이라 컬럼 지향이 맞는다</li>
+    <li>JSON·Parquet을 직접 읽을 수 있어 정규화 산출물을 그대로 적재한다</li>
+    <li>파일 하나라 백업·삭제·재생성이 단순하다</li>
+    </ul>
+
+    <h2>미결</h2>
+    <ul>
+    <li>대시보드가 DuckDB를 서버에서 읽을지, 브라우저(WASM)로 내려보낼지</li>
+    </ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-004">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-004" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P0" />
+  <title>F-004 · 마지막 글 조회수 보강 수집</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-004</p>
+    <h1 data-omd-field="title">마지막 글 조회수 보강 수집</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">수집</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P0</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">각 체인의 마지막 글 코드로 시드를 만들어 조회수를 받아온다. 완주율 계산의 전제다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-001.html">PRD-001</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-001.html">REL-001</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-41.html">SCR-41</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>각 체인의 마지막 글 코드로 시드를 만들어 조회수를 받아온다. 완주율 계산의 전제다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>체인 길이 2 이상인 체인만 대상이다</li>
+    <li>약 640요청 규모이며 진행률이 보인다</li>
+    <li>수집 후 완주율이 자동 계산된다</li>
+    </ul>
+    <h2>비고</h2>
+    <p>현재는 1번·2번 글만 있어 완주율을 모른다. 이 기능이 PRD-003 퍼널의 3번째 막대를 만든다.</p>
+  </main>
+</body>
+</html>

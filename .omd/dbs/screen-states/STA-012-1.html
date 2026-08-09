@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="screen-state" data-omd-id="STA-012-1">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="STA-012-1" />
+  <meta name="omd:kind" content="screen-state" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:stateType" content="기본" />
+  <title>STA-012-1 · 체인 목록 · 기본</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">STA-012-1</p>
+    <h1 data-omd-field="title">체인 목록 · 기본</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>trigger</dt>
+      <dd data-omd-field="trigger">스토어에 체인이 있고 필터 결과가 1건 이상일 때</dd>
+      <dt>exit</dt>
+      <dd data-omd-field="exit">해당 없음 — 정상 상태</dd>
+      <dt>stateType</dt>
+      <dd data-omd-field="stateType">기본</dd>
+      <dt>Page</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-12.html">SCR-12</a>
+      </dd>
+      <dt>Layout</dt>
+      <dd data-omd-rel="layouts">
+        <a href="../layouts/LAY-002.html">LAY-002</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>스토어에 체인이 있고 필터 결과가 1건 이상일 때</p>
+    <h2>What the user sees</h2>
+    <p>해당 화면의 정상 골격이 채워진 상태다. KPI·표·카드 수치는 스토어 실측(중앙값·n)을 쓴다.</p>
+    <h2>Exit path</h2>
+    <p>해당 없음 — 정상 상태</p>
+  </main>
+<section class="omd-wireframe" data-omd-wireframe="shell">
+  <h2>Shell + body</h2>
+  <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
+#wf-shell .side{background:#292524;color:#fafaf9;padding:.75rem;font-size:.8rem;display:flex;flex-direction:column;gap:2px}
+#wf-shell .brand{font-weight:700;padding:4px 8px 12px}
+#wf-shell .grp{font-size:10px;letter-spacing:.08em;opacity:.7;text-transform:uppercase;padding:10px 8px 4px}
+#wf-shell .nav{padding:5px 8px;border-radius:4px}
+#wf-shell .nav.on, #wf-shell .nav.active{background:#44403c}
+#wf-shell .nav .k{float:right;opacity:.7}
+#wf-shell .foot{margin-top:auto;font-size:11px;opacity:.7;padding:8px;border-top:1px solid #44403c}
+#wf-shell .main{display:flex;flex-direction:column;min-width:0;background:#fafaf9}
+#wf-shell .top{border-bottom:1px solid #d6d3d1;padding:.5rem .75rem;font-size:.8rem;color:#57534e}
+#wf-shell .top b{color:#1c1917}
+#wf-shell .body{padding:.75rem;flex:1}
+#wf-shell{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a}
+#wf-shell *{box-sizing:border-box}
+#wf-shell{margin:0;padding:16px;font:13px/1.5 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-shell .summary{display:grid;grid-template-columns:1.1fr 2fr;gap:14px;border:1px solid var(--bd);border-radius:8px;padding:14px;background:var(--panel);margin-bottom:12px}
+#wf-shell .kpis{display:flex;gap:22px}
+#wf-shell .kpi .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+#wf-shell .kpi .l{font-size:11px;color:var(--mut)}
+#wf-shell .hist{display:flex;align-items:flex-end;gap:3px;height:64px}
+#wf-shell .hist i{flex:1;background:var(--acc);opacity:.35;border-radius:2px 2px 0 0}
+#wf-shell .hist i.md{opacity:.9}
+#wf-shell .axis{display:flex;justify-content:space-between;font-size:10px;color:var(--mut);margin-top:4px}
+#wf-shell .warn{font-size:11px;color:var(--warn);margin-top:8px}
+#wf-shell .bar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+#wf-shell .chip{border:1px solid var(--bd);border-radius:20px;padding:3px 11px;color:var(--mut);background:var(--panel)}
+#wf-shell .chip.on{border-color:var(--acc);color:var(--acc);font-weight:600}
+#wf-shell .chip.preset{border-style:dashed}
+#wf-shell .right{margin-left:auto;color:var(--mut);font-size:12px}
+#wf-shell table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+#wf-shell th{text-align:left;font-size:11px;color:var(--mut);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--bd);white-space:nowrap}
+#wf-shell th.n, #wf-shell td.n{text-align:right;font-variant-numeric:tabular-nums}
+#wf-shell td{padding:9px 10px;border-bottom:1px solid var(--bd);vertical-align:top}
+#wf-shell tr:last-child td{border-bottom:0}
+#wf-shell .hook{max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#wf-shell .dim{color:var(--mut)}
+#wf-shell .badge{font-size:10px;border:1px solid var(--bd);border-radius:4px;padding:1px 5px;color:var(--mut)}
+#wf-shell .note{margin-top:10px;font-size:11px;color:var(--mut)}</style>
+  <div id="wf-shell" class="omd-mock"><div class="omd-wire-shell shell">
+  <aside class="omd-wire-sidebar side">
+    <div class="brand">Thread Booster</div>
+    <div class="nav">대시보드 홈</div>
+    <div class="grp">레퍼런스</div>
+    <div class="nav">계정 목록 <span class="k">3</span></div>
+    <div class="nav on active">체인 목록 <span class="k">1,722</span></div>
+    <div class="nav">글 검색</div>
+    <div class="grp">템플릿</div>
+    <div class="nav">템플릿 목록 <span class="k">28</span></div>
+    <div class="nav">심리 기법 <span class="k">17</span></div>
+    <div class="grp">데이터</div>
+    <div class="nav">수집 콘솔</div>
+    <div class="nav">계정 레지스트리</div>
+    <div class="foot">마지막 수집<br>2026-08-08 · 실패 0</div>
+  </aside>
+  <div class="omd-wire-main main">
+    <div class="omd-wire-crumb top"><div class="crumb">레퍼런스 / <b>체인 목록</b></div></div>
+    <div class="omd-wire-body body"><div class="summary">
+  <div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">1,168</div><div class="l">유지율 측정 체인</div></div>
+      <div class="kpi"><div class="v">12.6%</div><div class="l">중앙 유지율</div></div>
+    </div>
+    <div class="warn">⚠ 상관이며 인과가 아님 · 표본 계정 3개</div>
+  </div>
+  <div>
+    <div class="hist">
+      <i style="height:14%"></i><i style="height:31%"></i><i style="height:58%"></i><i class="md" style="height:100%"></i><i class="md" style="height:82%"></i><i style="height:54%"></i><i style="height:38%"></i><i style="height:25%"></i><i style="height:16%"></i><i style="height:9%"></i><i style="height:6%"></i><i style="height:4%"></i>
+    </div>
+    <div class="axis"><span>0%</span><span>중앙 12.6%</span><span>60%+</span></div>
+  </div>
+</div>
+<div class="bar">
+  <span class="chip on">전체 계정</span>
+  <span class="chip">beyond.cho</span>
+  <span class="chip">badakstock</span>
+  <span class="chip">최근 90일</span>
+  <span class="chip">조회 ≥ 20,000</span>
+  <span class="chip preset">헛돈 훅</span>
+  <span class="chip preset">숨은 체인</span>
+  <span class="right">정렬: 훅 조회수 ↓ · 1,722건</span>
+</div>
+<table>
+  <tr><th>훅</th><th>계정</th><th>날짜</th><th class="n">길이</th><th class="n">훅 조회</th><th class="n">좋아요</th><th class="n">유지율</th><th class="n">배수</th></tr>
+  <tr><td class="hook">🚨 와... 트럼프가 폭탄 발언을 했다</td><td class="dim">beyond.cho</td><td class="dim">03-29</td><td class="n">9</td><td class="n">1,060,177</td><td class="n">12,904</td><td class="n">6.8%</td><td class="n">90.4×</td></tr>
+  <tr><td class="hook">🚨와... 스페이스X가 2600조를 쓸어 담는다</td><td class="dim">beyond.cho</td><td class="dim">05-25</td><td class="n">16</td><td class="n">20,851</td><td class="n">371</td><td class="n">47.6%</td><td class="n">1.4×</td></tr>
+  <tr><td class="hook">돈 한 푼 안 드는 자기계발 사이트 TOP5</td><td class="dim">beyond.cho</td><td class="dim">04-02</td><td class="n">7</td><td class="n">46,946</td><td class="n">2,180</td><td class="n">0.2%</td><td class="n">3.1×</td></tr>
+  <tr><td class="hook">안녕하세요 나는바닥에서잡아입니다.</td><td class="dim">badakstock</td><td class="dim">05-18</td><td class="n">10</td><td class="n">37,255</td><td class="n">157</td><td class="n">59.8%</td><td class="n">6.7×</td></tr>
+  <tr><td class="hook">아직 부자가 되지 못한 자들아.</td><td class="dim">beyond.cho</td><td class="dim">02-11</td><td class="n">3</td><td class="n">13,617</td><td class="n">83</td><td class="n">89.5%</td><td class="n">0.9×</td></tr>
+  <tr><td class="hook" colspan="8"><span class="badge">조회수 없음</span> <span class="dim">유지율 미측정 행은 정렬 시 맨 뒤로</span></td></tr>
+</table>
+</div>
+  </div>
+</div></div>
+</section>
+<section class="omd-wireframe" data-omd-wireframe="body">
+  <h2>Body only</h2>
+  <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a}
+#wf-body *{box-sizing:border-box}
+#wf-body{margin:0;padding:16px;font:13px/1.5 -apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo",sans-serif;color:var(--ink);background:var(--bg)}
+#wf-body .summary{display:grid;grid-template-columns:1.1fr 2fr;gap:14px;border:1px solid var(--bd);border-radius:8px;padding:14px;background:var(--panel);margin-bottom:12px}
+#wf-body .kpis{display:flex;gap:22px}
+#wf-body .kpi .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+#wf-body .kpi .l{font-size:11px;color:var(--mut)}
+#wf-body .hist{display:flex;align-items:flex-end;gap:3px;height:64px}
+#wf-body .hist i{flex:1;background:var(--acc);opacity:.35;border-radius:2px 2px 0 0}
+#wf-body .hist i.md{opacity:.9}
+#wf-body .axis{display:flex;justify-content:space-between;font-size:10px;color:var(--mut);margin-top:4px}
+#wf-body .warn{font-size:11px;color:var(--warn);margin-top:8px}
+#wf-body .bar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+#wf-body .chip{border:1px solid var(--bd);border-radius:20px;padding:3px 11px;color:var(--mut);background:var(--panel)}
+#wf-body .chip.on{border-color:var(--acc);color:var(--acc);font-weight:600}
+#wf-body .chip.preset{border-style:dashed}
+#wf-body .right{margin-left:auto;color:var(--mut);font-size:12px}
+#wf-body table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+#wf-body th{text-align:left;font-size:11px;color:var(--mut);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--bd);white-space:nowrap}
+#wf-body th.n, #wf-body td.n{text-align:right;font-variant-numeric:tabular-nums}
+#wf-body td{padding:9px 10px;border-bottom:1px solid var(--bd);vertical-align:top}
+#wf-body tr:last-child td{border-bottom:0}
+#wf-body .hook{max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#wf-body .dim{color:var(--mut)}
+#wf-body .badge{font-size:10px;border:1px solid var(--bd);border-radius:4px;padding:1px 5px;color:var(--mut)}
+#wf-body .note{margin-top:10px;font-size:11px;color:var(--mut)}</style>
+  <div id="wf-body" class="omd-mock"><div class="omd-wire-body-only"><div class="summary">
+  <div>
+    <div class="kpis">
+      <div class="kpi"><div class="v">1,168</div><div class="l">유지율 측정 체인</div></div>
+      <div class="kpi"><div class="v">12.6%</div><div class="l">중앙 유지율</div></div>
+    </div>
+    <div class="warn">⚠ 상관이며 인과가 아님 · 표본 계정 3개</div>
+  </div>
+  <div>
+    <div class="hist">
+      <i style="height:14%"></i><i style="height:31%"></i><i style="height:58%"></i><i class="md" style="height:100%"></i><i class="md" style="height:82%"></i><i style="height:54%"></i><i style="height:38%"></i><i style="height:25%"></i><i style="height:16%"></i><i style="height:9%"></i><i style="height:6%"></i><i style="height:4%"></i>
+    </div>
+    <div class="axis"><span>0%</span><span>중앙 12.6%</span><span>60%+</span></div>
+  </div>
+</div>
+<div class="bar">
+  <span class="chip on">전체 계정</span>
+  <span class="chip">beyond.cho</span>
+  <span class="chip">badakstock</span>
+  <span class="chip">최근 90일</span>
+  <span class="chip">조회 ≥ 20,000</span>
+  <span class="chip preset">헛돈 훅</span>
+  <span class="chip preset">숨은 체인</span>
+  <span class="right">정렬: 훅 조회수 ↓ · 1,722건</span>
+</div>
+<table>
+  <tr><th>훅</th><th>계정</th><th>날짜</th><th class="n">길이</th><th class="n">훅 조회</th><th class="n">좋아요</th><th class="n">유지율</th><th class="n">배수</th></tr>
+  <tr><td class="hook">🚨 와... 트럼프가 폭탄 발언을 했다</td><td class="dim">beyond.cho</td><td class="dim">03-29</td><td class="n">9</td><td class="n">1,060,177</td><td class="n">12,904</td><td class="n">6.8%</td><td class="n">90.4×</td></tr>
+  <tr><td class="hook">🚨와... 스페이스X가 2600조를 쓸어 담는다</td><td class="dim">beyond.cho</td><td class="dim">05-25</td><td class="n">16</td><td class="n">20,851</td><td class="n">371</td><td class="n">47.6%</td><td class="n">1.4×</td></tr>
+  <tr><td class="hook">돈 한 푼 안 드는 자기계발 사이트 TOP5</td><td class="dim">beyond.cho</td><td class="dim">04-02</td><td class="n">7</td><td class="n">46,946</td><td class="n">2,180</td><td class="n">0.2%</td><td class="n">3.1×</td></tr>
+  <tr><td class="hook">안녕하세요 나는바닥에서잡아입니다.</td><td class="dim">badakstock</td><td class="dim">05-18</td><td class="n">10</td><td class="n">37,255</td><td class="n">157</td><td class="n">59.8%</td><td class="n">6.7×</td></tr>
+  <tr><td class="hook">아직 부자가 되지 못한 자들아.</td><td class="dim">beyond.cho</td><td class="dim">02-11</td><td class="n">3</td><td class="n">13,617</td><td class="n">83</td><td class="n">89.5%</td><td class="n">0.9×</td></tr>
+  <tr><td class="hook" colspan="8"><span class="badge">조회수 없음</span> <span class="dim">유지율 미측정 행은 정렬 시 맨 뒤로</span></td></tr>
+</table>
+</div></div>
+</section>
+</body>
+</html>

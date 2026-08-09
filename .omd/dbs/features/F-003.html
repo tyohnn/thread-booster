@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="feature" data-omd-id="F-003">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="F-003" />
+  <meta name="omd:kind" content="feature" />
+  <meta name="omd:status" content="초안" />
+  <meta name="omd:changeType" content="신규" />
+  <meta name="omd:priority" content="P1" />
+  <title>F-003 · 신규 글 발견</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">F-003</p>
+    <h1 data-omd-field="title">신규 글 발견</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">초안</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType">신규</dd>
+      <dt>area</dt>
+      <dd data-omd-field="area">수집</dd>
+      <dt>priority</dt>
+      <dd data-omd-field="priority">P1</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">계정의 새 글 코드를 찾아 수집 대기열에 넣는다. 로그인 없이 도는 경로는 커버리지가 약 2일이라 매일 돌려야 한다.</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-001.html">PRD-001</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories"></dd>
+      <dt>Release</dt>
+      <dd data-omd-rel="release">
+        <a href="../release/REL-001.html">REL-001</a>
+      </dd>
+      <dt>ADR</dt>
+      <dd data-omd-rel="adr"></dd>
+      <dt>Pages</dt>
+      <dd data-omd-rel="pages">
+        <a href="../pages/SCR-42.html">SCR-42</a>
+      </dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>동작</h2>
+    <p>계정의 새 글 코드를 찾아 수집 대기열에 넣는다. 로그인 없이 도는 경로는 커버리지가 약 2일이라 매일 돌려야 한다.</p>
+    <h2>수용 기준</h2>
+    <ul>
+    <li>이미 아는 코드는 건너뛴다</li>
+    <li>커버리지 한계(약 2일)를 화면에 명시한다</li>
+    <li>프로필 피드 전체 수확은 로그인 세션이 있을 때만 시도한다</li>
+    </ul>
+    <h2>제약</h2>
+    <p>프로필 피드는 forward-only 가상화다. 위로 스크롤해도 지나간 카드는 복구되지 않는다.</p>
+  </main>
+</body>
+</html>

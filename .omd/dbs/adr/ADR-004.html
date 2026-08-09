@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="adr" data-omd-id="ADR-004">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="ADR-004" />
+  <meta name="omd:kind" content="adr" />
+  <meta name="omd:status" content="채택" />
+  <meta name="omd:stage" content="채택" />
+  <title>ADR-004 · 수집은 SSR JSON 파싱만 쓰고 DOM 스크래핑은 폐기한다</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">ADR-004</p>
+    <h1 data-omd-field="title">수집은 SSR JSON 파싱만 쓰고 DOM 스크래핑은 폐기한다</h1>
+    <dl class="omd-props">
+      <dt>status</dt>
+      <dd data-omd-field="status">채택</dd>
+      <dt>stage</dt>
+      <dd data-omd-field="stage">채택</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">수집은 SSR JSON 파싱만 쓰고 DOM 스크래핑은 폐기한다</dd>
+      <dt>영역</dt>
+      <dd data-omd-field="영역">인프라</dd>
+      <dt>결정일</dt>
+      <dd data-omd-field="결정일">2026-08-08</dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Context</h2>
+    <p>2026-08-08 이전에는 브라우저를 띄워 DOM을 긁었다. 그 방식은 카운트가 반올림되고, 조회수를 못 얻고, 체인을 잘못 묶었다. 실제로 체인 구성의 80%가 틀렸다. Threads는 퍼머링크 HTML의 <code>&lt;script type="application/json"&gt;</code> 안에 게시물 데이터를 통째로 보낸다.</p>
+
+    <h2>Decision</h2>
+    <ul>
+    <li>수집은 <strong>퍼머링크 SSR JSON 파싱</strong>으로 한다. 로그인이 필요 없다</li>
+    <li>DOM 수확기(<code>extract_chain.js</code>, <code>harvest_runner.js</code>)는 더 이상 쓰지 않는다</li>
+    <li>예외: 신규 글 <strong>발견</strong>은 프로필 피드 페이지네이션이 필요하고 여기에는 로그인 세션이 든다</li>
+    </ul>
+
+    <h2>Consequences</h2>
+    <ul>
+    <li>체인 구성은 SSR 페이로드의 스레드 구조를 근거로 재구축했다</li>
+    <li>구 CSV·구 JSON은 시점 스냅샷으로 보존한다 (→ POL-004)</li>
+    </ul>
+
+    <h2>Alternatives considered</h2>
+    <p class="omd-placeholder">Notion 본문에 해당 섹션 내용 없음.</p>
+
+    <h2>근거</h2>
+    <ul>
+    <li>카운트가 정수로 나온다 (화면 표기는 2유효숫자 반올림)</li>
+    <li>조회수를 얻을 수 있다. 초반 유지율은 이걸로 처음 측정됐다</li>
+    <li>로그인이 없으므로 계정에 이력이 남지 않는다. 2026-08-08 기준 1,506요청 실패 0건</li>
+    </ul>
+
+    <h2>위험</h2>
+    <p>Threads의 SSR 페이로드 구조가 바뀌면 파서가 깨진다. 파서를 한 파일(<code>ssr.mjs</code>)로 격리해 둔 이유다.</p>
+  </main>
+</body>
+</html>

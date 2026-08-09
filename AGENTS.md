@@ -5,9 +5,10 @@ Threads 레퍼런스 계정을 수집·분석해 **독자가 어디서 이탈하
 
 ## 먼저 알아야 할 것
 
-- **기획 SSOT는 Notion이다.** [Thread Booster > 제품 기획 · 기능 명세](https://app.notion.com/p/3b6346dac4568080a6b1c8b24aa7b65e)
-  — PRD 4 · User Story 14 · Features 21 · Release 3 · ADR 4 · 정책 4 · IA 13 · Pages 10 · Layouts 4 · 화면 상태 10.
-  제품 관련 결정을 코드에서 추측하지 말고 **거기서 읽어라.**
+- **기획 SSOT는 `.omd/dbs` (로컬 HTML 카탈로그)다.**
+  — PRD · User Story · Features · Release · ADR · 정책 · IA · Pages · Layouts · 화면 상태 · 폐기 보관함.
+  제품 관련 결정을 코드에서 추측하지 말고 **여기서 읽어라.**
+  Notion 핸드북([제품 기획 · 기능 명세](https://app.notion.com/p/3b6346dac4568080a6b1c8b24aa7b65e))은 **이관 원본·보관용**이며 더 이상 쓰기 대상이 아니다.
 - **공개 GitHub 저장소다** — `tyohnn/thread-booster` (PUBLIC). 커밋하는 것은 전부 외부에 공개된다.
   **수집 원문(`data_export/`)은 제3자 게시물이라 `.gitignore` 로 제외돼 있다** (POL-002). 절대 강제 추가하지 마라.
   새 산출물을 커밋할 때도 남의 글 전문이 섞였는지 먼저 확인한다. 분석용 짧은 인용은 허용된다.
@@ -17,6 +18,7 @@ Threads 레퍼런스 계정을 수집·분석해 **독자가 어디서 이탈하
 ## 구조
 
 ```
+.omd/dbs/               ★ 기획 SSOT (로컬 HTML 카탈로그)
 shared/crawler/         ★ 현행 수집기 (SSR JSON 파싱)
   ssr.mjs               파서 (의존성 없음)
   fetch.mjs             퍼머링크 수집 · 로그인 불필요
@@ -89,25 +91,23 @@ Notion MCP로 한글을 쓰면 낮은 확률로 글자가 바뀐다 (`걸러낸�
 **5. `rm -rf` + 와일드카드는 권한 분류기에 막힌다.**
 파일을 명시적으로 나열해 `rm`하고, 디렉토리는 `rm -r`로 따로 지운다. 그 전에 백업 tar부터.
 
-## 기획 문서 작성 규약 (Notion)
+## 기획 문서 작성 규약 (`.omd/dbs`)
 
-**화면 상태 DB — 상태 하나당 한 행이다.**
-- 화면마다 **기본 상태** 행을 두고, 변주(로딩 · 빈 상태 · 부분 데이터 · 오류 · 권한 없음 · 스코프 밖)를
-  **각각 별도 행**으로 만든다. 한 행에 여러 변주를 묶지 않는다.
-- 묶으면 `상태 유형` select 가 대표값 하나로 뭉개져서 유형별 필터·집계가 불가능해진다.
-  행을 쪼개야 "오류 상태만 모아보기"가 성립한다.
-- 각 행은 `트리거`(이 상태로 들어가는 조건)와 `빠져나가는 법`(정상으로 복귀하는 경로)을 반드시 채운다.
+**화면 상태 — 상태 하나당 한 HTML 파일이다** (`.omd/dbs/screen-states/STA-*.html`).
+- 화면마다 **기본 상태** 파일을 두고, 변주(로딩 · 빈 상태 · 부분 데이터 · 오류 · 권한 없음 · 스코프 밖)를
+  **각각 별도 파일**로 만든다. 한 파일에 여러 변주를 묶지 않는다.
+- 각 파일은 `트리거`(이 상태로 들어가는 조건)와 `빠져나가는 법`(정상으로 복귀하는 경로)을 반드시 채운다.
 - 상태명은 `화면 · 상태` 형식으로 쓴다. 예: `체인 목록 · 필터 결과 0건`
 
-**Layouts DB — 본문 골격은 셸에 끼운 모습을 같이 싣는다.**
-- 본문 골격(LAY-002·003·004)을 단독으로만 그리면 실제 본문 셀 폭·여백·스크롤 경계를 알 수 없다.
-- 각 레이아웃 페이지에 **① 앱 셸(LAY-001)에 끼운 뷰**와 **② 본문 골격 단독 뷰**를 둘 다 넣는다.
+**Layouts — 본문 골격은 셸에 끼운 모습을 같이 싣는다.**
+- 각 레이아웃 HTML에 **① 앱 셸(LAY-001)에 끼운 뷰**와 **② 본문 골격 단독 뷰**를
+  `<section class="omd-wireframe">` 로 둘 다 넣는다.
 - 셸에 끼운 뷰에는 사이드바 활성 항목과 브레드크럼을 해당 화면 기준으로 맞춘다.
 
 **공통**
-- 화면·상태 목업은 코드 블록이 아니라 HTML 첨부 + `<embed>` 로 넣는다 (위 함정 3).
-- 목업 속 수치는 실제 데이터에서 가져온다. 가짜 숫자를 넣으면 설계 판단이 왜곡된다.
-- 접은 항목은 삭제하지 말고 **`폐기 보관함` DB로 옮기고** 원래 ID · 폐기 사유 · 대체 항목을 채운다.
+- 화면·상태 목업은 Notion embed가 아니라 같은 HTML 안의 `omd-wireframe` 섹션이다.
+- 목업 속 수치는 `data_export/normalized/` 실측(중앙값·n)을 쓴다. 가짜 숫자를 넣으면 설계 판단이 왜곡된다.
+- 접은 항목은 삭제하지 말고 **`archive/`** 로 옮기고 원래 ID · 폐기 사유 · 대체 항목을 채운다.
 
 ## 현재 상태 (2026-08-09)
 
@@ -120,7 +120,45 @@ Notion MCP로 한글을 쓰면 낮은 확률로 글자가 바뀐다 (`걸러낸�
 
 ## 다음 작업
 
-우선순위는 Notion Release DB가 정본이다. 요약하면:
+우선순위는 `.omd/dbs/release` 가 정본이다. 요약하면:
 1. **v0.1 데이터 파이프라인** — 수집·정규화·적재를 명령 한 줄로. 화면 없음
 2. **v1.0** — 레퍼런스 탐색 → **템플릿 매니저** → 이탈 그래프 순 (템플릿이 이탈 분석보다 우선)
 3. 미결정: 스토어 엔진(DuckDB vs SQLite, ADR-002) · 훅 유형 분류 방식 · 구 Notion 5-DB 처리
+
+<!-- oh-my-docs:start -->
+# Oh My Docs
+
+This repository uses a docs-first workflow. Canonical product intent lives in
+**one** handbook SSOT — either local HTML catalogs (`.omd/dbs/<catalog>/*.html`)
+or Notion — never more than one as authoritative.
+
+## Content source (SSOT)
+
+1. Read `.omd/project.json` and use `contentSource.ssot`
+   (`local` | `notion`).
+2. Missing `contentSource` means `local`.
+3. If `.omd/project.json` is missing, run `inspect` / ask the user to choose
+   SSOT and `adopt` before inventing handbook files.
+4. For `local`, edit HTML files under `.omd/dbs` (see
+   `references/html-document-contract.md`). For `notion`, edit the single
+   Home page: only `# 도메인` / `# 기획` / `# 개발` section headers, with
+   catalog DBs stacked inline under them (no per-catalog headings, no child
+   pages, no sidebar) via the host Notion MCP. Do not treat an unselected
+   provider as truth.
+
+## Documentation is always first
+
+Any decision, agreement, requirement, design choice, open question, or new
+discussion that should outlive this chat must be written into the selected SSOT
+— not left only in conversation.
+
+1. Before and during the talk, check whether the topic already exists in the SSOT.
+2. Create or update the matching handbook artifacts as the discussion progresses.
+3. Catalog entries (PRD, story, plan, ADR, …) go in the **catalog store** — a
+   Notion inline database row on Home, or a local `.omd/dbs/<catalog>/*.html`
+   file — never as ad-hoc child pages. **Planning ≠ Plans**:
+   implementation plans belong in Plans (`dbs.plans` / `.omd/dbs/plans`).
+4. Prefer `node <skill>/scripts/omd.mjs new <kind> --title "…" --yes` (local)
+   or the Notion catalog workflow (notion) over ad-hoc files or chat-only notes.
+5. Run `node <skill>/scripts/omd.mjs check` after meaningful documentation edits.
+<!-- oh-my-docs:end -->

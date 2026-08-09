@@ -1,0 +1,39 @@
+{
+  "as_of": "from data_export/normalized (local)",
+  "n_chains": 2266,
+  "n_posts": 40193,
+  "n_retention": 1610,
+  "n_single_post_chains": 469,
+  "accounts": {
+    "badakstock": {
+      "n_chains": 706,
+      "median_hook_views": 5549.5,
+      "n_retention": 527,
+      "median_retention": 0.10965393078615723
+    },
+    "beyond.cho": {
+      "n_chains": 682,
+      "median_hook_views": 22208.0,
+      "n_retention": 510,
+      "median_retention": 0.14678491844699293
+    },
+    "gten_btc": {
+      "n_chains": 544,
+      "median_hook_views": 14508.5,
+      "n_retention": 442,
+      "median_retention": 0.08258543432991225
+    },
+    "ho_ho_ju_ju": {
+      "n_chains": 333,
+      "median_hook_views": 7703,
+      "n_retention": 131,
+      "median_retention": 0.14798850574712644
+    }
+  },
+  "overall": {
+    "median_hook_views": 10752,
+    "median_retention": 0.10859190234741482,
+    "n_hook_views": 2265,
+    "n_retention": 1610
+  }
+}

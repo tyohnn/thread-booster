@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oh-my-docs.dev/schemas/state-1.0.schema.json",
+  "title": "Oh My Docs state",
+  "type": "object",
+  "required": ["contractVersion", "skillVersion", "templateVersion", "uiSnapshot", "projectDigest", "inventory", "files"],
+  "properties": {
+    "contractVersion": { "const": "1.0" },
+    "skillVersion": { "type": "string" },
+    "templateVersion": { "type": "string" },
+    "uiSnapshot": {
+      "type": "object",
+      "required": ["distribution", "vocabularyDigest"],
+      "properties": {
+        "distribution": { "const": "skill-template" },
+        "vocabularyDigest": { "type": "string" }
+      }
+    },
+    "projectDigest": { "type": "string" },
+    "inventory": { "type": "object" },
+    "files": { "type": "object" },
+    "provider": {
+      "type": "object",
+      "properties": {
+        "notion": {
+          "type": "object",
+          "properties": {
+            "schemaVersion": { "type": "string" },
+            "schemaDigest": { "type": "string" },
+            "lastObservedAt": { "type": "string" },
+            "lastManifestDigest": { "type": "string" },
+            "mappings": { "type": "object" },
+            "pendingOperationIds": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "completedOperationIds": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
