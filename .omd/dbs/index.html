@@ -5,28 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thread Booster · 기획 카탈로그</title>
   <link rel="stylesheet" href="../assets/omd-doc.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            border: "hsl(var(--border))",
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            primary: { DEFAULT: "hsl(var(--primary))", foreground: "hsl(var(--primary-foreground))" },
+            muted: { DEFAULT: "hsl(var(--muted))", foreground: "hsl(var(--muted-foreground))" },
+            card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
+          },
+          borderRadius: { lg: "var(--radius)", md: "calc(var(--radius) - 2px)", sm: "calc(var(--radius) - 4px)" },
+          fontFamily: {
+            sans: ["var(--omd-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+            mono: ["var(--omd-font-mono)", "ui-monospace", "monospace"],
+            display: ["var(--omd-font-display)", "ui-serif", "Georgia", "serif"],
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body>
-  <header class="omd-doc-header">
-    <p class="omd-id">.omd/dbs</p>
-    <h1>Thread Booster · 기획 SSOT</h1>
-    <p>로컬 HTML 카탈로그가 제품 기획의 단일 출처다. Notion 핸드북은 이관 원본·보관용이다.</p>
-  </header>
-  <main class="omd-doc-body">
-    <h2>Catalogs</h2>
-    <ul class="omd-home-list">
-      <li><a href="./release/">Release <span>REL-*</span></a></li>
-      <li><a href="./prds/">PRDs <span>PRD-*</span></a></li>
-      <li><a href="./stories/">User Stories <span>US-*</span></a></li>
-      <li><a href="./features/">Features <span>F-*</span></a></li>
-      <li><a href="./policies/">정책 <span>POL-*</span></a></li>
-      <li><a href="./adr/">ADR <span>ADR-*</span></a></li>
-      <li><a href="./ia/">IA <span>IA-*</span></a></li>
-      <li><a href="./pages/">Pages <span>SCR-*</span></a></li>
-      <li><a href="./layouts/">Layouts <span>LAY-* · wireframes</span></a></li>
-      <li><a href="./screen-states/">화면 상태 <span>STA-* · 상태당 1파일</span></a></li>
-      <li><a href="./archive/">폐기 보관함 <span>retired rows</span></a></li>
-    </ul>
-  </main>
+<body class="omd-home-page min-h-screen bg-background text-foreground antialiased">
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <header class="mb-6 rounded-xl border bg-card text-card-foreground shadow-sm px-5 py-4">
+      <p class="omd-id mb-2">.omd/dbs</p>
+      <h1 class="font-display text-2xl font-bold tracking-tight">Thread Booster · 기획 SSOT</h1>
+      <p class="mt-1 text-sm text-muted-foreground">로컬 HTML 카탈로그가 제품 기획의 단일 출처다. 카탈로그를 열어 ID · 제목 · 상태를 본다.</p>
+    </header>
+    <main>
+      <div class="rounded-md border bg-card text-card-foreground shadow-sm">
+        <div class="relative w-full overflow-auto">
+          <table class="w-full caption-bottom text-sm">
+            <thead class="[&_tr]:border-b">
+              <tr class="border-b transition-colors hover:bg-muted/50">
+                <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Catalog</th>
+                <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Prefix</th>
+                <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Path</th>
+              </tr>
+            </thead>
+                        <tbody class="[&_tr:last-child]:border-0">
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./release/index.html">Release</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">REL-*</code></td><td class="p-4 align-middle"><a href="./release/index.html"><code class="font-mono text-xs text-muted-foreground">release/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./prds/index.html">PRDs</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">PRD-*</code></td><td class="p-4 align-middle"><a href="./prds/index.html"><code class="font-mono text-xs text-muted-foreground">prds/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./stories/index.html">User Stories</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">US-*</code></td><td class="p-4 align-middle"><a href="./stories/index.html"><code class="font-mono text-xs text-muted-foreground">stories/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./features/index.html">Features</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">F-*</code></td><td class="p-4 align-middle"><a href="./features/index.html"><code class="font-mono text-xs text-muted-foreground">features/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./policies/index.html">정책</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">POL-*</code></td><td class="p-4 align-middle"><a href="./policies/index.html"><code class="font-mono text-xs text-muted-foreground">policies/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./adr/index.html">ADR</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">ADR-*</code></td><td class="p-4 align-middle"><a href="./adr/index.html"><code class="font-mono text-xs text-muted-foreground">adr/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./ia/index.html">IA</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">IA-*</code></td><td class="p-4 align-middle"><a href="./ia/index.html"><code class="font-mono text-xs text-muted-foreground">ia/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./pages/index.html">Pages</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">SCR-*</code></td><td class="p-4 align-middle"><a href="./pages/index.html"><code class="font-mono text-xs text-muted-foreground">pages/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./layouts/index.html">Layouts</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">LAY-*</code></td><td class="p-4 align-middle"><a href="./layouts/index.html"><code class="font-mono text-xs text-muted-foreground">layouts/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./screen-states/index.html">화면 상태</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">STA-*</code></td><td class="p-4 align-middle"><a href="./screen-states/index.html"><code class="font-mono text-xs text-muted-foreground">screen-states/</code></a></td></tr>
+              <tr class="border-b transition-colors hover:bg-muted/50"><td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./archive/index.html">폐기 보관함</a></td><td class="p-4 align-middle"><code class="font-mono text-xs text-muted-foreground">—</code></td><td class="p-4 align-middle"><a href="./archive/index.html"><code class="font-mono text-xs text-muted-foreground">archive/</code></a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>

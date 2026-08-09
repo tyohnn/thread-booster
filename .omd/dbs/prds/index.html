@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko" data-omd-catalog="prds">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRDs · catalog</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: ["class"],
+    theme: {
+      extend: {
+        colors: {
+          border: "hsl(var(--border))",
+          input: "hsl(var(--input))",
+          ring: "hsl(var(--ring))",
+          background: "hsl(var(--background))",
+          foreground: "hsl(var(--foreground))",
+          primary: {
+            DEFAULT: "hsl(var(--primary))",
+            foreground: "hsl(var(--primary-foreground))",
+          },
+          secondary: {
+            DEFAULT: "hsl(var(--secondary))",
+            foreground: "hsl(var(--secondary-foreground))",
+          },
+          muted: {
+            DEFAULT: "hsl(var(--muted))",
+            foreground: "hsl(var(--muted-foreground))",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--accent))",
+            foreground: "hsl(var(--accent-foreground))",
+          },
+          card: {
+            DEFAULT: "hsl(var(--card))",
+            foreground: "hsl(var(--card-foreground))",
+          },
+        },
+        borderRadius: {
+          lg: "var(--radius)",
+          md: "calc(var(--radius) - 2px)",
+          sm: "calc(var(--radius) - 4px)",
+        },
+        fontFamily: {
+          sans: ["var(--omd-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+          mono: ["var(--omd-font-mono)", "ui-monospace", "monospace"],
+          display: ["var(--omd-font-display)", "ui-serif", "Georgia", "serif"],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="omd-catalog-page min-h-screen bg-background text-foreground antialiased">
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <nav class="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground" aria-label="Breadcrumb">
+      <a class="font-medium text-primary hover:underline underline-offset-4" href="../index.html">Catalogs</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-foreground">PRDs</span>
+    </nav>
+    <header class="mb-6 rounded-xl border bg-card text-card-foreground shadow-sm px-5 py-4">
+      <p class="omd-id mb-2">prds</p>
+      <h1 class="font-display text-2xl font-bold tracking-tight">PRDs</h1>
+      <p class="mt-1 text-sm text-muted-foreground"><span class="font-semibold text-foreground tabular-nums">4</span> documents</p>
+    </header>
+    <main>
+      <div class="rounded-md border bg-card text-card-foreground shadow-sm">
+      <div class="relative w-full overflow-auto">
+        <table class="w-full caption-bottom text-sm">
+          <thead class="[&_tr]:border-b">
+            <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7.5rem]">ID</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Title</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Summary</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7rem]">Status</th>
+            </tr>
+          </thead>
+          <tbody class="[&_tr:last-child]:border-0">
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./PRD-001.html"><span class="omd-id">PRD-001</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./PRD-001.html">데이터 파이프라인과 로컬 스토어</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">긁어낸 스레드 데이터를 한 번의 명령으로 수집·정규화·적재해, 대시보드가 바로 질의할 수 있는 단일 로컬 스토어를 유지한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./PRD-002.html"><span class="omd-id">PRD-002</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./PRD-002.html">레퍼런스 탐색</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">팔로우하는 스레드 계정의 체인과 글을 조회수·참여율과 함께 훑어, 오늘 무엇을 본뜰지 5분 안에 고를 수 있게 한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./PRD-003.html"><span class="omd-id">PRD-003</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./PRD-003.html">체인 이탈 분석</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">체인의 글별 조회수 낙차를 퍼널로 그려, 독자가 몇 번째 글에서 떠나는지와 그게 어떤 훅 유형에서 심한지를 보여준다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./PRD-004.html"><span class="omd-id">PRD-004</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./PRD-004.html">템플릿 매니저</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">터진 체인을 표현이 아닌 구조와 심리 기법으로 분해해 재사용 가능한 템플릿으로 쌓고, 그 템플릿이 실제로 통하는지 성과로 되돌아본다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </main>
+  </div>
+</body>
+</html>
