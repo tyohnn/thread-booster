@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-browser": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "548a1f92c7ff55081c65ec1577ff5136beb1d0f58252d448d5bd43f05fefc703",
+      "wellKnownDigest": "sha256:a674b7d81066e3cc471a7512ddb4ae724418cbfefa75cbb050b0dc430e4d57a0"
+    },
+    "animation-vocabulary": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "39319fc9a33c15be08666b3685f58666f042ff36bb902b7814c0834a5ba99df4",
+      "wellKnownDigest": "sha256:16bfb5a10b42c4c2dfeb15c3705f9a2de774b33bf4ae055305130d4abff4b16b"
+    },
+    "gsap": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "80d30df109fa6046f53188ae003f0d5b979080b2d0fd5721b077e387a23d6214",
+      "wellKnownDigest": "sha256:ed4f14572eefe9e207c559b9ee58347964b72a7b044bf19ab48e507e69b0dcbd"
+    },
+    "improve-animations": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "fbb23fc2140e437a12edc84450823d53f6de2e452dfbff41d9ee47469f5e7354",
+      "wellKnownDigest": "sha256:ce4e18186c4504ee1709632b26a81143abb05841d767794eb40461b14cd95d14"
+    },
+    "next-cache-components-adoption": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "e55748a9e68607f5f5ee3bae547fc1530a97a4c51cbfb226c4e7a6f540140496",
+      "wellKnownDigest": "sha256:081776156918b8c6e801c6a61b8623223d4108fec802f1d30bbe58ebcd87d0a1"
+    },
+    "next-partial-prefetching-adoption": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "cfed44cfce68b08b2a7edf3d6f07b230a49dfbf180825ca49a5bbf12b27a558a",
+      "wellKnownDigest": "sha256:4ed43c1f766872e8322821b5103176cf08d8cd26409ddd80c95af689d59ae74e"
+    },
+    "review-animations": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "cd97ea6312f8608e24d8e4658a6790fc318eb6220086867343345b6ab39a6be9",
+      "wellKnownDigest": "sha256:0620bdd9be9ff45001d80f3afb7d21a8b2ad7d39ea5c7c01e236783dd341a76c"
+    },
+    "shadcn": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "d37ca78d3e027ab8ba1e4770327c83712c49232658d0fa0cccfda10da820e3c5",
+      "wellKnownDigest": "sha256:857f558f874c974fe467422b458ec38f386ae8199f603ea4f8d7d9d6d6fe51e2"
+    },
+    "stripe-best-practices": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "75abd089f42fa3499cceda1a305e50a2885a80b908390c67298a55673816d0ba",
+      "wellKnownDigest": "sha256:603d1ebcd5006d31fab8a159a60398d07cb7c4a7107f7aff9bae61cfd7647bee"
+    },
+    "supabase": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "4d1e8b7a59c060b48df66a917337a00e53909f0aea909d19b98ec3bac017a0fd",
+      "wellKnownDigest": "sha256:f1312facb4e1cd4e44505987856fdf88fa747ab3f1b1dcfc2e64731b5977c8b8"
+    },
+    "supabase-postgres-best-practices": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "ccd05ad7b916fafb83356fd2e9cc8f5a4bc2b728c39dc1fde80c5ca9324e6b78",
+      "wellKnownDigest": "sha256:5ff39bedf7f908078936e205757e4cefadc2cf3c22416abb2d41290aec8a4fbf"
+    },
+    "tailwind-design-system": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "d8089ed4f3cd5041a991b5ea28446cfb9b929898ba9b828e7f8eb7a84aa98cba",
+      "wellKnownDigest": "sha256:e651c8d44b646e95ad8596701124ce46334363c86c65dca02a75018a6600c0fe"
+    },
+    "typescript-advanced-types": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "8ae6842915685abba82e54a0e0dd49307d535dc4e4ddc3a7a5e1707b79d9935b",
+      "wellKnownDigest": "sha256:0facabf51fd69e65f03830f79c611ab38a36a9541b94fe7d895b2fd5aff50d2c"
+    },
+    "ui-ux-pro-max": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "d30a2c17984144ab8a28fa0a6fb2589b1ae795d0ff2165b8692dc16b3e4e1d85",
+      "wellKnownDigest": "sha256:0a784c5e365a69b4a1544e670e9c4d21ff54b04a5b7d9a636f3e1a9805a3d88f"
+    },
+    "vercel-composition-patterns": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "47df1982f0a715e3f8b541f5a8bccf53a884d3c2b144c38c8022e272ac34a29e",
+      "wellKnownDigest": "sha256:afc0f4de51fdb7af3ee15872a364b1498c51be221e4b03c18670e50feb2b7a56"
+    },
+    "vercel-react-best-practices": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "6d60b430de79d8283df426585ac17f72d66352d822612569e32342fe61f7a881",
+      "wellKnownDigest": "sha256:7459708cf5d16fd98ee4d8bdf538b88b566effc7fb1c5cd962c929ad3b8ea8eb"
+    },
+    "vercel-react-view-transitions": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "a256963607e0574c4c1013e292c07437f6765378d08300e6f86bc08c59d46162",
+      "wellKnownDigest": "sha256:30d576c5081d5131621ee5239cc1adec3a8683a0d31c539335eb10d52058919b"
+    },
+    "webapp-testing": {
+      "source": "skills.sh",
+      "sourceUrl": "https://skills.sh/p/46VoGo3iBsTF1c3v",
+      "sourceType": "well-known",
+      "computedHash": "21f47bc3aaf88e629f93117f2e19bd33bd2f7cf98d56dcf58b4e84a4f00cdf4d",
+      "wellKnownDigest": "sha256:e1d63bbfef7876f7e327ab313f300dba06555fbdcee681ca698bd47e0c19b925"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "_comment": "트래킹 대상 계정 레지스트리. status.mjs 로 현황을 보고, 수집은 한 번에 한 계정씩만 돌린다.",
+  "accounts": [
+    {
+      "handle": "beyond.cho",
+      "label": "초월자",
+      "topic": "경제·투자 시사",
+      "followers": 100000,
+      "status": "active",
+      "added_at": "2026-06-13",
+      "notes": "시사 서사형 훅(🚨 와… ㄷㄷ). 유지율 18%대로 가장 높은 유형."
+    },
+    {
+      "handle": "ho_ho_ju_ju",
+      "label": "호호주주",
+      "topic": "투자·일상",
+      "followers": 50000,
+      "status": "active",
+      "added_at": "2026-06-13",
+      "notes": "2026-08-08 확인: 종료된 계정이 아니라 계속 활동 중. 도달은 작지만 참여율이 1.69%로 높다."
+    },
+    {
+      "handle": "dolphin_invest_",
+      "label": "돌핀",
+      "topic": "투자",
+      "followers": 67270,
+      "status": "active",
+      "added_at": "2026-08-08",
+      "notes": "짧은 구어체 훅. 상단 고정글 있음(2025-10-24) — 시간순 정렬 시 주의."
+    },
+    {
+      "handle": "mujabon_life",
+      "label": "무자본으로 살아남기",
+      "topic": "자기계발·마인드셋",
+      "followers": 19384,
+      "status": "active",
+      "added_at": "2026-08-08",
+      "notes": "짧은 명령형 훅(“~해라”). 하루 여러 건 발행. 8/8에만 4건."
+    },
+    {
+      "handle": "badakstock",
+      "label": "나는바닥에서잡아",
+      "topic": "주식·시황",
+      "followers": 56536,
+      "status": "active",
+      "added_at": "2026-08-08",
+      "notes": "설명형 훅에 종목·수치를 그대로 넣는다. beyond.cho의 감탄형과 대조군."
+    },
+    {
+      "handle": "afternoonlibrary",
+      "label": "오후의 도서관",
+      "topic": "연금·노후 투자",
+      "followers": 14375,
+      "status": "active",
+      "added_at": "2026-08-08",
+      "notes": "<꺾쇠 제목> 포맷 고정. 발행 빈도 낮음(월 2~3건). 훅 유형 실험에 좋은 이질 표본."
+    },
+    {
+      "handle": "gten_btc",
+      "label": "지텐",
+      "topic": "비트코인·매크로",
+      "followers": 71970,
+      "status": "active",
+      "added_at": "2026-08-08",
+      "notes": "대화체 훅. 팔로워 최다(7.2만)."
+    },
+    {
+      "handle": "hot_hailee",
+      "label": null,
+      "topic": null,
+      "followers": null,
+      "status": "active",
+      "added_at": "2026-08-08",
+      "notes": "미조사"
+    }
+  ]
+}
