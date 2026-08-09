@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="spec" data-omd-id="DM-001">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="DM-001" />
+  <meta name="omd:kind" content="spec" />
+  <meta name="omd:stage" content="accepted" />
+  <meta name="omd:specType" content="data-model" />
+  <title>DM-001 · REL-001 파이프라인 스토어 계약</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <nav class="omd-crumb" aria-label="Breadcrumb">
+    <a class="omd-back" href="./index.html"><span class="omd-back-icon" aria-hidden="true">←</span> 목록으로</a>
+    <span aria-hidden="true">·</span>
+    <a href="../index.html">Catalogs</a>
+  </nav>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">DM-001</p>
+    <h1 data-omd-field="title">REL-001 파이프라인 스토어 계약</h1>
+    <dl class="omd-props">
+      <dt>stage</dt>
+      <dd data-omd-field="stage" data-omd-value="accepted">accepted</dd>
+      <dt>specType</dt>
+      <dd data-omd-field="specType">data-model</dd>
+      <dt>summary</dt>
+      <dd data-omd-field="summary">accounts.json · raw JSONL · normalized · DuckDB 단일 파일의 입출력과 append-only 관측 불변식.</dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Contract</h2>
+    <p><code>pnpm data:refresh</code>는 활성 계정을 순차 수집하고, raw를 정규화한 뒤 DuckDB 파일을 전체 재생성한다. 원본 권위는 JSONL이며 DuckDB는 파생물이다 (ADR-002).</p>
+
+    <h2>Entities</h2>
+    <ul>
+      <li><strong>Account</strong> — 레지스트리 행 (<code>accounts.json</code>): handle, alias?, active, last_fetched_at?</li>
+      <li><strong>RawObservation</strong> — append-only JSONL 라인 (퍼머링크 수집 결과)</li>
+      <li><strong>Post / Chain</strong> — 정규화 산출물</li>
+      <li><strong>Metric</strong> — (post_id, observed_at) 시계열; 덮어쓰기 금지</li>
+      <li><strong>Retention</strong> — 체인 초반 유지율 등 (POL-003)</li>
+      <li><strong>Store</strong> — DuckDB 파일 1개 (accounts, chains, posts, metrics, retention 테이블)</li>
+    </ul>
+
+    <h2>Fields</h2>
+    <table>
+      <tr><th>엔티티</th><th>핵심 필드</th></tr>
+      <tr><td>Account</td><td>handle (PK), active, last_fetched_at</td></tr>
+      <tr><td>Post</td><td>post_id, chain_id, account, position, permalink</td></tr>
+      <tr><td>Metric</td><td>post_id, observed_at, views?, likes? (결측=NULL, 0 아님)</td></tr>
+      <tr><td>Retention</td><td>chain_id, early_retention? (2번/1번), n 근거</td></tr>
+    </table>
+
+    <h2>Invariants</h2>
+    <ul>
+      <li>동시에 한 계정만 수집 (POL-001)</li>
+      <li>metrics는 append-only; 동일 (post_id, observed_at) 재기록 시 멱등 또는 거부</li>
+      <li>조회수 결측을 0으로 채우지 않는다 (POL-003)</li>
+      <li>단일 글 체인은 유지율 계산 제외</li>
+      <li>원문 raw는 git에 올리지 않는다 (POL-002)</li>
+      <li>스키마 변경 시 DuckDB는 마이그레이션 대신 전체 재생성</li>
+    </ul>
+
+    <h2>Acceptance</h2>
+    <ul>
+      <li>한 명령으로 raw→normalized→DuckDB까지 완료</li>
+      <li>스토어에 계정 ≥ 3, 체인 ≥ 1000</li>
+      <li>같은 post에 서로 다른 observed_at 행이 공존 가능</li>
+      <li>JSONL만으로 스토어 재생성 가능</li>
+    </ul>
+  </main>
+</body>
+</html>

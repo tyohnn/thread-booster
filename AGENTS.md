@@ -15,20 +15,46 @@ Threads 레퍼런스 계정을 수집·분석해 **독자가 어디서 이탈하
 - 데이터·백업은 git 밖에 있다. `data_export/` 를 지우면 재수집 외에는 복구 수단이 없다.
 - 로컬 단독 사용 도구다. 로그인·배포·멀티테넌시는 범위 밖이다 (ADR-003).
 
+## 아키텍처 (모노레포 · 포트/어댑터)
+
+이 저장소는 **모노레포**로 키운다. 앱·패키지·공유 코드를 한 워크스페이스에서 관리한다.
+
+구현은 **헥사고날(포트와 어댑터)** 을 선호한다.
+
+- **도메인/유스케이스(코어)** — 수집·정규화·적재·지표 규칙의 “무엇을 하는지”. 파일·HTTP·DuckDB·CLI에 직접 의존하지 않는다.
+- **포트** — 코어가 필요로 하는 인터페이스(저장소, 수집기, 시계, 로거 등).
+- **어댑터** — 포트의 실제 구현. 예: Threads SSR 수집, JSONL/파일 시스템, DuckDB 스토어, `pnpm` CLI 엔트리.
+- 의존 방향은 **바깥 → 안쪽만**. 어댑터가 코어를 알고, 코어는 어댑터를 모른다.
+- 새 기능은 “코어에 유스케이스를 두고, 필요한 포트만 만든 뒤, 어댑터를 붙인다” 순으로 간다.
+- 기존 `shared/crawler` 스크립트는 검증된 동작이다. REL-001에서 한 줄로 묶을 때도 **어댑터로 감싸 코어에 주입**하는 쪽을 우선하고, 스크립트에 도메인 규칙을 더 쌓지 않는다.
+
+## 테스트 (TDD · Vitest)
+
+**기본은 TDD다.** 도메인·유스케이스 규칙을 바꿀 때는 실패하는 테스트를 먼저 쓰고, 구현·어댑터는 그다음이다.
+
+- 러너: **Vitest** (`pnpm test` / 패키지에서 `pnpm test:watch`)
+- **도메인·유스케이스** — 순수 함수, 외부 I/O 없이 단위 테스트 필수
+- **어댑터** — 임시 디렉터리·픽스처로 스모크 (실 Threads 네트워크·실 raw 전문은 CI에 넣지 않는다)
+- 새 패키지/기능 PR은 관련 테스트 없이 머지하지 않는다
+- 수치·POL-003(상대 성과 ±2주 중앙값)·exit criteria 같은 규칙은 테스트에 고정해 문서와 어긋나지 않게 한다
+
 ## 구조
 
 ```
 .omd/dbs/               ★ 기획 SSOT (로컬 HTML 카탈로그)
-shared/crawler/         ★ 현행 수집기 (SSR JSON 파싱)
+packages/pipeline/      ★ REL-001 오케스트레이션 (헥사고날: domain · ports · adapters · cli)
+shared/crawler/         ★ 현행 수집기 어댑터 (SSR JSON 파싱) — 코어가 직접 의존하지 않음
   ssr.mjs               파서 (의존성 없음)
   fetch.mjs             퍼머링크 수집 · 로그인 불필요
   discover.mjs          신규 글 발견 · 로그인 불필요 · 커버리지 ~2일
   harvest.mjs           프로필 피드 전체 수확 · 로그인 필요 (login.mjs 선행)
   normalize.mjs         raw → posts · chains · metrics · retention
-  retention.mjs         초반 유지율
+  retention.mjs         초반 유지율 (레거시 CLI; 파이프라인은 domain/retention 사용)
+  accounts.json         계정 레지스트리 (F-001)
 shared/load_*.py        Notion 대량 적재 (한글 안전 경로 — 아래 함정 참조)
 data_export/raw/        수집 원본 JSONL · append-only
 data_export/normalized/ posts · chains · metrics(시계열) · retention
+data_export/store/      DuckDB 파생물 (ADR-002)
 templates/              훅 템플릿 카드 8종 + 안티패턴 + 체크리스트
 .claude/skills/thread-hook-analysis/   훅 분해·태깅 스킬 + 분석 스크립트
 ```
@@ -36,12 +62,23 @@ templates/              훅 템플릿 카드 8종 + 안티패턴 + 체크리스�
 ## 자주 쓰는 명령
 
 ```bash
+# 테스트 (TDD — Vitest)
+pnpm test
+
+# REL-001 파이프라인 — 기본은 기존 raw 정규화·DuckDB 적재 (네트워크 수집 없음)
+pnpm data:refresh
+pnpm data:verify
+pnpm accounts list
+pnpm accounts add some_handle --label "별칭"
+# 시드가 있을 때만 계정 순차 fetch 포함
+pnpm data:refresh -- --fetch
+
 # 훅 성과 조회 — 조회수 절대값 대신 rel_views(인접 시기 대비 배수)를 기본으로 써라
 python3 .claude/skills/thread-hook-analysis/scripts/relperf.py --account beyond.cho --top rel_views -n 15
 python3 .claude/skills/thread-hook-analysis/scripts/hooks.py --top retention --min-views 20000 -n 15
 python3 .claude/skills/thread-hook-analysis/scripts/hooks.py --sample 30 --min-views 5000
 
-# 수집 (한 번에 한 계정씩만)
+# 수집 (한 번에 한 계정씩만) — 레거시 직접 호출
 cd shared/crawler
 node fetch.mjs --codes seeds_<account>.txt --out ../../data_export/raw/hooks_<account>_<date>.jsonl
 node normalize.mjs --raw ../../data_export/raw/*.jsonl --out ../../data_export/normalized
@@ -62,6 +99,7 @@ node normalize.mjs --raw ../../data_export/raw/*.jsonl --out ../../data_export/n
 
 **지표** (POL-003)
 - 평균이 아니라 **중앙값**을 기본으로 쓴다. 조회수 분포가 극단적으로 치우쳐 있다.
+- **좋고 나쁨**은 절대값이 아니라, 같은 계정·게시 ±2주(총 4주) 이웃 지표 **중앙값** 대비 배수(rel)로 판정한다. 창 이웃 n이 너무 적으면 판정하지 않는다.
 - 모든 수치에 **표본 수(n)** 를 붙인다.
 - **결측을 보간하지 않는다.** 조회수 없는 글은 0이 아니라 빈칸이다. 단일 글 체인은 유지율 대상이 아니다.
 - 전부 **상관이며 인과가 아니다.** 표본은 계정 3개뿐이다. 해석 문구에 이를 명시한다.

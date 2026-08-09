@@ -5,101 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Release · catalog</title>
   <link rel="stylesheet" href="../../assets/omd-doc.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    darkMode: ["class"],
-    theme: {
-      extend: {
-        colors: {
-          border: "hsl(var(--border))",
-          input: "hsl(var(--input))",
-          ring: "hsl(var(--ring))",
-          background: "hsl(var(--background))",
-          foreground: "hsl(var(--foreground))",
-          primary: {
-            DEFAULT: "hsl(var(--primary))",
-            foreground: "hsl(var(--primary-foreground))",
-          },
-          secondary: {
-            DEFAULT: "hsl(var(--secondary))",
-            foreground: "hsl(var(--secondary-foreground))",
-          },
-          muted: {
-            DEFAULT: "hsl(var(--muted))",
-            foreground: "hsl(var(--muted-foreground))",
-          },
-          accent: {
-            DEFAULT: "hsl(var(--accent))",
-            foreground: "hsl(var(--accent-foreground))",
-          },
-          card: {
-            DEFAULT: "hsl(var(--card))",
-            foreground: "hsl(var(--card-foreground))",
-          },
-        },
-        borderRadius: {
-          lg: "var(--radius)",
-          md: "calc(var(--radius) - 2px)",
-          sm: "calc(var(--radius) - 4px)",
-        },
-        fontFamily: {
-          sans: ["var(--omd-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
-          mono: ["var(--omd-font-mono)", "ui-monospace", "monospace"],
-          display: ["var(--omd-font-display)", "ui-serif", "Georgia", "serif"],
-        },
-      },
-    },
-  };
-</script>
 </head>
-<body class="omd-catalog-page min-h-screen bg-background text-foreground antialiased">
-  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-    <nav class="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground" aria-label="Breadcrumb">
-      <a class="font-medium text-primary hover:underline underline-offset-4" href="../index.html">Catalogs</a>
-      <span aria-hidden="true">/</span>
-      <span class="text-foreground">Release</span>
-    </nav>
-    <header class="mb-6 rounded-xl border bg-card text-card-foreground shadow-sm px-5 py-4">
-      <p class="omd-id mb-2">release</p>
-      <h1 class="font-display text-2xl font-bold tracking-tight">Release</h1>
-    </header>
-    <main>
-      <div class="rounded-md border bg-card text-card-foreground shadow-sm">
-      <div class="relative w-full overflow-auto">
-        <table class="w-full caption-bottom text-sm">
-          <thead class="[&_tr]:border-b">
-            <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
-              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7.5rem]">ID</th>
-              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Title</th>
-              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Summary</th>
-              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7rem]">Status</th>
-            </tr>
-          </thead>
-          <tbody class="[&_tr:last-child]:border-0">
+<body class="omd-catalog-page">
+  <nav class="omd-crumb"><a href="../index.html">Catalogs</a> / Release</nav>
+  <header class="omd-doc-header"><p class="omd-id">release</p><h1>Release</h1></header>
+  <main>
+    <table>
+      <thead><tr><th>ID</th><th>Title</th><th>Summary</th><th>Status</th></tr></thead>
+      <tbody>
             <tr class="border-b transition-colors hover:bg-muted/50">
               <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./REL-001.html"><span class="omd-id">REL-001</span></a></td>
               <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./REL-001.html">v0.1 데이터 파이프라인</a></td>
               <td class="p-4 align-middle text-muted-foreground max-w-md">수집·정규화·적재를 한 번의 명령으로 돌리고, 대시보드가 읽을 단일 로컬 스토어를 만든다</td>
-              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="계획">계획</span></td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold" data-status="active">active</span></td>
             </tr>
             <tr class="border-b transition-colors hover:bg-muted/50">
               <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./REL-002.html"><span class="omd-id">REL-002</span></a></td>
               <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./REL-002.html">v1.0 레퍼런스·이탈·템플릿</a></td>
               <td class="p-4 align-middle text-muted-foreground max-w-md">체인이 어디서 끊기는지 눈으로 보고, 살아남은 구조를 템플릿으로 저장할 수 있다</td>
-              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="계획">계획</span></td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold" data-status="계획">계획</span></td>
             </tr>
             <tr class="border-b transition-colors hover:bg-muted/50">
               <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./REL-003.html"><span class="omd-id">REL-003</span></a></td>
               <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./REL-003.html">v2.0 우리 계정 발행·성과</a></td>
               <td class="p-4 align-middle text-muted-foreground max-w-md">템플릿으로 쓴 글을 실제로 발행하고, 우리 계정 기준선을 확보한다</td>
-              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="계획">계획</span></td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold" data-status="계획">계획</span></td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    </main>
-  </div>
+      </tbody>
+    </table>
+  </main>
 </body>
 </html>

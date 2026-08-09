@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="omd:id" content="ADR-002" />
   <meta name="omd:kind" content="adr" />
-  <meta name="omd:status" content="제안" />
-  <meta name="omd:stage" content="제안" />
+  <meta name="omd:status" content="채택" />
+  <meta name="omd:stage" content="채택" />
   <title>ADR-002 · 로컬 스토어는 DuckDB 파일 하나로 간다</title>
   <link rel="stylesheet" href="../../assets/omd-doc.css" />
 </head>
@@ -16,11 +16,11 @@
     <h1 data-omd-field="title">로컬 스토어는 DuckDB 파일 하나로 간다</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status" data-omd-value="제안">제안</dd>
+      <dd data-omd-field="status" data-omd-value="채택">채택</dd>
       <dt>stage</dt>
-      <dd data-omd-field="stage" data-omd-value="제안">제안</dd>
+      <dd data-omd-field="stage" data-omd-value="채택">채택</dd>
       <dt>summary</dt>
-      <dd data-omd-field="summary">로컬 스토어는 DuckDB 파일 하나로 간다</dd>
+      <dd data-omd-field="summary">로컬 스토어는 DuckDB 파일 하나로 간다. REL-001(F-007)의 전제다.</dd>
       <dt>영역</dt>
       <dd data-omd-field="영역">데이터 모델</dd>
       <dt>결정일</dt>
@@ -29,21 +29,23 @@
   </header>
   <main class="omd-doc-body">
     <h2>Context</h2>
-    <p>로컬 단독 실행이고 쓰기는 수집할 때만, 읽기는 집계·정렬·조인이 대부분이다. 관측 시계열은 append-only로 계속 자란다.</p>
+    <p>로컬 단독 실행이고 쓰기는 수집할 때만, 읽기는 집계·정렬·조인이 대부분이다. 관측 시계열은 append-only로 계속 자란다. F-007(로컬 스토어 빌드)는 엔진 선택이 없으면 착수할 수 없다.</p>
 
     <h2>Decision</h2>
     <p><strong>DuckDB 파일 한 개</strong>를 스토어로 쓴다. 원본 JSONL은 그대로 보존하고, DuckDB는 언제든 재생성 가능한 파생물로 취급한다.</p>
+    <p>채택일: 2026-08-09 (REL-001 문서 잠금).</p>
 
     <h2>Consequences</h2>
     <ul>
-    <li>정규화 단계가 DuckDB 적재까지 책임진다</li>
+    <li>정규화 단계가 DuckDB 적재까지 책임진다 (F-007)</li>
     <li>스키마 변경 시 마이그레이션 대신 <strong>전체 재생성</strong>한다. 원본이 JSONL로 남아 있어 가능하다</li>
+    <li>SQLite는 기각한다 — 이 규모에서 충분할 수 있으나, 유지율·시점별 성장·유형별 중앙값 질의가 컬럼 지향에 더 맞다</li>
     </ul>
 
     <h2>Alternatives considered</h2>
     <table>
     <tr><th>대안</th><th>평가</th></tr>
-    <tr><td>SQLite</td><td>익숙하고 안정적이지만 집계 성능과 분석 함수가 약하다. 다만 이 규모(2만 행)에서는 실질 차이가 크지 않을 수 있다</td></tr>
+    <tr><td>SQLite</td><td>익숙하고 안정적이지만 집계·분석 함수가 약하다. 이 규모(2만 행)에서는 실질 차이가 크지 않을 수 있으나 DuckDB를 채택한다</td></tr>
     <tr><td>JSON 파일 직접 읽기</td><td>지금 방식. 매번 전체를 메모리에 올려야 하고 조인이 코드로 흩어진다</td></tr>
     </table>
 
@@ -54,9 +56,9 @@
     <li>파일 하나라 백업·삭제·재생성이 단순하다</li>
     </ul>
 
-    <h2>미결</h2>
+    <h2>미결 (REL-001 비차단)</h2>
     <ul>
-    <li>대시보드가 DuckDB를 서버에서 읽을지, 브라우저(WASM)로 내려보낼지</li>
+    <li>대시보드가 DuckDB를 서버에서 읽을지, 브라우저(WASM)로 내려보낼지 — <strong>v1.0 대시보드 설계 시</strong> 재논의. CLI 적재만 하는 REL-001에는 영향 없다</li>
     </ul>
   </main>
 </body>

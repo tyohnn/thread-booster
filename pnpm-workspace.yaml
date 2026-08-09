@@ -1,0 +1,10 @@
+packages:
+  - 'packages/*'
+  - 'shared/crawler'
+
+allowBuilds:
+  esbuild: true
+
+onlyBuiltDependencies:
+  - duckdb
+  - esbuild
