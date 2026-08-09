@@ -21,7 +21,9 @@
   원래 ID·폐기 사유·대체 항목을 채운다.
 
 **파일 작업**
-- 이 저장소는 git이 아니다. 파일을 지우기 전에 `tar -czf`로 백업하고, 백업 파일 수와 원본 파일 수를 대조해 확인한다.
+- **공개 저장소다.** 커밋 전 `git status --short` 로 무엇이 올라가는지 반드시 훑고,
+  수집 원문·로그인 세션(`shared/crawler/.profile/`)·심링크가 섞였는지 확인한다.
+- git 이 추적하지 않는 것(`data_export/`)을 지울 때는 `tar -czf` 로 먼저 백업하고, 백업 파일 수와 원본 파일 수를 대조한다.
 - 문서에서 경로를 지우면 그 경로를 참조하는 다른 문서도 같이 고친다
   (`README.md` · `NOTION_SYNC.md` · `templates/README.md` · 스킬의 `SKILL.md`·`references/`).
 

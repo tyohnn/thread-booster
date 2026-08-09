@@ -8,7 +8,10 @@ Threads 레퍼런스 계정을 수집·분석해 **독자가 어디서 이탈하
 - **기획 SSOT는 Notion이다.** [Thread Booster > 제품 기획 · 기능 명세](https://app.notion.com/p/3b6346dac4568080a6b1c8b24aa7b65e)
   — PRD 4 · User Story 14 · Features 21 · Release 3 · ADR 4 · 정책 4 · IA 13 · Pages 10 · Layouts 4 · 화면 상태 10.
   제품 관련 결정을 코드에서 추측하지 말고 **거기서 읽어라.**
-- **git 저장소가 아니다.** 삭제·덮어쓰기는 되돌릴 수 없다. 지우기 전에 반드시 백업 tar를 만든다.
+- **공개 GitHub 저장소다** — `tyohnn/thread-booster` (PUBLIC). 커밋하는 것은 전부 외부에 공개된다.
+  **수집 원문(`data_export/`)은 제3자 게시물이라 `.gitignore` 로 제외돼 있다** (POL-002). 절대 강제 추가하지 마라.
+  새 산출물을 커밋할 때도 남의 글 전문이 섞였는지 먼저 확인한다. 분석용 짧은 인용은 허용된다.
+- 데이터·백업은 git 밖에 있다. `data_export/` 를 지우면 재수집 외에는 복구 수단이 없다.
 - 로컬 단독 사용 도구다. 로그인·배포·멀티테넌시는 범위 밖이다 (ADR-003).
 
 ## 구조
