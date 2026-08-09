@@ -15,7 +15,7 @@
     <h1 data-omd-field="title">카드 그리드</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>summary</dt>
       <dd data-omd-field="summary">본문 골격 · 정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</dd>
       <dt>tier</dt>
@@ -29,21 +29,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Role</h2>
-    <p>본문 골격 · 정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</p>
-    <h2>Regions</h2>
-    <p>정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</p>
-    <h2>Rules</h2>
-    <ul>
-      <li>카드는 <strong>슬롯 골격을 그대로 보여준다.</strong> 예시 문장이 아니라 <code>{ACTOR}</code> 같은 빈칸 형태여야 재사용할 때 바로 갈아끼울 수 있다</li>
-      <li><strong>표본 3건 미만은 수치를 띄우지 않는다.</strong> &quot;근거 부족&quot; 배지로 대체한다 (F-021)</li>
-      <li>기본 정렬은 성과순. 단 정렬 기준이 중앙 유지율인지 배수인지를 칩으로 명시한다</li>
-      <li>마지막 칸의 점선 카드는 체인에서 승격하는 진입점이다 — 빈 상태에서도 동일하게 보인다</li>
-    </ul>
-    <h2>Responsive notes</h2>
-    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -146,6 +132,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -221,5 +208,20 @@
 </div>
 </div>
 </section>
+<main class="omd-doc-body">
+    <h2>Role</h2>
+    <p>본문 골격 · 정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</p>
+    <h2>Regions</h2>
+    <p>정렬·필터 칩바 · 반응형 카드 그리드(제목 · 슬롯 골격 · 기법 태그 · 성과 롤업) · 마지막 칸은 생성 카드</p>
+    <h2>Rules</h2>
+    <ul>
+      <li>카드는 <strong>슬롯 골격을 그대로 보여준다.</strong> 예시 문장이 아니라 <code>{ACTOR}</code> 같은 빈칸 형태여야 재사용할 때 바로 갈아끼울 수 있다</li>
+      <li><strong>표본 3건 미만은 수치를 띄우지 않는다.</strong> &quot;근거 부족&quot; 배지로 대체한다 (F-021)</li>
+      <li>기본 정렬은 성과순. 단 정렬 기준이 중앙 유지율인지 배수인지를 칩으로 명시한다</li>
+      <li>마지막 칸의 점선 카드는 체인에서 승격하는 진입점이다 — 빈 상태에서도 동일하게 보인다</li>
+    </ul>
+    <h2>Responsive notes</h2>
+    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
+  </main>
 </body>
 </html>

@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">템플릿 상세 · 연결 체인 없음</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">매핑 재구축 직후 해당 템플릿에 연결된 체인이 0건인 상태</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">체인이 1건 이상 매핑되면 근거 부족 또는 기본 상태로 전환</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">빈 상태</dd>
+      <dd data-omd-field="stateType" data-omd-value="빈 상태">빈 상태</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-32.html">SCR-32</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>매핑 재구축 직후 해당 템플릿에 연결된 체인이 0건인 상태</p>
-    <h2>What the user sees</h2>
-    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
-    <h2>Exit path</h2>
-    <p>체인이 1건 이상 매핑되면 근거 부족 또는 기본 상태로 전환</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -97,6 +90,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a}
@@ -121,5 +115,13 @@
   <div class="dim">연결된 체인이 없습니다. 구 chain_id 매핑이 무효화됐습니다 (PRD-004) — 재매핑 실행 전까지 성과 영역이 비어 있습니다.</div>
 </div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>매핑 재구축 직후 해당 템플릿에 연결된 체인이 0건인 상태</p>
+    <h2>What the user sees</h2>
+    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>체인이 1건 이상 매핑되면 근거 부족 또는 기본 상태로 전환</p>
+  </main>
 </body>
 </html>

@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">템플릿 목록 · 로딩</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">템플릿 목록 화면 진입 또는 새로고침으로 데이터 질의가 진행 중일 때</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">질의 응답 도착 시 기본 · 빈 상태 · 부분 데이터 중 해당 상태로 자동 전환</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">로딩</dd>
+      <dd data-omd-field="stateType" data-omd-value="로딩">로딩</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-31.html">SCR-31</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>템플릿 목록 화면 진입 또는 새로고침으로 데이터 질의가 진행 중일 때</p>
-    <h2>What the user sees</h2>
-    <p>스켈레톤·플레이스홀더가 실제 열/카드 폭과 맞게 표시된다. 레이아웃이 데이터 도착 시 튀지 않는다.</p>
-    <h2>Exit path</h2>
-    <p>질의 응답 도착 시 기본 · 빈 상태 · 부분 데이터 중 해당 상태로 자동 전환</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -105,6 +98,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a}
@@ -137,5 +131,13 @@
   <div class="card"><div class="sk" style="width:55%;height:13px"></div><div class="sk" style="height:34px"></div><div class="sk" style="width:75%"></div></div>
 </div></div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>템플릿 목록 화면 진입 또는 새로고침으로 데이터 질의가 진행 중일 때</p>
+    <h2>What the user sees</h2>
+    <p>스켈레톤·플레이스홀더가 실제 열/카드 폭과 맞게 표시된다. 레이아웃이 데이터 도착 시 튀지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>질의 응답 도착 시 기본 · 빈 상태 · 부분 데이터 중 해당 상태로 자동 전환</p>
+  </main>
 </body>
 </html>

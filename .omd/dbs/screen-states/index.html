@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ko" data-omd-catalog="screen-states">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page States · catalog</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: ["class"],
+    theme: {
+      extend: {
+        colors: {
+          border: "hsl(var(--border))",
+          input: "hsl(var(--input))",
+          ring: "hsl(var(--ring))",
+          background: "hsl(var(--background))",
+          foreground: "hsl(var(--foreground))",
+          primary: {
+            DEFAULT: "hsl(var(--primary))",
+            foreground: "hsl(var(--primary-foreground))",
+          },
+          secondary: {
+            DEFAULT: "hsl(var(--secondary))",
+            foreground: "hsl(var(--secondary-foreground))",
+          },
+          muted: {
+            DEFAULT: "hsl(var(--muted))",
+            foreground: "hsl(var(--muted-foreground))",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--accent))",
+            foreground: "hsl(var(--accent-foreground))",
+          },
+          card: {
+            DEFAULT: "hsl(var(--card))",
+            foreground: "hsl(var(--card-foreground))",
+          },
+        },
+        borderRadius: {
+          lg: "var(--radius)",
+          md: "calc(var(--radius) - 2px)",
+          sm: "calc(var(--radius) - 4px)",
+        },
+        fontFamily: {
+          sans: ["var(--omd-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+          mono: ["var(--omd-font-mono)", "ui-monospace", "monospace"],
+          display: ["var(--omd-font-display)", "ui-serif", "Georgia", "serif"],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="omd-catalog-page min-h-screen bg-background text-foreground antialiased">
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <nav class="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground" aria-label="Breadcrumb">
+      <a class="font-medium text-primary hover:underline underline-offset-4" href="../index.html">Catalogs</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-foreground">Page States</span>
+    </nav>
+    <header class="mb-6 rounded-xl border bg-card text-card-foreground shadow-sm px-5 py-4">
+      <p class="omd-id mb-2">screen-states</p>
+      <h1 class="font-display text-2xl font-bold tracking-tight">Page States</h1>
+    </header>
+    <main>
+      <div class="rounded-md border bg-card text-card-foreground shadow-sm">
+      <div class="relative w-full overflow-auto">
+        <table class="w-full caption-bottom text-sm">
+          <thead class="[&_tr]:border-b">
+            <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7.5rem]">ID</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Title</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Summary</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7rem]">Status</th>
+            </tr>
+          </thead>
+          <tbody class="[&_tr:last-child]:border-0">
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-001-1.html"><span class="omd-id">STA-001-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-001-1.html">대시보드 홈 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-001-2.html"><span class="omd-id">STA-001-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-001-2.html">대시보드 홈 · 초기 로딩</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-001-3.html"><span class="omd-id">STA-001-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-001-3.html">대시보드 홈 · 첫 실행 (수집 이력 없음)</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-001-4.html"><span class="omd-id">STA-001-4</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-001-4.html">대시보드 홈 · 데이터 오래됨</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-011-1.html"><span class="omd-id">STA-011-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-011-1.html">계정 목록 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-011-2.html"><span class="omd-id">STA-011-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-011-2.html">계정 목록 · 로딩</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-011-3.html"><span class="omd-id">STA-011-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-011-3.html">계정 목록 · 등록된 계정 없음</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-011-4.html"><span class="omd-id">STA-011-4</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-011-4.html">계정 목록 · 정규화 대기 계정 포함</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-012-1.html"><span class="omd-id">STA-012-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-012-1.html">체인 목록 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-012-2.html"><span class="omd-id">STA-012-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-012-2.html">체인 목록 · 로딩</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-012-3.html"><span class="omd-id">STA-012-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-012-3.html">체인 목록 · 스토어 비어 있음</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-012-4.html"><span class="omd-id">STA-012-4</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-012-4.html">체인 목록 · 필터 결과 0건</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-012-5.html"><span class="omd-id">STA-012-5</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-012-5.html">체인 목록 · 유지율 결측 다수</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-012-6.html"><span class="omd-id">STA-012-6</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-012-6.html">체인 목록 · 스토어 로드 실패</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-012-7.html"><span class="omd-id">STA-012-7</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-012-7.html">체인 목록 · 데이터 오래됨</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-013-1.html"><span class="omd-id">STA-013-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-013-1.html">체인 상세 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-013-2.html"><span class="omd-id">STA-013-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-013-2.html">체인 상세 · 로딩</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-013-3.html"><span class="omd-id">STA-013-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-013-3.html">체인 상세 · 완주율 없음</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-013-4.html"><span class="omd-id">STA-013-4</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-013-4.html">체인 상세 · 단일 글 체인</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-013-5.html"><span class="omd-id">STA-013-5</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-013-5.html">체인 상세 · 글 순번 누락</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-013-6.html"><span class="omd-id">STA-013-6</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-013-6.html">체인 상세 · 원본 삭제됨</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-013-7.html"><span class="omd-id">STA-013-7</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-013-7.html">체인 상세 · 존재하지 않는 체인</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-014-1.html"><span class="omd-id">STA-014-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-014-1.html">글 검색 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-014-2.html"><span class="omd-id">STA-014-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-014-2.html">글 검색 · 입력 전</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-014-3.html"><span class="omd-id">STA-014-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-014-3.html">글 검색 · 검색 중</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-014-4.html"><span class="omd-id">STA-014-4</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-014-4.html">글 검색 · 결과 없음</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-031-1.html"><span class="omd-id">STA-031-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-031-1.html">템플릿 목록 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-031-2.html"><span class="omd-id">STA-031-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-031-2.html">템플릿 목록 · 로딩</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-031-3.html"><span class="omd-id">STA-031-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-031-3.html">템플릿 목록 · 템플릿 0개</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-031-4.html"><span class="omd-id">STA-031-4</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-031-4.html">템플릿 목록 · 성과 근거 부족</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-031-5.html"><span class="omd-id">STA-031-5</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-031-5.html">템플릿 목록 · 매핑 무효화</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-032-1.html"><span class="omd-id">STA-032-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-032-1.html">템플릿 상세 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-032-2.html"><span class="omd-id">STA-032-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-032-2.html">템플릿 상세 · 근거 부족</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-032-3.html"><span class="omd-id">STA-032-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-032-3.html">템플릿 상세 · 연결 체인 없음</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-033-1.html"><span class="omd-id">STA-033-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-033-1.html">심리 기법 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-033-2.html"><span class="omd-id">STA-033-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-033-2.html">심리 기법 · 계정 간 방향 엇갈림</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-033-3.html"><span class="omd-id">STA-033-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-033-3.html">심리 기법 · 안티 기법 확신도 낮음</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-041-1.html"><span class="omd-id">STA-041-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-041-1.html">수집 콘솔 · 기본(유휴)</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-041-2.html"><span class="omd-id">STA-041-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-041-2.html">수집 콘솔 · 진행 중</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-041-3.html"><span class="omd-id">STA-041-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-041-3.html">수집 콘솔 · 다른 계정 실행 중</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-041-4.html"><span class="omd-id">STA-041-4</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-041-4.html">수집 콘솔 · 실패 일부</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-041-5.html"><span class="omd-id">STA-041-5</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-041-5.html">수집 콘솔 · 차단 의심</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-042-1.html"><span class="omd-id">STA-042-1</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-042-1.html">계정 레지스트리 · 기본</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-042-2.html"><span class="omd-id">STA-042-2</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-042-2.html">계정 레지스트리 · 등록 없음</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./STA-042-3.html"><span class="omd-id">STA-042-3</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./STA-042-3.html">계정 레지스트리 · 중복 핸들</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">—</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </main>
+  </div>
+</body>
+</html>

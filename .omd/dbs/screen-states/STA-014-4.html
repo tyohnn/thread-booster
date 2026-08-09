@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">글 검색 · 결과 없음</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">검색어는 있으나 일치 0건</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">검색어 수정 또는 지우기</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">빈 상태</dd>
+      <dd data-omd-field="stateType" data-omd-value="빈 상태">빈 상태</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-14.html">SCR-14</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>검색어는 있으나 일치 0건</p>
-    <h2>What the user sees</h2>
-    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
-    <h2>Exit path</h2>
-    <p>검색어 수정 또는 지우기</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -96,6 +89,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff}
@@ -119,5 +113,13 @@
 #wf-body .dim{color:var(--mut);font-size:11px}</style>
   <div id="wf-body" class="omd-mock"><div class="omd-wire-body-only"><div class="case"><div class="inp" style="color:var(--ink)">스테이블코인 규제</div><div class="mid"><div class="msg">일치하는 글이 없습니다</div><div>철자나 띄어쓰기를 바꿔 다시 검색해보세요. 형태소 분석은 아직 지원하지 않습니다.</div></div></div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>검색어는 있으나 일치 0건</p>
+    <h2>What the user sees</h2>
+    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>검색어 수정 또는 지우기</p>
+  </main>
 </body>
 </html>

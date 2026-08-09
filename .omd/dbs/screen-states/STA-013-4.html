@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">체인 상세 · 단일 글 체인</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">chain_len = 1 — 현재 173개</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">해당 없음 — 구조상 퍼널이 존재하지 않는 체인이다</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">빈 상태</dd>
+      <dd data-omd-field="stateType" data-omd-value="빈 상태">빈 상태</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-13.html">SCR-13</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>chain_len = 1 — 현재 173개</p>
-    <h2>What the user sees</h2>
-    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
-    <h2>Exit path</h2>
-    <p>해당 없음 — 구조상 퍼널이 존재하지 않는 체인이다</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -114,6 +107,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a;--gap:#c9c9c4}
@@ -155,5 +149,13 @@
   <div class="dim" style="margin-top:8px">퍼널 영역을 빈 박스로 남기지 않고 통째로 감춘다. 대신 그 이유를 한 줄로 쓴다</div>
 </div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>chain_len = 1 — 현재 173개</p>
+    <h2>What the user sees</h2>
+    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>해당 없음 — 구조상 퍼널이 존재하지 않는 체인이다</p>
+  </main>
 </body>
 </html>

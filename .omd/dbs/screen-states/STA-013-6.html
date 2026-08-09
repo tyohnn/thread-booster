@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">체인 상세 · 원본 삭제됨</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">퍼머링크가 404 — 원본 삭제 또는 비공개 전환</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">해당 없음 — 수집 시점 스냅샷으로만 열람한다</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">스코프 밖</dd>
+      <dd data-omd-field="stateType" data-omd-value="스코프 밖">스코프 밖</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-13.html">SCR-13</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>퍼머링크가 404 — 원본 삭제 또는 비공개 전환</p>
-    <h2>What the user sees</h2>
-    <p>현재 관측이 유효하지 않거나 원본이 사라진 사실을 배너로 알리고, 가능한 다음 행동을 안내한다.</p>
-    <h2>Exit path</h2>
-    <p>해당 없음 — 수집 시점 스냅샷으로만 열람한다</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -113,6 +106,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a;--gap:#c9c9c4}
@@ -153,5 +147,13 @@
   <div class="dim">수집 당시 스냅샷으로 계속 열람할 수 있다. 다만 지표는 갱신되지 않으므로 <b>고정 시점</b>임을 명시한다. 원본 링크 버튼은 비활성.</div>
 </div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>퍼머링크가 404 — 원본 삭제 또는 비공개 전환</p>
+    <h2>What the user sees</h2>
+    <p>현재 관측이 유효하지 않거나 원본이 사라진 사실을 배너로 알리고, 가능한 다음 행동을 안내한다.</p>
+    <h2>Exit path</h2>
+    <p>해당 없음 — 수집 시점 스냅샷으로만 열람한다</p>
+  </main>
 </body>
 </html>

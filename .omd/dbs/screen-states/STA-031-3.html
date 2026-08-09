@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">템플릿 목록 · 템플릿 0개</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">등록된 템플릿이 0개인 계정 · 워크스페이스에서 목록 진입</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">체인 목록에서 템플릿으로 승격하면 항목이 생겨 기본 상태로 전환</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">빈 상태</dd>
+      <dd data-omd-field="stateType" data-omd-value="빈 상태">빈 상태</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-31.html">SCR-31</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>등록된 템플릿이 0개인 계정 · 워크스페이스에서 목록 진입</p>
-    <h2>What the user sees</h2>
-    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
-    <h2>Exit path</h2>
-    <p>체인 목록에서 템플릿으로 승격하면 항목이 생겨 기본 상태로 전환</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -106,6 +99,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a}
@@ -139,5 +133,13 @@
   <div><span class="btn">유지율 상위 체인 보기</span><span class="btn sec">직접 만들기</span></div>
 </div></div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>등록된 템플릿이 0개인 계정 · 워크스페이스에서 목록 진입</p>
+    <h2>What the user sees</h2>
+    <p>안내 문구와 다음 행동(CTA)이 본문 중앙에 보인다. 빈 목록만 두지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>체인 목록에서 템플릿으로 승격하면 항목이 생겨 기본 상태로 전환</p>
+  </main>
 </body>
 </html>

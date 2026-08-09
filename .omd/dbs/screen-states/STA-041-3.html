@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">수집 콘솔 · 다른 계정 실행 중</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">다른 계정의 수집이 이미 실행 중인 상태에서 신규 수집을 시도할 때</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">실행 중인 수집이 끝나면 다른 계정 수집 버튼이 다시 활성화된다</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">권한 없음</dd>
+      <dd data-omd-field="stateType" data-omd-value="권한 없음">권한 없음</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-41.html">SCR-41</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>다른 계정의 수집이 이미 실행 중인 상태에서 신규 수집을 시도할 때</p>
-    <h2>What the user sees</h2>
-    <p>실행 불가 사유와 대기/해제 조건을 명시하고, 다른 계정 수집 버튼을 비활성화한다.</p>
-    <h2>Exit path</h2>
-    <p>실행 중인 수집이 끝나면 다른 계정 수집 버튼이 다시 활성화된다</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -106,6 +99,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff;--warn:#c2703a;--err:#b3413a;--ok:#3f7d4e}
@@ -139,5 +133,13 @@
   <div class="dim">2026-08-01 두 계정 병렬 수집이 소프트 차단을 불렀다. UI에서 아예 막는다 (POL-001)</div>
 </div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>다른 계정의 수집이 이미 실행 중인 상태에서 신규 수집을 시도할 때</p>
+    <h2>What the user sees</h2>
+    <p>실행 불가 사유와 대기/해제 조건을 명시하고, 다른 계정 수집 버튼을 비활성화한다.</p>
+    <h2>Exit path</h2>
+    <p>실행 중인 수집이 끝나면 다른 계정 수집 버튼이 다시 활성화된다</p>
+  </main>
 </body>
 </html>

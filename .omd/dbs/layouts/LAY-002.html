@@ -15,7 +15,7 @@
     <h1 data-omd-field="title">요약 패널 + 필터바 + 표</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>summary</dt>
       <dd data-omd-field="summary">본문 골격 · 상단 요약(KPI + 분포 히스토그램 + 상관 경고) · 칩 필터바(계정·기간·훅·최소 조회 + 프리셋) · 정렬 가능 표</dd>
       <dt>tier</dt>
@@ -33,22 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Role</h2>
-    <p>본문 골격 · 상단 요약(KPI + 분포 히스토그램 + 상관 경고) · 칩 필터바(계정·기간·훅·최소 조회 + 프리셋) · 정렬 가능 표</p>
-    <h2>Regions</h2>
-    <p>상단 요약(KPI + 분포 히스토그램 + 상관 경고) · 칩 필터바(계정·기간·훅·최소 조회 + 프리셋) · 정렬 가능 표</p>
-    <h2>Rules</h2>
-    <ul>
-      <li><strong>이탈 분석을 흡수한 골격이다.</strong> 유지율 분포·훅 유형 비교를 상단 패널에서 보여주고, <code>헛돈 훅</code> · <code>숨은 체인</code> 은 프리셋 필터로 처리한다 (F-015 · F-016)</li>
-      <li>요약 패널은 <strong>현재 필터 기준으로 재계산</strong>된다. 전체 상수를 고정 노출하지 않는다</li>
-      <li>&quot;상관이며 인과가 아님 · 표본 계정 3개&quot; 경고를 요약 패널에 고정한다 (POL-003)</li>
-      <li>결측 행(조회수 없음)은 빈칸이며 정렬 시 맨 뒤로 보낸다. 0 으로 채우지 않는다</li>
-      <li>행 클릭은 상세(LAY-003)로 이동</li>
-    </ul>
-    <h2>Responsive notes</h2>
-    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -155,6 +140,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -231,5 +217,21 @@
 </table>
 </div>
 </section>
+<main class="omd-doc-body">
+    <h2>Role</h2>
+    <p>본문 골격 · 상단 요약(KPI + 분포 히스토그램 + 상관 경고) · 칩 필터바(계정·기간·훅·최소 조회 + 프리셋) · 정렬 가능 표</p>
+    <h2>Regions</h2>
+    <p>상단 요약(KPI + 분포 히스토그램 + 상관 경고) · 칩 필터바(계정·기간·훅·최소 조회 + 프리셋) · 정렬 가능 표</p>
+    <h2>Rules</h2>
+    <ul>
+      <li><strong>이탈 분석을 흡수한 골격이다.</strong> 유지율 분포·훅 유형 비교를 상단 패널에서 보여주고, <code>헛돈 훅</code> · <code>숨은 체인</code> 은 프리셋 필터로 처리한다 (F-015 · F-016)</li>
+      <li>요약 패널은 <strong>현재 필터 기준으로 재계산</strong>된다. 전체 상수를 고정 노출하지 않는다</li>
+      <li>&quot;상관이며 인과가 아님 · 표본 계정 3개&quot; 경고를 요약 패널에 고정한다 (POL-003)</li>
+      <li>결측 행(조회수 없음)은 빈칸이며 정렬 시 맨 뒤로 보낸다. 0 으로 채우지 않는다</li>
+      <li>행 클릭은 상세(LAY-003)로 이동</li>
+    </ul>
+    <h2>Responsive notes</h2>
+    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
+  </main>
 </body>
 </html>

@@ -16,13 +16,13 @@
     <h1 data-omd-field="title">심리 기법 · 안티 기법 확신도 낮음</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>trigger</dt>
       <dd data-omd-field="trigger">거의 동일한 훅 텍스트인데 성과가 100배 넘게 갈린 사례가 있어 훅 텍스트만으로 효과를 확정할 수 없을 때</dd>
       <dt>exit</dt>
       <dd data-omd-field="exit">해당 없음 — 표본이 늘어 확신도가 올라가면 배지 등급만 상향된다</dd>
       <dt>stateType</dt>
-      <dd data-omd-field="stateType">부분 데이터</dd>
+      <dd data-omd-field="stateType" data-omd-value="부분 데이터">부분 데이터</dd>
       <dt>Page</dt>
       <dd data-omd-rel="pages">
         <a href="../pages/SCR-33.html">SCR-33</a>
@@ -33,14 +33,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Trigger</h2>
-    <p>거의 동일한 훅 텍스트인데 성과가 100배 넘게 갈린 사례가 있어 훅 텍스트만으로 효과를 확정할 수 없을 때</p>
-    <h2>What the user sees</h2>
-    <p>가능한 데이터는 그대로 보여주고, 결측·근거 부족은 배너·배지·빈칸(—)으로 명시한다. 0으로 채우지 않는다.</p>
-    <h2>Exit path</h2>
-    <p>해당 없음 — 표본이 늘어 확신도가 올라가면 배지 등급만 상향된다</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -94,6 +87,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body{--bd:#e3e3e0;--mut:#8b8b85;--ink:#26251f;--acc:#3b6ea5;--bg:#fbfbfa;--panel:#fff}
@@ -115,5 +109,13 @@
   이런 항목은 값 옆에 <span class="warn">확신도: 낮음</span> 배지를 붙이고, 클릭하면 근거가 된 대조 사례를 보여준다.</div>
 </div></div></div>
 </section>
+<main class="omd-doc-body">
+    <h2>Trigger</h2>
+    <p>거의 동일한 훅 텍스트인데 성과가 100배 넘게 갈린 사례가 있어 훅 텍스트만으로 효과를 확정할 수 없을 때</p>
+    <h2>What the user sees</h2>
+    <p>가능한 데이터는 그대로 보여주고, 결측·근거 부족은 배너·배지·빈칸(—)으로 명시한다. 0으로 채우지 않는다.</p>
+    <h2>Exit path</h2>
+    <p>해당 없음 — 표본이 늘어 확신도가 올라가면 배지 등급만 상향된다</p>
+  </main>
 </body>
 </html>

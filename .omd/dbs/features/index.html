@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko" data-omd-catalog="features">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Features · catalog</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: ["class"],
+    theme: {
+      extend: {
+        colors: {
+          border: "hsl(var(--border))",
+          input: "hsl(var(--input))",
+          ring: "hsl(var(--ring))",
+          background: "hsl(var(--background))",
+          foreground: "hsl(var(--foreground))",
+          primary: {
+            DEFAULT: "hsl(var(--primary))",
+            foreground: "hsl(var(--primary-foreground))",
+          },
+          secondary: {
+            DEFAULT: "hsl(var(--secondary))",
+            foreground: "hsl(var(--secondary-foreground))",
+          },
+          muted: {
+            DEFAULT: "hsl(var(--muted))",
+            foreground: "hsl(var(--muted-foreground))",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--accent))",
+            foreground: "hsl(var(--accent-foreground))",
+          },
+          card: {
+            DEFAULT: "hsl(var(--card))",
+            foreground: "hsl(var(--card-foreground))",
+          },
+        },
+        borderRadius: {
+          lg: "var(--radius)",
+          md: "calc(var(--radius) - 2px)",
+          sm: "calc(var(--radius) - 4px)",
+        },
+        fontFamily: {
+          sans: ["var(--omd-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+          mono: ["var(--omd-font-mono)", "ui-monospace", "monospace"],
+          display: ["var(--omd-font-display)", "ui-serif", "Georgia", "serif"],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="omd-catalog-page min-h-screen bg-background text-foreground antialiased">
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <nav class="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground" aria-label="Breadcrumb">
+      <a class="font-medium text-primary hover:underline underline-offset-4" href="../index.html">Catalogs</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-foreground">Features</span>
+    </nav>
+    <header class="mb-6 rounded-xl border bg-card text-card-foreground shadow-sm px-5 py-4">
+      <p class="omd-id mb-2">features</p>
+      <h1 class="font-display text-2xl font-bold tracking-tight">Features</h1>
+    </header>
+    <main>
+      <div class="rounded-md border bg-card text-card-foreground shadow-sm">
+      <div class="relative w-full overflow-auto">
+        <table class="w-full caption-bottom text-sm">
+          <thead class="[&_tr]:border-b">
+            <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7.5rem]">ID</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Title</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Summary</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7rem]">Status</th>
+            </tr>
+          </thead>
+          <tbody class="[&_tr:last-child]:border-0">
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-001.html"><span class="omd-id">F-001</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-001.html">계정 레지스트리</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">추적할 스레드 계정을 등록·조회·비활성화한다. 핸들, 별칭, 활성 여부, 마지막 수집 시각, 누적 체인·글 수를 갖는다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-002.html"><span class="omd-id">F-002</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-002.html">퍼머링크 수집 실행기</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">코드 목록을 받아 퍼머링크의 SSR JSON을 파싱해 raw JSONL로 append한다. 로그인 불필요.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-003.html"><span class="omd-id">F-003</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-003.html">신규 글 발견</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">계정의 새 글 코드를 찾아 수집 대기열에 넣는다. 로그인 없이 도는 경로는 커버리지가 약 2일이라 매일 돌려야 한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-004.html"><span class="omd-id">F-004</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-004.html">마지막 글 조회수 보강 수집</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">각 체인의 마지막 글 코드로 시드를 만들어 조회수를 받아온다. 완주율 계산의 전제다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-005.html"><span class="omd-id">F-005</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-005.html">정규화와 체인 재구성</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">raw JSONL을 읽어 posts·chains로 정규화한다. 체인은 SSR 페이로드의 스레드 구조를 근거로 재구성한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-006.html"><span class="omd-id">F-006</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-006.html">관측 시계열 적재</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">수집할 때마다 글별 좋아요·댓글·재게시·조회수를 관측 시점과 함께 append한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-007.html"><span class="omd-id">F-007</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-007.html">로컬 스토어 빌드</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">정규화 산출물을 단일 분석 스토어(DuckDB 파일)로 적재한다. 대시보드는 이 파일만 읽는다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-008.html"><span class="omd-id">F-008</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-008.html">수집 콘솔</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">계정별 수집 상태, 마지막 실행 결과, 실패 건수, 관측 시점 목록을 한 화면에서 본다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-009.html"><span class="omd-id">F-009</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-009.html">계정 목록과 요약</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">계정별로 체인 수, 중앙 훅 조회수, 참여율, 중앙 유지율, 마지막 수집일을 한 표에 보여준다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-010.html"><span class="omd-id">F-010</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-010.html">체인 목록 정렬·필터</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">체인 1,722개를 표로 보여주고 정렬·필터한다. 행은 훅 앞 60자, 날짜, 길이, 훅 조회수, 좋아요, 유지율, 월별 배수를 갖는다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-011.html"><span class="omd-id">F-011</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-011.html">체인 상세</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">체인의 글을 seq 순서로 전문 표시하고 글마다 지표를 붙인다. 상단에 체인 요약과 퍼널(F-014)을 둔다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-012.html"><span class="omd-id">F-012</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-012.html">글 전문 검색</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">30,523개 글의 본문을 검색한다. 결과에서 체인 상세로 이동한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-013.html"><span class="omd-id">F-013</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-013.html">스냅샷 성장 추이</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">같은 글의 관측 시점별 값을 선그래프로 보여준다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-014.html"><span class="omd-id">F-014</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-014.html">체인 퍼널 차트</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">한 체인의 1번·2번·마지막 글 조회수를 막대로 그리고 구간별 잔존율을 표시한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-015.html"><span class="omd-id">F-015</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-015.html">유지율 분포와 훅 유형 비교</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">전체 유지율 분포를 히스토그램으로 보여주고, 훅 유형·계정·체인 길이별로 나눠 비교한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-016.html"><span class="omd-id">F-016</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-016.html">이상 체인 추출</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">두 종류의 예외를 자동으로 추린다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-017.html"><span class="omd-id">F-017</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-017.html">훅 유형 분류기</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">훅 본문을 보고 유형을 붙인다. 1차는 규칙 기반(이모지·숫자 목록·감탄사 패턴), 수정은 수작업으로 덮어쓴다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-018.html"><span class="omd-id">F-018</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-018.html">템플릿 카드</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">템플릿 하나를 훅 구조, 전개 순서, 주의사항, 심리 기법 태그, 연결 체인으로 구성한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-019.html"><span class="omd-id">F-019</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-019.html">체인을 템플릿으로 승격</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">체인 상세에서 버튼 하나로 템플릿 초안을 만든다. 길이·유지율·훅 유형 같은 구조 정보만 자동으로 채우고 문장은 복사하지 않는다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-020.html"><span class="omd-id">F-020</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-020.html">심리 기법 태깅과 교차 조회</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">심리 기법 마스터 17개를 관리하고 템플릿에 복수로 붙인다. 기법을 기준으로 역방향 조회한다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./F-021.html"><span class="omd-id">F-021</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./F-021.html">템플릿 성과 롤업</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">템플릿에 연결된 체인들의 지표를 집계해 템플릿 카드에 보여준다.</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="초안">초안</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </main>
+  </div>
+</body>
+</html>

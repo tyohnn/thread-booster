@@ -15,7 +15,7 @@
     <h1 data-omd-field="title">상세 — 헤더 + 퍼널 + 스트림 + 액션 레일</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status">초안</dd>
+      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
       <dt>summary</dt>
       <dd data-omd-field="summary">본문 골격 · 메타 헤더 · 3점 퍼널 차트 · seq 순 글 스트림(글별 지표 우측 정렬) · 우측 액션 레일(승격·원본·태그·연결 템플릿)</dd>
       <dt>tier</dt>
@@ -29,22 +29,7 @@
       </dd>
     </dl>
   </header>
-  <main class="omd-doc-body">
-    <h2>Role</h2>
-    <p>본문 골격 · 메타 헤더 · 3점 퍼널 차트 · seq 순 글 스트림(글별 지표 우측 정렬) · 우측 액션 레일(승격·원본·태그·연결 템플릿)</p>
-    <h2>Regions</h2>
-    <p>메타 헤더 · 3점 퍼널 차트 · seq 순 글 스트림(글별 지표 우측 정렬) · 우측 액션 레일(승격·원본·태그·연결 템플릿)</p>
-    <h2>Rules</h2>
-    <ul>
-      <li>퍼널은 <strong>3점 막대</strong>다 — 1번 · 2번 · 마지막. 중간 글은 조회수가 없으므로 점선 빈 박스로 두고 <strong>보간하지 않는다</strong> (F-014 · POL-003)</li>
-      <li>마지막 글 조회수가 없으면 2점으로 그리고 그 사실을 표시한다</li>
-      <li>글 순번이 빠진 구간은 명시한다 (수집 누락과 삭제를 구분할 수 없기 때문)</li>
-      <li><strong>우측 레일의 첫 버튼은 항상 &quot;템플릿으로 저장&quot;</strong> 이다 (F-019). 발견과 기록 사이 마찰을 없애는 것이 이 화면의 존재 이유다</li>
-      <li>승격 시 <strong>원문 문장을 복사하지 않는다</strong> — 구조 요약만 넘긴다 (POL-002)</li>
-    </ul>
-    <h2>Responsive notes</h2>
-    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
-  </main>
+  
 <section class="omd-wireframe" data-omd-wireframe="shell">
   <h2>Shell + body</h2>
   <style>#wf-shell .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -152,6 +137,7 @@
   </div>
 </div></div>
 </section>
+
 <section class="omd-wireframe" data-omd-wireframe="body">
   <h2>Body only</h2>
   <style>#wf-body .shell{display:grid;grid-template-columns:11rem 1fr;min-height:16rem;border:1px solid var(--omd-line,#d6d3d1);border-radius:8px;overflow:hidden;background:#fff}
@@ -233,5 +219,21 @@
 </div>
 </div>
 </section>
+<main class="omd-doc-body">
+    <h2>Role</h2>
+    <p>본문 골격 · 메타 헤더 · 3점 퍼널 차트 · seq 순 글 스트림(글별 지표 우측 정렬) · 우측 액션 레일(승격·원본·태그·연결 템플릿)</p>
+    <h2>Regions</h2>
+    <p>메타 헤더 · 3점 퍼널 차트 · seq 순 글 스트림(글별 지표 우측 정렬) · 우측 액션 레일(승격·원본·태그·연결 템플릿)</p>
+    <h2>Rules</h2>
+    <ul>
+      <li>퍼널은 <strong>3점 막대</strong>다 — 1번 · 2번 · 마지막. 중간 글은 조회수가 없으므로 점선 빈 박스로 두고 <strong>보간하지 않는다</strong> (F-014 · POL-003)</li>
+      <li>마지막 글 조회수가 없으면 2점으로 그리고 그 사실을 표시한다</li>
+      <li>글 순번이 빠진 구간은 명시한다 (수집 누락과 삭제를 구분할 수 없기 때문)</li>
+      <li><strong>우측 레일의 첫 버튼은 항상 &quot;템플릿으로 저장&quot;</strong> 이다 (F-019). 발견과 기록 사이 마찰을 없애는 것이 이 화면의 존재 이유다</li>
+      <li>승격 시 <strong>원문 문장을 복사하지 않는다</strong> — 구조 요약만 넘긴다 (POL-002)</li>
+    </ul>
+    <h2>Responsive notes</h2>
+    <p>셸(LAY-001)과 본문 골격을 분리해 두어, 본문 셀 폭·여백·스크롤 경계를 셸에 끼운 뷰와 단독 뷰 모두에서 확인한다.</p>
+  </main>
 </body>
 </html>

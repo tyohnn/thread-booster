@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko" data-omd-catalog="stories">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User stories · catalog</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: ["class"],
+    theme: {
+      extend: {
+        colors: {
+          border: "hsl(var(--border))",
+          input: "hsl(var(--input))",
+          ring: "hsl(var(--ring))",
+          background: "hsl(var(--background))",
+          foreground: "hsl(var(--foreground))",
+          primary: {
+            DEFAULT: "hsl(var(--primary))",
+            foreground: "hsl(var(--primary-foreground))",
+          },
+          secondary: {
+            DEFAULT: "hsl(var(--secondary))",
+            foreground: "hsl(var(--secondary-foreground))",
+          },
+          muted: {
+            DEFAULT: "hsl(var(--muted))",
+            foreground: "hsl(var(--muted-foreground))",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--accent))",
+            foreground: "hsl(var(--accent-foreground))",
+          },
+          card: {
+            DEFAULT: "hsl(var(--card))",
+            foreground: "hsl(var(--card-foreground))",
+          },
+        },
+        borderRadius: {
+          lg: "var(--radius)",
+          md: "calc(var(--radius) - 2px)",
+          sm: "calc(var(--radius) - 4px)",
+        },
+        fontFamily: {
+          sans: ["var(--omd-font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+          mono: ["var(--omd-font-mono)", "ui-monospace", "monospace"],
+          display: ["var(--omd-font-display)", "ui-serif", "Georgia", "serif"],
+        },
+      },
+    },
+  };
+</script>
+</head>
+<body class="omd-catalog-page min-h-screen bg-background text-foreground antialiased">
+  <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+    <nav class="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground" aria-label="Breadcrumb">
+      <a class="font-medium text-primary hover:underline underline-offset-4" href="../index.html">Catalogs</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-foreground">User stories</span>
+    </nav>
+    <header class="mb-6 rounded-xl border bg-card text-card-foreground shadow-sm px-5 py-4">
+      <p class="omd-id mb-2">stories</p>
+      <h1 class="font-display text-2xl font-bold tracking-tight">User stories</h1>
+    </header>
+    <main>
+      <div class="rounded-md border bg-card text-card-foreground shadow-sm">
+      <div class="relative w-full overflow-auto">
+        <table class="w-full caption-bottom text-sm">
+          <thead class="[&_tr]:border-b">
+            <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7.5rem]">ID</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Title</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground">Summary</th>
+              <th class="h-10 px-4 text-left align-middle font-medium text-muted-foreground w-[7rem]">Status</th>
+            </tr>
+          </thead>
+          <tbody class="[&_tr:last-child]:border-0">
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-001.html"><span class="omd-id">US-001</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-001.html">팔로우할 계정을 등록해 다음 수집부터 자동으로 들어오게 한다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">새 레퍼런스를 발견했을 때 스크립트를 고치지 않고 바로 추적을 시작한다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-002.html"><span class="omd-id">US-002</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-002.html">수집이 어디까지 갔고 무엇이 실패했는지 확인한다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">차단·실패를 조기에 알아채고 같은 요청을 반복하지 않는다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-003.html"><span class="omd-id">US-003</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-003.html">재수집해도 과거 관측이 덮어쓰이지 않고 쌓이게 한다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">&amp;quot;터진 직후 스파이크&amp;quot;와 &amp;quot;계속 붙는 글&amp;quot;을 구분할 수 있다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-004.html"><span class="omd-id">US-004</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-004.html">계정별 요약을 나란히 놓고 전략 차이를 비교한다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">도달형 계정과 참여형 계정을 구분해 벤치마크한다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-005.html"><span class="omd-id">US-005</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-005.html">체인 목록을 조회수·배수로 정렬하고 걸러낸다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">터진 것만 모아 보는 것은 앱에서는 불가능하다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-006.html"><span class="omd-id">US-006</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-006.html">체인 전문을 1번 글부터 순서대로 지표와 함께 읽는다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">앱에서는 체인이 끊겨 보여 구조를 못 읽는다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-007.html"><span class="omd-id">US-007</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-007.html">글 전문을 검색해 특정 소재가 어떻게 다뤄졌는지 찾는다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">같은 주제를 남들은 어떤 훅으로 열었는지 모아 본다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-008.html"><span class="omd-id">US-008</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-008.html">같은 글이 시간이 지나면서 얼마나 자랐는지 본다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">어떤 글이 오래 붙는지 알면 템플릿 선별 기준이 달라진다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-009.html"><span class="omd-id">US-009</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-009.html">체인의 글별 조회수 낙차를 퍼널로 본다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">독자가 몇 번째 글에서 떠나는지를 눈으로 확인한다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-010.html"><span class="omd-id">US-010</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-010.html">훅 유형별 유지율을 비교해 어떤 구조가 버티는지 판단한다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">다음 글의 훅 유형을 감이 아니라 분포로 고른다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-011.html"><span class="omd-id">US-011</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-011.html">유지율이 무너진 체인을 추려내 원인 구간을 본다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">잘된 것보다 망한 것에서 배울 것이 많다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-012.html"><span class="omd-id">US-012</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-012.html">체인을 보다가 그 자리에서 템플릿으로 승격시킨다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">발견과 기록 사이의 마찰이 없어야 실제로 쌓인다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-013.html"><span class="omd-id">US-013</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-013.html">심리 기법으로 태깅하고 기법별로 교차 조회한다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">표현이 아니라 기법을 재사용해야 저작권 문제가 없다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+            <tr class="border-b transition-colors hover:bg-muted/50">
+              <td class="p-4 align-middle whitespace-nowrap"><a class="inline-flex" href="./US-014.html"><span class="omd-id">US-014</span></a></td>
+              <td class="p-4 align-middle font-medium"><a class="hover:underline underline-offset-4" href="./US-014.html">템플릿별 실제 성과를 보고 다음에 쓸 것을 고른다</a></td>
+              <td class="p-4 align-middle text-muted-foreground max-w-md">템플릿이 느낌이 아니라 지표로 계속 검증된다</td>
+              <td class="p-4 align-middle"><span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors text-foreground" data-status="백로그">백로그</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </main>
+  </div>
+</body>
+</html>
