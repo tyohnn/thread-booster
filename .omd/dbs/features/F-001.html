@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="omd:id" content="F-001" />
   <meta name="omd:kind" content="feature" />
-  <meta name="omd:status" content="초안" />
+  <meta name="omd:status" content="active" />
   <meta name="omd:changeType" content="신규" />
   <meta name="omd:priority" content="P0" />
   <title>F-001 · 계정 레지스트리</title>
@@ -17,7 +17,7 @@
     <h1 data-omd-field="title">계정 레지스트리</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
+      <dd data-omd-field="status" data-omd-value="active">active</dd>
       <dt>changeType</dt>
       <dd data-omd-field="changeType" data-omd-value="신규">신규</dd>
       <dt>area</dt>
@@ -28,20 +28,20 @@
       <dd data-omd-field="summary">추적할 스레드 계정을 등록·조회·비활성화한다. 핸들, 별칭, 활성 여부, 마지막 수집 시각, 누적 체인·글 수를 갖는다.</dd>
       <dt>PRD</dt>
       <dd data-omd-rel="prd">
-        <a href="../prds/PRD-001.html">PRD-001</a>
+        <a href="../prds/PRD-001.html" data-omd-rel-target="PRD-001">PRD-001</a>
       </dd>
       <dt>Stories</dt>
-      <dd data-omd-rel="stories"></dd>
+      <dd data-omd-rel="stories">
+        <a href="../stories/US-001.html" data-omd-rel-target="US-001">US-001</a>
+      </dd>
       <dt>Release</dt>
       <dd data-omd-rel="release">
-        <a href="../release/REL-001.html">REL-001</a>
+        <a href="../release/REL-001.html" data-omd-rel-target="REL-001">REL-001</a>
       </dd>
       <dt>ADR</dt>
       <dd data-omd-rel="adr"></dd>
       <dt>Pages</dt>
-      <dd data-omd-rel="pages">
-        <a href="../pages/PAGE-42.html">PAGE-42</a>
-      </dd>
+      <dd data-omd-rel="pages"></dd>
     </dl>
   </header>
   <main class="omd-doc-body">
@@ -55,6 +55,7 @@
     <li>계정별 마지막 수집 시각이 보인다</li>
     </ul>
     <h2>비고</h2>
+    <p>REL-001 인터페이스는 <code>accounts.json</code>(CLI). PAGE-42는 v1.0.</p>
     <p>현재 등록 대상: <code>beyond.cho</code>(수집 완료), <code>ho_ho_ju_ju</code>(수집 완료), <code>badakstock</code>(수집됨), <code>dolphin_invest_</code>(예정)</p>
   </main>
 </body>

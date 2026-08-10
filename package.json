@@ -1,0 +1,16 @@
+{
+  "name": "thread-booster",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.5.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "pnpm --filter @thread-booster/pipeline test",
+    "test:all": "pnpm -r --if-present test",
+    "data:refresh": "pnpm --filter @thread-booster/pipeline exec node src/cli/refresh.mjs",
+    "data:verify": "pnpm --filter @thread-booster/pipeline exec node src/cli/verify.mjs",
+    "accounts": "pnpm --filter @thread-booster/pipeline exec node src/cli/accounts.mjs"
+  }
+}

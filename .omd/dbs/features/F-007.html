@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="omd:id" content="F-007" />
   <meta name="omd:kind" content="feature" />
-  <meta name="omd:status" content="초안" />
+  <meta name="omd:status" content="active" />
   <meta name="omd:changeType" content="신규" />
   <meta name="omd:priority" content="P0" />
   <title>F-007 · 로컬 스토어 빌드</title>
@@ -17,7 +17,7 @@
     <h1 data-omd-field="title">로컬 스토어 빌드</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
+      <dd data-omd-field="status" data-omd-value="active">active</dd>
       <dt>changeType</dt>
       <dd data-omd-field="changeType" data-omd-value="신규">신규</dd>
       <dt>area</dt>
@@ -28,16 +28,20 @@
       <dd data-omd-field="summary">정규화 산출물을 단일 분석 스토어(DuckDB 파일)로 적재한다. 대시보드는 이 파일만 읽는다.</dd>
       <dt>PRD</dt>
       <dd data-omd-rel="prd">
-        <a href="../prds/PRD-001.html">PRD-001</a>
+        <a href="../prds/PRD-001.html" data-omd-rel-target="PRD-001">PRD-001</a>
       </dd>
       <dt>Stories</dt>
-      <dd data-omd-rel="stories"></dd>
+      <dd data-omd-rel="stories">
+        <a href="../stories/US-003.html" data-omd-rel-target="US-003">US-003</a>
+      </dd>
       <dt>Release</dt>
       <dd data-omd-rel="release">
-        <a href="../release/REL-001.html">REL-001</a>
+        <a href="../release/REL-001.html" data-omd-rel-target="REL-001">REL-001</a>
       </dd>
       <dt>ADR</dt>
-      <dd data-omd-rel="adr"></dd>
+      <dd data-omd-rel="adr">
+        <a href="../adr/ADR-002.html" data-omd-rel-target="ADR-002">ADR-002</a>
+      </dd>
       <dt>Pages</dt>
       <dd data-omd-rel="pages"></dd>
     </dl>
@@ -52,7 +56,7 @@
     <li>스키마 변경 시 마이그레이션 대신 재생성한다</li>
     </ul>
     <h2>의존</h2>
-    <p>ADR-002 (엔진 선택) 확정 후 착수.</p>
+    <p>ADR-002 <strong>채택</strong> (2026-08-09). DuckDB 단일 파일로 구현한다.</p>
   </main>
 </body>
 </html>

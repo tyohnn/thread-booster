@@ -1,0 +1,21 @@
+{
+  "name": "@thread-booster/pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "tb-refresh": "./src/cli/refresh.mjs",
+    "tb-accounts": "./src/cli/accounts.mjs",
+    "tb-verify": "./src/cli/verify.mjs"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "duckdb": "^1.3.2"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}

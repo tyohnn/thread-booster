@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko" data-omd-kind="plan" data-omd-id="PLAN-001">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="omd:id" content="PLAN-001" />
+  <meta name="omd:kind" content="plan" />
+  <meta name="omd:stage" content="active" />
+  <meta name="omd:changeType" content="product" />
+  <title>PLAN-001 · REL-001 데이터 파이프라인 일괄 구현</title>
+  <link rel="stylesheet" href="../../assets/omd-doc.css" />
+</head>
+<body>
+  <nav class="omd-crumb" aria-label="Breadcrumb">
+    <a class="omd-back" href="./index.html"><span class="omd-back-icon" aria-hidden="true">←</span> 목록으로</a>
+    <span aria-hidden="true">·</span>
+    <a href="../index.html">Catalogs</a>
+  </nav>
+  <header class="omd-doc-header">
+    <p class="omd-id" data-omd-field="id">PLAN-001</p>
+    <h1 data-omd-field="title">REL-001 데이터 파이프라인 일괄 구현</h1>
+    <dl class="omd-props">
+      <dt>stage</dt>
+      <dd data-omd-field="stage" data-omd-value="active">active</dd>
+      <dt>changeType</dt>
+      <dd data-omd-field="changeType" data-omd-value="product">product</dd>
+      <dt>codeAreas</dt>
+      <dd data-omd-field="codeAreas" data-omd-value="shared/crawler/">shared/crawler/</dd>
+      <dt>PRD</dt>
+      <dd data-omd-rel="prd">
+        <a href="../prds/PRD-001.html" data-omd-rel-target="PRD-001">PRD-001</a>
+      </dd>
+      <dt>Stories</dt>
+      <dd data-omd-rel="stories">
+        <a href="../stories/US-001.html" data-omd-rel-target="US-001">US-001</a>
+        <a href="../stories/US-002.html" data-omd-rel-target="US-002">US-002</a>
+        <a href="../stories/US-003.html" data-omd-rel-target="US-003">US-003</a>
+      </dd>
+      <dt>Specs</dt>
+      <dd data-omd-rel="specs">
+        <a href="../data-model/DM-001.html" data-omd-rel-target="DM-001">DM-001</a>
+      </dd>
+      <dt>Specs (System model)</dt>
+      <dd data-omd-rel="systemSpecs"></dd>
+    </dl>
+  </header>
+  <main class="omd-doc-body">
+    <h2>Goal</h2>
+    <p>문서 잠금된 REL-001을 한 번에 구현한다: <code>pnpm data:refresh</code> 한 줄로 수집→정규화→DuckDB 적재가 끝나고, 계정≥3·체인≥1000·관측 append-only를 만족한다.</p>
+    <p>전제: PRD-001 · US-001~003 · F-001~007 · ADR-002 · POL-001~003 · REL-001 status=<code>active</code> (2026-08-09 잠금).</p>
+
+    <h2>Approach</h2>
+    <ul>
+      <li>기존 <code>shared/crawler</code>(fetch · discover · harvest · normalize · retention)를 감싸 오케스트레이션한다. 파서를 새로 쓰지 않는다</li>
+      <li>계정 레지스트리는 <code>accounts.json</code> (F-001 / US-001)</li>
+      <li>스토어는 DuckDB 단일 파일 (ADR-002 / F-007). JSONL은 원본, DuckDB는 재생성 가능 파생물</li>
+      <li>화면·F-008은 만들지 않는다. 진행/실패는 CLI 로그 (US-002)</li>
+    </ul>
+
+    <h2>Steps</h2>
+    <ol>
+      <li><strong>F-001</strong> — <code>accounts.json</code> 스키마·CRUD CLI (등록·중복 거부·비활성·last_fetched)</li>
+      <li><strong>F-002~F-004</strong> — 레지스트리 기준 순차 수집(한 계정씩), POL-001 지터·백오프, 마지막 글 보강, 진행/실패 로그·실패 코드 재시도</li>
+      <li><strong>F-005~F-006</strong> — normalize + retention, metrics append-only (덮어쓰기 금지, POL-003)</li>
+      <li><strong>F-007</strong> — normalized → DuckDB 테이블(계정·체인·글·관측·유지율), 전체 재생성 경로</li>
+      <li><strong>오케스트레이션</strong> — <code>pnpm data:refresh</code> 엔트리, exit criteria 검증 스크립트(계정≥3, 체인≥1000, observed_at 누적)</li>
+    </ol>
+
+    <h2>Risks</h2>
+    <ul>
+      <li>소프트 차단 — POL-001 준수, 우회 금지</li>
+      <li>과거 metrics 스냅샷 유실 — append만, 삭제 금지 (POL-004와도 정렬)</li>
+      <li>DuckDB 의존성/네이티브 바인딩 — Node 환경에서 로드 확인</li>
+    </ul>
+
+    <h2>Verification</h2>
+    <ul>
+      <li><code>pnpm data:refresh</code> 한 번으로 스토어까지 완료</li>
+      <li>스토어 질의: 계정 ≥ 3, 체인 ≥ 1000</li>
+      <li>동일 글 두 시점 관측이 공존 (append)</li>
+      <li><code>omd.mjs check</code> 기획 문서 통과 유지</li>
+    </ul>
+
+    <h2>Out of this plan</h2>
+    <p>F-008 · PAGE-41/42 · 대시보드 · DuckDB WASM — REL-002.</p>
+  </main>
+</body>
+</html>

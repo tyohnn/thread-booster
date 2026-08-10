@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="omd:id" content="F-004" />
   <meta name="omd:kind" content="feature" />
-  <meta name="omd:status" content="초안" />
+  <meta name="omd:status" content="active" />
   <meta name="omd:changeType" content="신규" />
   <meta name="omd:priority" content="P0" />
   <title>F-004 · 마지막 글 조회수 보강 수집</title>
@@ -17,7 +17,7 @@
     <h1 data-omd-field="title">마지막 글 조회수 보강 수집</h1>
     <dl class="omd-props">
       <dt>status</dt>
-      <dd data-omd-field="status" data-omd-value="초안">초안</dd>
+      <dd data-omd-field="status" data-omd-value="active">active</dd>
       <dt>changeType</dt>
       <dd data-omd-field="changeType" data-omd-value="신규">신규</dd>
       <dt>area</dt>
@@ -28,20 +28,20 @@
       <dd data-omd-field="summary">각 체인의 마지막 글 코드로 시드를 만들어 조회수를 받아온다. 완주율 계산의 전제다.</dd>
       <dt>PRD</dt>
       <dd data-omd-rel="prd">
-        <a href="../prds/PRD-001.html">PRD-001</a>
+        <a href="../prds/PRD-001.html" data-omd-rel-target="PRD-001">PRD-001</a>
       </dd>
       <dt>Stories</dt>
-      <dd data-omd-rel="stories"></dd>
+      <dd data-omd-rel="stories">
+        <a href="../stories/US-002.html" data-omd-rel-target="US-002">US-002</a>
+      </dd>
       <dt>Release</dt>
       <dd data-omd-rel="release">
-        <a href="../release/REL-001.html">REL-001</a>
+        <a href="../release/REL-001.html" data-omd-rel-target="REL-001">REL-001</a>
       </dd>
       <dt>ADR</dt>
       <dd data-omd-rel="adr"></dd>
       <dt>Pages</dt>
-      <dd data-omd-rel="pages">
-        <a href="../pages/PAGE-41.html">PAGE-41</a>
-      </dd>
+      <dd data-omd-rel="pages"></dd>
     </dl>
   </header>
   <main class="omd-doc-body">
@@ -55,6 +55,8 @@
     </ul>
     <h2>비고</h2>
     <p>현재는 1번·2번 글만 있어 완주율을 모른다. 이 기능이 PRD-003 퍼널의 3번째 막대를 만든다.</p>
+      <h2>REL-001</h2>
+    <p>화면 없이 CLI·로그로 제공한다. F-008/PAGE-41은 v1.0.</p>
   </main>
 </body>
 </html>
